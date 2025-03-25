@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Academic Project Page</title>
+  <title>Robobench: A Comprehensive Evaluation Benchmark for Perception, Planning and Reflection of Embodied Multimodal Large Language Models</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -52,21 +52,51 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">Robobench: A Comprehensive Evaluation Benchmark for Perception, Planning and Reflection of Embodied Multimodal Large Language Models</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
+                <a>Yulin Luo</a>,</span>
+              <span class="author-block">
+                <a>Chun-Kai Fan</a>,</span>
+              <span class="author-block">
+                <a>Menghang Dong</a>,</span>
+              <span class="author-block">
+                <a>Mengdi Zhao</a>,</span>
+              <span class="author-block">                
+                <a>Bo-Wen Zhang</a>,</span>
+              <span class="author-block">
+                <a>Jiayu Shi</a>,</span>
+              <span class="author-block">
+                <a>Jiaming Liu</a>,</span>
+              <span class="author-block">
+                <a>Gaole Dai</a>,</span>
+              <span class="author-block">
+                <a>Rongyu Zhang</a>,</span>
+              <span class="author-block">
+                <a>Ruichuan An</a>,</span>
+              <span class="author-block">
+                <a>Kun Wu</a>,</span>
+              <span class="author-block">
+                <a>Zhengping Che</a>,</span>
+              <span class="author-block">
+                <a>Pengwei Wang</a>,</span>
+              <span class="author-block">
+                <a>Guang Liu</a>,</span>
+              <span class="author-block">
+                <a>Zhongyuan Wang</a>,</span>
+              <span class="author-block">
+                <a>Tiejun Huang</a>,</span>
+              <span class="author-block">
+                <a>Shanghang Zhang</a></span>
+              <span class="author-block">
                 <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="author-block"><sup>1</sup> Beijing Academy of Artificial Intelligence,<br><sup>2</sup> Peking University, <br><sup>3</sup> Beijing Innovation Center of Humanoid Robotics</span>
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Equal contribution, <sup>†</sup>Corresponding authors</small><br></span>
+                    <span class="author-block">ICCV 2025</span>
                   </div>
 
                   <div class="column has-text-centered">
@@ -127,13 +157,9 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
+        <img src="static/images/overview.png">
       <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+<b>RoboBench</b> is a comprehensive benchmark to evaluate embodied multi-modal language models (MLLMs) with Q&A framework spanning 4 levels and over 25 subcategories. It emulates the execution process of embodied tasks: starting with the comprehension of instructions, followed by scene perception, strategic planning, and culminating in summarization, reflection, and iterative improvement (top left). The primary metric is further divided into subcategories, demonstrating both the diversity and complexity of RoboBench (top right; bottom). Tasks are color-coded to aid in distinguishing between task types.
       </h2>
     </div>
   </div>
@@ -148,7 +174,13 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Recently, Multi-modal Large Language Models (MLLMs) have shown great potential to be the “brain” of embodied agents.
+However, existing benchmarks fail to evaluate the full capabilities essential for embodied tasks in MLLMs, including instruction comprehension, reasoning in complex environments, decision-making, affordance reasoning, and reflection.
+To bridge these gaps, we introduce <b>RoboBench</b>, a novel benchmark designed to systematically evaluate the capabilities of MLLMs as the brain of embodied agents.
+The evaluation formulation is structured around 5 key skills and 20 sub-dimensions, featuring specially designed tasks such as cross-embodiment planning, cross-object perception, and cross-view reasoning to ensure a fine-grained and realistic assessment.
+To assess the robustness of task planning, we introduce a DAG-based LLM evaluation framework that incorporates variations in execution order and task granularity.
+Through large-scale evaluations of closed-source and open-source MLLMs, we identify several critical limitations of previous benchmarks. Specifically, we observe that current MLLMs struggle with understanding implicit demand instructions, cross-embodiment planning, object interaction characteristic analysis, and fine-grained error reflection.
+RoboBench aims to drive progress in the field by guiding the development of next-generation MLLMs with enhanced embodied capabilities. Our code and dataset will be released soon.
           </p>
         </div>
       </div>
@@ -157,105 +189,42 @@
 </section>
 <!-- End paper abstract -->
 
-
-<!-- Image carousel -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+      <!-- Paper video. -->
+      <h2 class="title is-3">Leaderboard</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <img src="static/images/leaderboard.png">
+        </div>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
+      <div class="container is-max-desktop"></div>
+      <div class="content has-text-justified">
+      
+      </div></div>
     </div>
   </div>
-</div>
-</div>
 </section>
-<!-- End image carousel -->
 
 
-
-
-<!-- Youtube video -->
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
+      <h2 class="title is-3">Dataset Construction Pipeline</h2>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
+          <img src="static/images/pipeline.png">
         </div>
       </div>
+      <div class="container is-max-desktop"></div>
+      <div class="content has-text-justified">
+      RoboBench consolidates datasets from over 20 recent studies. These datasets have been processed through our three-category conversion workflow, which is color-coded as follows: <span style="color: green;">green</span> for perception, <span style="color: blue;">blue</span> for planning, and <span style="color: red;">red</span> for reflection. The processing pipeline generally involves preprocessing (employing quality filtering or basic binary classification), followed by steps with a Vision-Language Model (VLM), detection model, or human experts, culminating data standardization into metadata summaries. These metadata are then utilized to automate Q&A questions across various categories. The final Q&A format comprises standardized binary classification, multiple choice, and multi-step multiple choice formats, making it adaptable for both open-source and closed-source MLLM models.
+      </div></div>
     </div>
   </div>
 </section>
-<!-- End youtube video -->
-
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
 
 
 
@@ -278,7 +247,15 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <pre><code>@misc{luo2025robobench,
+        title={Robobench: A Comprehensive Evaluation Benchmark for Perception, Planning and Reflection of Embodied Multimodal Large Language Models}, 
+        author={Yulin Luo, Chun-Kai Fan, Menghang Dong, Mengdi Zhao, Bo-Wen Zhang, Jiayu Shi, Jiaming Liu, Gaole Dai, Rongyu Zhang, Ruichuan An, Kun Wu, Zhengping Che, Pengwei Wang, Guang Liu, Zhongyuan Wang, Tiejun Huang, Shanghang Zhang},
+        year={2025},
+        eprint={xxx},
+        archivePrefix={arXiv},
+        primaryClass={xxx},
+        url={https://arxiv.org/abs/xxx}, 
+  }</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
