@@ -1,0 +1,59 @@
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    
+    th,
+    td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+        vertical-align: middle;
+    }
+    
+    .header {
+        font-weight: bold;
+    }
+    
+    .sub-header {
+        font-weight: bold;
+    }
+    
+    .section-title {
+        font-weight: bold;
+    }
+    /* Background color for specific sections */
+    
+    .text-only {
+        background-color: #add8e6;
+        /* Light Blue */
+    }
+    
+    .closed-source {
+        background-color: #ffcccb;
+        /* Light Pink */
+    }
+    
+    .open-source {
+        background-color: #ffffe0;
+        /* Light Yellow */
+    }
+    
+    .video-mlm {
+        background-color: #90ee90;
+        /* Light Green */
+    }
+    
+    .sort-btn {
+        cursor: pointer;
+        font-size: 12px;
+        margin-left: 5px;
+        user-select: none;
+        /* 防止文字被选中 */
+    }
+    
+    .sort-btn:hover {
+        color: #007bff;
+        /* 悬停时变蓝色 */
+    }
