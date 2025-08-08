@@ -55,7 +55,7 @@
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
                         <h1 class="title is-1 publication-title">
-                            <img src="static/images/favicon.ico">Robobench: A Comprehensive Evaluation Benchmark for Perception, Planning and Reflection of Embodied Multimodal Large Language Models
+                            <img src="static/images/R2.jpg">Robobench: A Comprehensive Evaluation Benchmark for Perception, Planning and Reflection of Embodied Multimodal Large Language Models
                         </h1>
                         <div class="is-size-5 publication-authors">
                             <!-- Paper authors -->
@@ -162,7 +162,7 @@
     <section class="hero teaser">
         <div class="container is-max-desktop">
             <div class="hero-body">
-                <img src="static/images/overview.png">
+                <img src="static/images/robobench_teaser.jpg">
                 <h2 class="subtitle has-text-centered">
                     <b>RoboBench</b> is a comprehensive benchmark to evaluate embodied multi-modal language models (MLLMs) with Q&A framework spanning 4 levels and over 25 subcategories. It emulates the execution process of embodied tasks: starting with
                     the comprehension of instructions, followed by scene perception, strategic planning, and culminating in summarization, reflection, and iterative improvement (top left). The primary metric is further divided into subcategories, demonstrating
@@ -247,10 +247,9 @@
                 <h2 class="title is-3">Leaderboard</h2>
                 <div class="tab-container">
                     <div class="tab-buttons">
-                        <button class="tab-btn active" data-tab="text-only">Text only</button>
-                        <button class="tab-btn" data-tab="closed-source">Closed-Source Multi-Image MLLMs</button>
-                        <button class="tab-btn" data-tab="open-source">Open-Source Multi-Image MLLMs</button>
-                        <button class="tab-btn" data-tab="video-mlm">Open-Source Video MLLMs</button>
+                        <button class="tab-btn active" data-tab="text-only">指令理解+感知推理</button>
+                        <button class="tab-btn" data-tab="closed-source">泛化规划</button>
+                        <button class="tab-btn" data-tab="open-source">可操纵性分析+错误分析</button>
                     </div>
 
                     <div id="text-only" class="tab-content active">
@@ -258,58 +257,280 @@
                             <thead>
                                 <tr>
                                     <th colspan="1">Model</th>
-                                    <th colspan="15">Embodied Generalized Planning</th>
+                                    <th colspan="3">Embodied Instruction Comprehension</th>
+                                    <th colspan="9">Embodied Perception Reasoning</th>
                                 </tr>
                                 <tr>
                                     <th colspan="1"></th>
-                                    <th colspan="3">Cross-Embodiment Planning</th>
-                                    <th colspan="10">Cross-Object Planning</th>
-                                    <th colspan="1">Cross-View Planning</th>
+                                    <th colspan="1">Explicit Object Goal<span class="sort-btn" data-col="0">▼</span></th>
+                                    <th colspan="1">Implicit Demand Goal<span class="sort-btn" data-col="1">▼</span></th>
+                                    <th colspan="1">Avg<span class="sort-btn" data-col="2">▼</span></th>
+                                    <th colspan="2">Robotic Centric</th>
+                                    <th colspan="2">Object Centric</th>
+                                    <th colspan="3">Scene Centric</th>
+                                    <th colspan="1">Task Centric</th>
+                                    <th colspan="1"></th>
                                 </tr>
                                 <tr>
                                     <th colspan="1"></th>
-                                    <th colspan="1">Single-arm<span class="sort-btn" data-col="1">▼</span></th>
-                                    <th colspan="1">Dual-arm<span class="sort-btn" data-col="2">▼</span></th>
-                                    <th colspan="1">Mobile-manipulation<span class="sort-btn" data-col="3">▼</span></th>
-                                    <th colspan="5">Material Affordance</th>
-                                    <th colspan="4">Physical Attribute</th>
-                                    <th colspan="1">World Knowledge<span class="sort-btn" data-col="13">▼</span></th>
-                                    <th colspan="1">Multi-view<span class="sort-btn" data-col="14">▼</span></th>
-                                </tr>
-                                <tr>
-                                    <th colspan="4"></th>
-                                    <th colspan="1">Articulated<span class="sort-btn" data-col="4">▼</span></th>
-                                    <th colspan="1">Deformable<span class="sort-btn" data-col="5">▼</span></th>
-                                    <th colspan="1">Multi-object<span class="sort-btn" data-col="6">▼</span></th>
-                                    <th colspan="1">Rigid<span class="sort-btn" data-col="7">▼</span></th>
-                                    <th colspan="1">Special<span class="sort-btn" data-col="8">▼</span></th>
-                                    <th colspan="1">Color<span class="sort-btn" data-col="9">▼</span></th>
-                                    <th colspan="1">Number<span class="sort-btn" data-col="10">▼</span></th>
-                                    <th colspan="1">Shape<span class="sort-btn" data-col="11">▼</span></th>
-                                    <th colspan="1">Size<span class="sort-btn" data-col="12">▼</span></th>
-                                    <th colspan="2"></th>
+                                    <th colspan="3"></th>
+                                    <th colspan="1">Robotic Type<span class="sort-btn" data-col="3">▼</span></th>
+                                    <th colspan="1">Robotic View<span class="sort-btn" data-col="4">▼</span></th>
+                                    <th colspan="1">Static Attribute<span class="sort-btn" data-col="5">▼</span></th>
+                                    <th colspan="1">Tool Usage<span class="sort-btn" data-col="6">▼</span></th>
+                                    <th colspan="1">Spatial Relation<span class="sort-btn" data-col="7">▼</span></th>
+                                    <th colspan="1">Temporal Grounding timestamp<span class="sort-btn" data-col="8">▼</span></th>
+                                    <th colspan="1">Spatial-Temporal Causality<span class="sort-btn" data-col="9">▼</span></th>
+                                    <th colspan="1">Reference Detection<span class="sort-btn" data-col="10">▼</span></th>
+                                    <th colspan="1">Avg<span class="sort-btn" data-col="11">▼</span></th>>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="text-only">
-                                    <th colspan="15">Text only</th>
+                                <tr>
+                                    <td>最终数量</td>
+                                    <td>101</td>
+                                    <td>101</td>
+                                    <td>202</td>
+                                    <td>117</td>
+                                    <td>138</td>
+                                    <td>309</td>
+                                    <td>82</td>
+                                    <td>101</td>
+                                    <td>130</td>
+                                    <td>145</td>
+                                    <td>163</td>
+                                    <td>1185</td>
                                 </tr>
                                 <tr>
-                                    <td>GPT-4o-text-only</td>
-                                    <td>38.48</td>
-                                    <td>20.6</td>
-                                    <td>27.03</td>
-                                    <td>28.90</td>
-                                    <td>29.75</td>
-                                    <td>49.87</td>
-                                    <td>32.22</td>
-                                    <td>23.05</td>
-                                    <td>30.41</td>
-                                    <td>31.72</td>
-                                    <td>33.66</td>
-                                    <td>28.57</td>
-                                    <td>20.83</td>
-                                    <td>27.28</td>
+                                    <td>Human</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>0.00</td>
+                                    <td>80.67</td>
+                                    <td>79.08</td>
+                                    <td>43.77</td>
+                                    <td>83.89</td>
+                                    <td>70.91</td>
+                                    <td>51.61</td>
+                                    <td>91.22</td>
+                                    <td>93.22</td>
+                                    <td>73.90</td>
+                                </tr>
+                                <tr>
+                                    <th class="text-only" colspan="13">Proprietary MLLMs</th>
+                                </tr>
+                                <tr>
+                                    <td>GPT4o(Lang)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>20.51</td>
+                                    <td>13.77</td>
+                                    <td>5.18</td>
+                                    <td>35.37</td>
+                                    <td>25.74</td>
+                                    <td>18.32</td>
+                                    <td>25.52</td>
+                                    <td>22.09</td>
+                                    <td>20.81</td>
+                                </tr>
+                                <tr>
+                                    <td>GPT4o</td>
+                                    <td>77.27</td>
+                                    <td>66.18</td>
+                                    <td></td>
+                                    <td>64.96</td>
+                                    <td>39.38</td>
+                                    <td>24.92</td>
+                                    <td>46.75</td>
+                                    <td>42.24</td>
+                                    <td>20.61</td>
+                                    <td>33.10</td>
+                                    <td>41.31</td>
+                                    <td>39.16</td>
+                                </tr>
+                                <tr>
+                                    <td>GPT4o-mini</td>
+                                    <td>67.87</td>
+                                    <td>58.21</td>
+                                    <td></td>
+                                    <td>38.75</td>
+                                    <td>18.84</td>
+                                    <td>26.43</td>
+                                    <td>53.66</td>
+                                    <td>30.36</td>
+                                    <td>22.65</td>
+                                    <td>34.25</td>
+                                    <td>39.67</td>
+                                    <td>33.08</td>
+                                </tr>
+                                <tr>
+                                    <td>Claude-3.7-Sonnet</td>
+                                    <td>75.39</td>
+                                    <td>67.17</td>
+                                    <td></td>
+                                    <td>40.46</td>
+                                    <td>32.37</td>
+                                    <td>45.20</td>
+                                    <td>71.14</td>
+                                    <td>36.63</td>
+                                    <td>21.09</td>
+                                    <td>40.92</td>
+                                    <td>28.02</td>
+                                    <td>39.48</td>
+                                </tr>
+                                <tr>
+                                    <td>Claude-3.5-Sonnet</td>
+                                    <td>76.13</td>
+                                    <td>64.01</td>
+                                    <td></td>
+                                    <td>41.31</td>
+                                    <td>36.23</td>
+                                    <td>29.13</td>
+                                    <td>62.60</td>
+                                    <td>34.98</td>
+                                    <td>21.88</td>
+                                    <td>36.09</td>
+                                    <td>25.36</td>
+                                    <td>35.95</td>
+                                </tr>
+                                <tr>
+                                    <td>Gemini-2.5-Pro</td>
+                                    <td>79.35</td>
+                                    <td>71.63</td>
+                                    <td></td>
+                                    <td>64.30</td>
+                                    <td>41.71</td>
+                                    <td>54.83</td>
+                                    <td>82.27</td>
+                                    <td>60.44</td>
+                                    <td>49.68</td>
+                                    <td>71.73</td>
+                                    <td>78.68</td>
+                                    <td>62.96</td>
+                                </tr>
+                                <tr>
+                                    <td>Gemini-2.5-Flash</td>
+                                    <td>75.39</td>
+                                    <td>69.40</td>
+                                    <td></td>
+                                    <td>62.39</td>
+                                    <td>39.38</td>
+                                    <td>55.02</td>
+                                    <td>77.24</td>
+                                    <td>57.43</td>
+                                    <td>33.58</td>
+                                    <td>70.34</td>
+                                    <td>74.64</td>
+                                    <td>58.75</td>
+                                </tr>
+                                <tr>
+                                    <td>Gemini-2.0-Flash</td>
+                                    <td>75.69</td>
+                                    <td>69.01</td>
+                                    <td></td>
+                                    <td>56.69</td>
+                                    <td>20.77</td>
+                                    <td>49.08</td>
+                                    <td>78.46</td>
+                                    <td>42.57</td>
+                                    <td>21.37</td>
+                                    <td>51.72</td>
+                                    <td>72.40</td>
+                                    <td>49.13</td>
+                                </tr>
+                                <tr>
+                                    <td>Qwen-VL-Max</td>
+                                    <td>73.51</td>
+                                    <td>61.18</td>
+                                    <td></td>
+                                    <td>47.86</td>
+                                    <td>43.48</td>
+                                    <td>39.70</td>
+                                    <td>75.20</td>
+                                    <td>50.17</td>
+                                    <td>27.45</td>
+                                    <td>37.93</td>
+                                    <td>41.53</td>
+                                    <td>45.42</td>
+                                </tr>
+                                <tr>
+                                    <td>Qwen-VL-Plus</td>
+                                    <td>62.07</td>
+                                    <td>51.63</td>
+                                    <td></td>
+                                    <td>28.21</td>
+                                    <td>21.74</td>
+                                    <td>34.63</td>
+                                    <td>58.54</td>
+                                    <td>27.72</td>
+                                    <td>21.37</td>
+                                    <td>31.03</td>
+                                    <td>34.36</td>
+                                    <td>32.20</td>
+                                </tr>
+                                <tr>
+                                    <th class="text-only" colspan="13">Open-Source Multi-Image MLLMs</th>
+                                </tr>
+                                <tr>
+                                    <td>Qwen2.5-VL-72B-Ins</td>
+                                    <td>73.51</td>
+                                    <td>61.38</td>
+                                    <td></td>
+                                    <td>47.72</td>
+                                    <td>42.75</td>
+                                    <td>41.74</td>
+                                    <td>72.95</td>
+                                    <td>48.51</td>
+                                    <td>27.87</td>
+                                    <td>40.32</td>
+                                    <td>42.13</td>
+                                    <td>45.50</td>
+                                </tr>
+                                <tr>
+                                    <td>Qwen2.5-VL-7B-Ins</td>
+                                    <td>52.82</td>
+                                    <td>44.65</td>
+                                    <td></td>
+                                    <td>23.93</td>
+                                    <td>26.81</td>
+                                    <td>37.86</td>
+                                    <td>46.34</td>
+                                    <td>31.68</td>
+                                    <td>22.90</td>
+                                    <td>14.48</td>
+                                    <td>36.81</td>
+                                    <td>30.10</td>
+                                </tr>
+                                <tr>
+                                    <td>Qwen2-VL-72B-Ins</td>
+                                    <td>69.80</td>
+                                    <td>55.19</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Qwen2-VL-7B-Ins</td>
+                                    <td>50.54</td>
+                                    <td>36.23</td>
+                                    <td></td>
+                                    <td>17.19</td>
+                                    <td>21.55</td>
+                                    <td>17.26</td>
+                                    <td>57.32</td>
+                                    <td>29.04</td>
+                                    <td>24.19</td>
+                                    <td>23.45</td>
+                                    <td>21.88</td>
+                                    <td>26.49</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -320,160 +541,404 @@
                             <thead>
                                 <tr>
                                     <th colspan="1">Model</th>
-                                    <th colspan="15">Embodied Generalized Planning</th>
+                                    <th colspan="19">Embodied Generalized Planning</th>
                                 </tr>
                                 <tr>
                                     <th colspan="1"></th>
-                                    <th colspan="3">Cross-Embodiment Planning</th>
-                                    <th colspan="10">Cross-Object Planning</th>
-                                    <th colspan="1">Cross-View Planning</th>
+                                    <th colspan="4">Cross Embodiment Planning</th>
+                                    <th colspan="10">Cross Object Planning</th>
+                                    <th colspan="2">Cross-View Planning</th>
+                                    <th colspan="1">Cross Task Planning</th>
+                                    <th colspan="1">Cross Loop Planning</th>
+                                    <th colspan="1">Avg<span class="sort-btn" data-col="0">▼</span></th>
                                 </tr>
                                 <tr>
                                     <th colspan="1"></th>
                                     <th colspan="1">Single-arm<span class="sort-btn" data-col="1">▼</span></th>
                                     <th colspan="1">Dual-arm<span class="sort-btn" data-col="2">▼</span></th>
                                     <th colspan="1">Mobile-manipulation<span class="sort-btn" data-col="3">▼</span></th>
+                                    <th colspan="1">Human<span class="sort-btn" data-col="4">▼</span></th>
                                     <th colspan="5">Material Affordance</th>
                                     <th colspan="4">Physical Attribute</th>
-                                    <th colspan="1">World Knowledge<span class="sort-btn" data-col="13">▼</span></th>
-                                    <th colspan="1">Multi-view<span class="sort-btn" data-col="14">▼</span></th>
+                                    <th colspan="1">World Knowledge<span class="sort-btn" data-col="5">▼</span></th>
+                                    <th colspan="1">Single View<span class="sort-btn" data-col="6">▼</span></th>
+                                    <th colspan="1">Multi View<span class="sort-btn" data-col="7">▼</span></th>
+                                    <th colspan="1">Navigation<span class="sort-btn" data-col="8">▼</span></th>
+                                    <th colspan="1">Close Loop<span class="sort-btn" data-col="9">▼</span></th>
+                                    <th colspan="1"></th>
                                 </tr>
                                 <tr>
-                                    <th colspan="4"></th>
-                                    <th colspan="1">Articulated<span class="sort-btn" data-col="4">▼</span></th>
-                                    <th colspan="1">Deformable<span class="sort-btn" data-col="5">▼</span></th>
-                                    <th colspan="1">Multi-object<span class="sort-btn" data-col="6">▼</span></th>
-                                    <th colspan="1">Rigid<span class="sort-btn" data-col="7">▼</span></th>
-                                    <th colspan="1">Special<span class="sort-btn" data-col="8">▼</span></th>
-                                    <th colspan="1">Color<span class="sort-btn" data-col="9">▼</span></th>
-                                    <th colspan="1">Number<span class="sort-btn" data-col="10">▼</span></th>
-                                    <th colspan="1">Shape<span class="sort-btn" data-col="11">▼</span></th>
-                                    <th colspan="1">Size<span class="sort-btn" data-col="12">▼</span></th>
-                                    <th colspan="2"></th>
+                                    <th colspan="5"></th>
+                                    <th colspan="1">Rigid<span class="sort-btn" data-col="10">▼</span></th>
+                                    <th colspan="1">Articulated<span class="sort-btn" data-col="11">▼</span></th>
+                                    <th colspan="1">Deformable<span class="sort-btn" data-col="12">▼</span></th>
+                                    <th colspan="1">Special<span class="sort-btn" data-col="13">▼</span></th>
+                                    <th colspan="1">Multi-object<span class="sort-btn" data-col="14">▼</span></th>
+                                    <th colspan="1">Color<span class="sort-btn" data-col="15">▼</span></th>
+                                    <th colspan="1">Number<span class="sort-btn" data-col="16">▼</span></th>
+                                    <th colspan="1">Shape<span class="sort-btn" data-col="17">▼</span></th>
+                                    <th colspan="1">Size<span class="sort-btn" data-col="18">▼</span></th>
+                                    <th colspan="6"></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="closed-source">
-                                    <th colspan="15">Closed-Source Multi-Image MLLMs</th>
+                                <tr>
+                                    <td>最终数量</td>
+                                    <td>136</td>
+                                    <td>164</td>
+                                    <td>54</td>
+                                    <td>126</td>
+                                    <td>58</td>
+                                    <td>131</td>
+                                    <td>100</td>
+                                    <td>122</td>
+                                    <td>106</td>
+                                    <td>71</td>
+                                    <td>111</td>
+                                    <td>100</td>
+                                    <td>65</td>
+                                    <td>38</td>
+                                    <td>85</td>
+                                    <td>86</td>
+                                    <td>190</td>
+                                    <td></td>
+                                    <td>190</td>
                                 </tr>
                                 <tr>
-                                    <td>GPT-4o</td>
-                                    <td>38.53</td>
-                                    <td>30.37</td>
-                                    <td>20.79</td>
-                                    <td>12.21</td>
-                                    <td>30.03</td>
-                                    <td>48.07</td>
-                                    <td>32.37</td>
-                                    <td>22.32</td>
-                                    <td>31.79</td>
-                                    <td>35.01</td>
-                                    <td>32.55</td>
-                                    <td>37.50</td>
-                                    <td>21.88</td>
-                                    <td>37.05</td>
+                                    <td>Human</td>
+                                    <td>88.75</td>
+                                    <td>65.54</td>
+                                    <td>69.36</td>
+                                    <td>77.25</td>
+                                    <td>82.63</td>
+                                    <td>83.72</td>
+                                    <td>77.06</td>
+                                    <td>67.97</td>
+                                    <td>73.06</td>
+                                    <td>91.94</td>
+                                    <td>74.56</td>
+                                    <td>88.75</td>
+                                    <td>88.13</td>
+                                    <td>73.24</td>
+                                    <td>72.99</td>
+                                    <td>73.13</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>73.42</td>
                                 </tr>
                                 <tr>
-                                    <td>GPT-4o-Mini</td>
-                                    <td>36.99</td>
-                                    <td>23.45</td>
-                                    <td>25.52</td>
-                                    <td>15.34</td>
-                                    <td>27.89</td>
-                                    <td>44.26</td>
-                                    <td>29.98</td>
-                                    <td>20.75</td>
-                                    <td>32.31</td>
-                                    <td>31.61</td>
-                                    <td>31.94</td>
-                                    <td>26.79</td>
-                                    <td>22.92</td>
-                                    <td>28.48</td>
+                                    <th class="closed-source" colspan="20">Proprietary MLLMs</th>
                                 </tr>
                                 <tr>
-                                    <td>Gemini-1.5-Pro</td>
-                                    <td>41.07</td>
-                                    <td>27.35</td>
-                                    <td>25.20</td>
-                                    <td>14.16</td>
-                                    <td>31.84</td>
-                                    <td>51.42</td>
-                                    <td>34.12</td>
-                                    <td>25.75</td>
-                                    <td>34.79</td>
-                                    <td>38.92</td>
-                                    <td>35.93</td>
-                                    <td>32.50</td>
-                                    <td>32.99</td>
-                                    <td>35.53</td>
+                                    <td>GPT4o(Lang)</td>
+                                    <td>76.21</td>
+                                    <td>54.54</td>
+                                    <td>62.27</td>
+                                    <td>63.86</td>
+                                    <td>75.26</td>
+                                    <td>80.95</td>
+                                    <td>66.05</td>
+                                    <td>69.18</td>
+                                    <td>67.69</td>
+                                    <td>74.08</td>
+                                    <td>65.50</td>
+                                    <td>72.50</td>
+                                    <td>77.54</td>
+                                    <td>59.47</td>
+                                    <td>65.29</td>
+                                    <td>63.95</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>64.37</td>
                                 </tr>
                                 <tr>
-                                    <td>Gemini-1.5-Flash</td>
-                                    <td>35.94</td>
-                                    <td>24.67</td>
-                                    <td>20.17</td>
-                                    <td>17.14</td>
-                                    <td>23.58</td>
-                                    <td>48.7</td>
-                                    <td>28.67</td>
-                                    <td>19.76</td>
-                                    <td>33.37</td>
-                                    <td>37.81</td>
-                                    <td>31.6</td>
-                                    <td>30.36</td>
-                                    <td>25.00</td>
-                                    <td>31.39</td>
+                                    <td>GPT4o</td>
+                                    <td>72.65</td>
+                                    <td>52.99</td>
+                                    <td>59.27</td>
+                                    <td>64.58</td>
+                                    <td>73.88</td>
+                                    <td>80.69</td>
+                                    <td>65.30</td>
+                                    <td>66.48</td>
+                                    <td>66.93</td>
+                                    <td>69.65</td>
+                                    <td>71.76</td>
+                                    <td>63.15</td>
+                                    <td>78.15</td>
+                                    <td>63.55</td>
+                                    <td>60.65</td>
+                                    <td>65.06</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>63.22</td>
+                                </tr>
+                                <tr>
+                                    <td>GPT4o-mini</td>
+                                    <td>66.18</td>
+                                    <td>46.77</td>
+                                    <td>52.27</td>
+                                    <td>59.75</td>
+                                    <td>72.33</td>
+                                    <td>69.27</td>
+                                    <td>63.45</td>
+                                    <td>54.39</td>
+                                    <td>55.57</td>
+                                    <td>69.08</td>
+                                    <td>68.33</td>
+                                    <td>59.90</td>
+                                    <td>67.38</td>
+                                    <td>58.03</td>
+                                    <td>54.29</td>
+                                    <td>52.91</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>57.05</td>
+                                </tr>
+                                <tr>
+                                    <td>Claude-3.7-Sonnet</td>
+                                    <td>76.62</td>
+                                    <td>56.92</td>
+                                    <td>60.18</td>
+                                    <td>59.45</td>
+                                    <td>67.93</td>
+                                    <td>82.75</td>
+                                    <td>68.35</td>
+                                    <td>67.87</td>
+                                    <td>62.88</td>
+                                    <td>64.72</td>
+                                    <td>64.41</td>
+                                    <td>54.35</td>
+                                    <td>76.62</td>
+                                    <td>62.37</td>
+                                    <td>71.23</td>
+                                    <td>71.16</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>62.81</td>
                                 </tr>
                                 <tr>
                                     <td>Claude-3.5-Sonnet</td>
-                                    <td>35.63</td>
-                                    <td>25.55</td>
-                                    <td>17.92</td>
-                                    <td>13.70</td>
-                                    <td>25.05</td>
-                                    <td>46.39</td>
-                                    <td>28.80</td>
-                                    <td>23.79</td>
-                                    <td>28.83</td>
-                                    <td>35.66</td>
-                                    <td>30.44</td>
-                                    <td>24.40</td>
-                                    <td>19.79</td>
-                                    <td>32.07</td>
+                                    <td>76.65</td>
+                                    <td>56.13</td>
+                                    <td>57.73</td>
+                                    <td>63.05</td>
+                                    <td>72.33</td>
+                                    <td>80.23</td>
+                                    <td>66.25</td>
+                                    <td>65.66</td>
+                                    <td>62.55</td>
+                                    <td>63.03</td>
+                                    <td>70.27</td>
+                                    <td>58.35</td>
+                                    <td>76.69</td>
+                                    <td>62.24</td>
+                                    <td>70.82</td>
+                                    <td>71.34</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>63.14</td>
+                                </tr>
+                                <tr>
+                                    <td>Gemini-2.5-Pro</td>
+                                    <td>74.19</td>
+                                    <td>57.47</td>
+                                    <td>63.00</td>
+                                    <td>63.18</td>
+                                    <td>73.97</td>
+                                    <td>77.52</td>
+                                    <td>65.30</td>
+                                    <td>66.52</td>
+                                    <td>69.10</td>
+                                    <td>71.06</td>
+                                    <td>73.78</td>
+                                    <td>64.85</td>
+                                    <td>82.23</td>
+                                    <td>65.39</td>
+                                    <td>70.53</td>
+                                    <td>68.14</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>65.07</td>
+                                </tr>
+                                <tr>
+                                    <td>Gemini-2.5-Flash</td>
+                                    <td>76.58</td>
+                                    <td>58.54</td>
+                                    <td>66.00</td>
+                                    <td>59.75</td>
+                                    <td>75.00</td>
+                                    <td>80.69</td>
+                                    <td>65.20</td>
+                                    <td>66.15</td>
+                                    <td>67.92</td>
+                                    <td>67.61</td>
+                                    <td>72.88</td>
+                                    <td>59.55</td>
+                                    <td>76.08</td>
+                                    <td>61.58</td>
+                                    <td>69.00</td>
+                                    <td>65.29</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>63.99</td>
+                                </tr>
+                                <tr>
+                                    <td>Gemini-2.0-Flash</td>
+                                    <td>75.99</td>
+                                    <td>54.91</td>
+                                    <td>56.91</td>
+                                    <td>61.78</td>
+                                    <td>73.36</td>
+                                    <td>79.08</td>
+                                    <td>65.80</td>
+                                    <td>63.20</td>
+                                    <td>64.62</td>
+                                    <td>62.96</td>
+                                    <td>73.83</td>
+                                    <td>63.25</td>
+                                    <td>79.92</td>
+                                    <td>64.47</td>
+                                    <td>67.59</td>
+                                    <td>68.37</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>63.30</td>
                                 </tr>
                                 <tr>
                                     <td>Qwen-VL-Max</td>
-                                    <td>38.07</td>
-                                    <td>26.24</td>
-                                    <td>22.63</td>
-                                    <td>18.53</td>
-                                    <td>30.33</td>
-                                    <td>45.32</td>
-                                    <td>30.08</td>
-                                    <td>24.26</td>
-                                    <td>34.71</td>
-                                    <td>37.15</td>
-                                    <td>33.38</td>
-                                    <td>28.57</td>
-                                    <td>23.96</td>
-                                    <td>30.40</td>
+                                    <td>71.03</td>
+                                    <td>50.76</td>
+                                    <td>61.73</td>
+                                    <td>62.58</td>
+                                    <td>71.03</td>
+                                    <td>76.53</td>
+                                    <td>63.35</td>
+                                    <td>65.74</td>
+                                    <td>64.72</td>
+                                    <td>65.99</td>
+                                    <td>69.64</td>
+                                    <td>61.15</td>
+                                    <td>75.31</td>
+                                    <td>61.84</td>
+                                    <td>65.65</td>
+                                    <td>65.17</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>61.89</td>
                                 </tr>
                                 <tr>
                                     <td>Qwen-VL-Plus</td>
-                                    <td>30.79</td>
-                                    <td>24.05</td>
-                                    <td>12.83</td>
-                                    <td>26.23</td>
-                                    <td>23.62</td>
-                                    <td>47.56</td>
-                                    <td>26.28</td>
-                                    <td>14.05</td>
-                                    <td>32.99</td>
-                                    <td>23.32</td>
-                                    <td>26.65</td>
-                                    <td>28.57</td>
-                                    <td>25.00</td>
-                                    <td>23.25</td>
+                                    <td>60.04</td>
+                                    <td>38.90</td>
+                                    <td>49.09</td>
+                                    <td>55.34</td>
+                                    <td>56.90</td>
+                                    <td>49.54</td>
+                                    <td>55.05</td>
+                                    <td>55.61</td>
+                                    <td>49.81</td>
+                                    <td>63.66</td>
+                                    <td>61.22</td>
+                                    <td>59.45</td>
+                                    <td>64.77</td>
+                                    <td>49.08</td>
+                                    <td>52.12</td>
+                                    <td>56.98</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>51.62</td>
+                                </tr>
+                                <tr>
+                                    <th class="closed-source" colspan="20">Open-Source Multi-Image MLLMs</th>
+                                </tr>
+                                <tr>
+                                    <td>Qwen2.5-VL-72B-Ins</td>
+                                    <td>70.37</td>
+                                    <td>52.56</td>
+                                    <td>60.18</td>
+                                    <td>63.22</td>
+                                    <td>70.43</td>
+                                    <td>78.51</td>
+                                    <td>63.20</td>
+                                    <td>62.21</td>
+                                    <td>60.85</td>
+                                    <td>68.03</td>
+                                    <td>69.50</td>
+                                    <td>61.85</td>
+                                    <td>70.92</td>
+                                    <td>63.03</td>
+                                    <td>65.53</td>
+                                    <td>62.62</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>61.35</td>
+                                </tr>
+                                <tr>
+                                    <td>Qwen2.5-VL-7B-Ins</td>
+                                    <td>48.97</td>
+                                    <td>33.87</td>
+                                    <td>42.36</td>
+                                    <td>51.44</td>
+                                    <td>56.64</td>
+                                    <td>44.39</td>
+                                    <td>48.20</td>
+                                    <td>47.13</td>
+                                    <td>40.94</td>
+                                    <td>53.87</td>
+                                    <td>47.66</td>
+                                    <td>49.50</td>
+                                    <td>53.46</td>
+                                    <td>38.42</td>
+                                    <td>45.41</td>
+                                    <td>33.84</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>43.30</td>
+                                </tr>
+                                <tr>
+                                    <td>Qwen2-VL-72B-Ins</td>
+                                    <td>66.99</td>
+                                    <td>45.15</td>
+                                    <td>53.64</td>
+                                    <td>61.44</td>
+                                    <td>74.14</td>
+                                    <td>61.26</td>
+                                    <td>60.80</td>
+                                    <td>56.48</td>
+                                    <td>59.10</td>
+                                    <td>70.99</td>
+                                    <td>63.15</td>
+                                    <td>64.40</td>
+                                    <td>68.15</td>
+                                    <td>60.92</td>
+                                    <td>62.12</td>
+                                    <td>59.13</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>58.11</td>
+                                </tr>
+                                <tr>
+                                    <td>Qwen2-VL-7B-Ins</td>
+                                    <td>46.21</td>
+                                    <td>32.56</td>
+                                    <td>41.64</td>
+                                    <td>54.96</td>
+                                    <td>51.81</td>
+                                    <td>46.30</td>
+                                    <td>45.90</td>
+                                    <td>36.72</td>
+                                    <td>40.47</td>
+                                    <td>43.03</td>
+                                    <td>43.92</td>
+                                    <td>54.20</td>
+                                    <td>43.15</td>
+                                    <td>36.05</td>
+                                    <td>44.82</td>
+                                    <td>43.43</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>41.18</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -484,222 +949,186 @@
                             <thead>
                                 <tr>
                                     <th colspan="1">Model</th>
-                                    <th colspan="15">Embodied Generalized Planning</th>
+                                    <th colspan="4">Embodied Affordance Reasoning</th>
+                                    <th colspan="3">Embodied Failure Analysis</th>
                                 </tr>
                                 <tr>
                                     <th colspan="1"></th>
-                                    <th colspan="3">Cross-Embodiment Planning</th>
-                                    <th colspan="10">Cross-Object Planning</th>
-                                    <th colspan="1">Cross-View Planning</th>
-                                </tr>
-                                <tr>
-                                    <th colspan="1"></th>
-                                    <th colspan="1">Single-arm<span class="sort-btn" data-col="1">▼</span></th>
-                                    <th colspan="1">Dual-arm<span class="sort-btn" data-col="2">▼</span></th>
-                                    <th colspan="1">Mobile-manipulation<span class="sort-btn" data-col="3">▼</span></th>
-                                    <th colspan="5">Material Affordance</th>
-                                    <th colspan="4">Physical Attribute</th>
-                                    <th colspan="1">World Knowledge<span class="sort-btn" data-col="13">▼</span></th>
-                                    <th colspan="1">Multi-view<span class="sort-btn" data-col="14">▼</span></th>
-                                </tr>
-                                <tr>
-                                    <th colspan="4"></th>
-                                    <th colspan="1">Articulated<span class="sort-btn" data-col="4">▼</span></th>
-                                    <th colspan="1">Deformable<span class="sort-btn" data-col="5">▼</span></th>
-                                    <th colspan="1">Multi-object<span class="sort-btn" data-col="6">▼</span></th>
-                                    <th colspan="1">Rigid<span class="sort-btn" data-col="7">▼</span></th>
-                                    <th colspan="1">Special<span class="sort-btn" data-col="8">▼</span></th>
-                                    <th colspan="1">Color<span class="sort-btn" data-col="9">▼</span></th>
-                                    <th colspan="1">Number<span class="sort-btn" data-col="10">▼</span></th>
-                                    <th colspan="1">Shape<span class="sort-btn" data-col="11">▼</span></th>
-                                    <th colspan="1">Size<span class="sort-btn" data-col="12">▼</span></th>
-                                    <th colspan="2"></th>
+                                    <th colspan="1">Manipulation Static Affordance<span class="sort-btn" data-col="0">▼</span></th>
+                                    <th colspan="1">Manipulation Dynamic Affordance<span class="sort-btn" data-col="1">▼</span></th>
+                                    <th colspan="1">Navigation Reference Affordance<span class="sort-btn" data-col="2">▼</span></th>
+                                    <th colspan="1">Avg<span class="sort-btn" data-col="3">▼</span></th>
+                                    <th colspan="1">Execution Error<span class="sort-btn" data-col="4">▼</span></th>
+                                    <th colspan="1">Planning Error<span class="sort-btn" data-col="5">▼</span></th>
+                                    <th colspan="1">Avg<span class="sort-btn" data-col="6">▼</span></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="open-source">
-                                    <th colspan="15">Open-Source Multi-Image MLLMs</th>
+                                <tr>
+                                    <td>最终数量</td>
+                                    <td>150</td>
+                                    <td>151</td>
+                                    <td>102</td>
+                                    <td>403</td>
+                                    <td>151</td>
+                                    <td>145</td>
+                                    <td>0</td>
                                 </tr>
                                 <tr>
-                                    <td>InternVL2-8B</td>
-                                    <td>9.72</td>
-                                    <td>7.01</td>
-                                    <td>5.50</td>
-                                    <td>5.82</td>
-                                    <td>17.49</td>
-                                    <td>15.77</td>
-                                    <td>16.32</td>
-                                    <td>12.62</td>
-                                    <td>17.54</td>
-                                    <td>13.06</td>
-                                    <td>18.18</td>
-                                    <td>11.42</td>
-                                    <td>18.05</td>
-                                    <td>13.93</td>
+                                    <td>Human</td>
+                                    <td>0.0582</td>
+                                    <td>0.0853</td>
+                                    <td>0.0770</td>
+                                    <td>0.0735</td>
+                                    <td>47.30</td>
+                                    <td>80.67</td>
+                                    <td>63.99</td>
                                 </tr>
                                 <tr>
-                                    <td>InternVL2-40B</td>
-                                    <td>19.17</td>
-                                    <td>13.78</td>
-                                    <td>16.05</td>
-                                    <td>18.11</td>
-                                    <td>21.74</td>
-                                    <td>12.25</td>
-                                    <td>15.65</td>
-                                    <td>14.30</td>
-                                    <td>16.20</td>
-                                    <td>12.58</td>
-                                    <td>15.00</td>
-                                    <td>21.42</td>
-                                    <td>47.91</td>
-                                    <td>35.86</td>
+                                    <th class="open-source" colspan="8">Proprietary MLLMs</th>
                                 </tr>
                                 <tr>
-                                    <td>LLaVA-OneVision-0.5B</td>
-                                    <td>28.61</td>
-                                    <td>4.88</td>
-                                    <td>13.60</td>
-                                    <td>11.12</td>
-                                    <td>18.52</td>
-                                    <td>15.73</td>
-                                    <td>15.67</td>
-                                    <td>7.60</td>
-                                    <td>13.54</td>
-                                    <td>26.18</td>
-                                    <td>16.85</td>
-                                    <td>12.14</td>
-                                    <td>2.91</td>
-                                    <td>2.12</td>
+                                    <td>GPT4o(Lang)</td>
+                                    <td>0.2741</td>
+                                    <td>0.3020</td>
+                                    <td>0.3196</td>
+                                    <td>0.3077</td>
+                                    <td>25.17</td>
+                                    <td>37.93</td>
+                                    <td>31.5500</td>
                                 </tr>
                                 <tr>
-                                    <td>LLaVA-OneVision-7B</td>
-                                    <td>27.68</td>
-                                    <td>7.93</td>
-                                    <td>5.28</td>
-                                    <td>21.86</td>
-                                    <td>22.16</td>
-                                    <td>24.98</td>
-                                    <td>20.43</td>
-                                    <td>17.23</td>
-                                    <td>15.58</td>
-                                    <td>25.34</td>
-                                    <td>32.78</td>
-                                    <td>5.36</td>
-                                    <td>22.92</td>
-                                    <td>17.58</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div id="video-mlm" class="tab-content">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th colspan="1">Model</th>
-                                    <th colspan="15">Embodied Generalized Planning</th>
+                                    <td>GPT4o</td>
+                                    <td>0.2092</td>
+                                    <td>0.2474</td>
+                                    <td>0.2427</td>
+                                    <td>0.2307</td>
+                                    <td>22.29</td>
+                                    <td>57.01</td>
+                                    <td>39.6500</td>
                                 </tr>
                                 <tr>
-                                    <th colspan="1"></th>
-                                    <th colspan="3">Cross-Embodiment Planning</th>
-                                    <th colspan="10">Cross-Object Planning</th>
-                                    <th colspan="1">Cross-View Planning</th>
+                                    <td>GPT4o-mini</td>
+                                    <td>0.2383</td>
+                                    <td>0.2873</td>
+                                    <td>0.2912</td>
+                                    <td>0.2645</td>
+                                    <td>17.66</td>
+                                    <td>44.60</td>
+                                    <td>31.1300</td>
                                 </tr>
                                 <tr>
-                                    <th colspan="1"></th>
-                                    <th colspan="1">Single-arm<span class="sort-btn" data-col="1">▼</span></th>
-                                    <th colspan="1">Dual-arm<span class="sort-btn" data-col="2">▼</span></th>
-                                    <th colspan="1">Mobile-manipulation<span class="sort-btn" data-col="3">▼</span></th>
-                                    <th colspan="5">Material Affordance</th>
-                                    <th colspan="4">Physical Attribute</th>
-                                    <th colspan="1">World Knowledge<span class="sort-btn" data-col="13">▼</span></th>
-                                    <th colspan="1">Multi-view<span class="sort-btn" data-col="14">▼</span></th>
+                                    <td>Claude-3.7-Sonnet</td>
+                                    <td>0.1847</td>
+                                    <td>0.2279</td>
+                                    <td>0.2417</td>
+                                    <td>0.2181</td>
+                                    <td>18.32</td>
+                                    <td>54.24</td>
+                                    <td>36.2800</td>
                                 </tr>
                                 <tr>
-                                    <th colspan="4"></th>
-                                    <th colspan="1">Articulated<span class="sort-btn" data-col="4">▼</span></th>
-                                    <th colspan="1">Deformable<span class="sort-btn" data-col="5">▼</span></th>
-                                    <th colspan="1">Multi-object<span class="sort-btn" data-col="6">▼</span></th>
-                                    <th colspan="1">Rigid<span class="sort-btn" data-col="7">▼</span></th>
-                                    <th colspan="1">Special<span class="sort-btn" data-col="8">▼</span></th>
-                                    <th colspan="1">Color<span class="sort-btn" data-col="9">▼</span></th>
-                                    <th colspan="1">Number<span class="sort-btn" data-col="10">▼</span></th>
-                                    <th colspan="1">Shape<span class="sort-btn" data-col="11">▼</span></th>
-                                    <th colspan="1">Size<span class="sort-btn" data-col="12">▼</span></th>
-                                    <th colspan="2"></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="video-mlm">
-                                    <th colspan="15">Open-Source Video MLLMs</th>
+                                    <td>Claude-3.5-Sonnet</td>
+                                    <td>0.2055</td>
+                                    <td>0.2170</td>
+                                    <td>0.2194</td>
+                                    <td>0.2140</td>
+                                    <td>16.12</td>
+                                    <td>47.52</td>
+                                    <td>31.8200</td>
                                 </tr>
                                 <tr>
-                                    <td>LLaVA-Video-7B-Qwen2</td>
-                                    <td>21.94</td>
-                                    <td>10.70</td>
-                                    <td>23.33</td>
-                                    <td>21.60</td>
-                                    <td>26.63</td>
-                                    <td>19.67</td>
-                                    <td>26.69</td>
-                                    <td>20.59</td>
-                                    <td>15.49</td>
-                                    <td>23.30</td>
-                                    <td>28.70</td>
-                                    <td>8.93</td>
-                                    <td>10.42</td>
-                                    <td>21.61</td>
+                                    <td>Gemini-2.5-Pro</td>
+                                    <td>0.1303</td>
+                                    <td>0.1739</td>
+                                    <td>0.1637</td>
+                                    <td>0.1572</td>
+                                    <td>15.96</td>
+                                    <td>74.31</td>
+                                    <td>45.1350</td>
                                 </tr>
                                 <tr>
-                                    <td>LLaVA-Video-72B-Qwen2</td>
-                                    <td>29.54</td>
-                                    <td>11.22</td>
-                                    <td>5.78</td>
-                                    <td>26.59</td>
-                                    <td>33.56</td>
-                                    <td>22.79</td>
-                                    <td>16.81</td>
-                                    <td>21.31</td>
-                                    <td>19.40</td>
-                                    <td>25.45</td>
-                                    <td>22.41</td>
-                                    <td>18.21</td>
-                                    <td>37.50</td>
-                                    <td>21.88</td>
+                                    <td>Gemini-2.5-Flash</td>
+                                    <td>0.1783</td>
+                                    <td>0.2299</td>
+                                    <td>0.2301</td>
+                                    <td>0.2168</td>
+                                    <td>18.54</td>
+                                    <td>67.65</td>
+                                    <td>43.0950</td>
                                 </tr>
                                 <tr>
-                                    <td>VideoLLaMA2-7B</td>
-                                    <td>13.68</td>
-                                    <td>18.17</td>
-                                    <td>15.37</td>
-                                    <td>12.85</td>
-                                    <td>16.89</td>
-                                    <td>7.27</td>
-                                    <td>7.52</td>
-                                    <td>14.86</td>
-                                    <td>11.98</td>
-                                    <td>14.13</td>
-                                    <td>8.70</td>
-                                    <td>17.14</td>
-                                    <td>16.66</td>
-                                    <td>15.41</td>
+                                    <td>Gemini-2.0-Flash</td>
+                                    <td>0.1759</td>
+                                    <td>0.1753</td>
+                                    <td>0.1486</td>
+                                    <td>0.1668</td>
+                                    <td>28.48</td>
+                                    <td>59.80</td>
+                                    <td>44.1400</td>
                                 </tr>
                                 <tr>
-                                    <td>VideoLLaMA2-72B</td>
-                                    <td>19.03</td>
-                                    <td>21.01</td>
-                                    <td>17.64</td>
-                                    <td>19.39</td>
-                                    <td>11.93</td>
-                                    <td>13.27</td>
-                                    <td>18.70</td>
-                                    <td>20.24</td>
-                                    <td>18.18</td>
-                                    <td>32.83</td>
-                                    <td>29.07</td>
-                                    <td>18.57</td>
-                                    <td>16.66</td>
-                                    <td>23.08</td>
+                                    <td>Qwen-VL-Max</td>
+                                    <td>0.1329</td>
+                                    <td>0.2055</td>
+                                    <td>0.2370</td>
+                                    <td>0.1879</td>
+                                    <td>17.22</td>
+                                    <td>57.93</td>
+                                    <td>37.5750</td>
+                                </tr>
+                                <tr>
+                                    <td>Qwen-VL-Plus</td>
+                                    <td>0.2317</td>
+                                    <td>0.3251</td>
+                                    <td>0.2546</td>
+                                    <td>0.2533</td>
+                                    <td>13.91</td>
+                                    <td>40.00</td>
+                                    <td>26.9550</td>
+                                </tr>
+                                <tr>
+                                    <th class="open-source" colspan="8">Open-Source Multi-Image MLLMs</th>
+                                </tr>
+                                <tr>
+                                    <td>Qwen2.5-VL-72B-Ins</td>
+                                    <td>0.1254</td>
+                                    <td>0.2305</td>
+                                    <td>0.2565</td>
+                                    <td>0.2032</td>
+                                    <td>12.59</td>
+                                    <td>50.72</td>
+                                    <td>31.6550</td>
+                                </tr>
+                                <tr>
+                                    <td>Qwen2.5-VL-7B-Ins</td>
+                                    <td>0.2438</td>
+                                    <td>0.3207</td>
+                                    <td>0.2921</td>
+                                    <td>0.2855</td>
+                                    <td>13.91</td>
+                                    <td>26.90</td>
+                                    <td>20.4050</td>
+                                </tr>
+                                <tr>
+                                    <td>Qwen2-VL-72B-Ins</td>
+                                    <td>0.1382</td>
+                                    <td>0.2368</td>
+                                    <td>0.1743</td>
+                                    <td>0.1833</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Qwen2-VL-7B-Ins</td>
+                                    <td>0.1756</td>
+                                    <td>0.3316</td>
+                                    <td>0.2611</td>
+                                    <td>0.2509</td>
+                                    <td>15.33</td>
+                                    <td>38.30</td>
+                                    <td>26.8150</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -722,7 +1151,7 @@
                 <h2 class="title is-3">Dataset Construction Pipeline</h2>
                 <div class="columns is-centered has-text-centered">
                     <div class="column is-four-fifths">
-                        <img src="static/images/pipeline.png">
+                        <img src="static/images/robobench_pipeline.jpg">
                     </div>
                 </div>
                 <div class="container is-max-desktop"></div>
