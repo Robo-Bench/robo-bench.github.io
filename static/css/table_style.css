@@ -65,6 +65,25 @@ th {
     vertical-align: middle;
 }
 
+/* 确保所有表格具有一致的基础样式 */
+.tab-content table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+    font-family: inherit;
+}
+
+.tab-content table th,
+.tab-content table td {
+    border: 1px solid #ddd;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.tab-content table tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
 tr {
     text-align: center;
     vertical-align: middle;
@@ -100,21 +119,45 @@ td {
 }
 
 
-/* 背景色 */
+/* 分类标题行样式 - 保持不同背景色但统一其他样式 */
 
 .text-only {
-    background-color: #add8e6;
+    background-color: #add8e6 !important;
     /* Light Blue */
+    font-weight: bold !important;
+    color: #2c3e50 !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    padding: 12px 8px !important;
+    border: 1px solid #ddd !important;
+    font-size: 1em !important;
+    letter-spacing: 0.5px !important;
 }
 
 .closed-source {
-    background-color: #ffcccb;
+    background-color: #ffcccb !important;
     /* Light Pink */
+    font-weight: bold !important;
+    color: #2c3e50 !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    padding: 12px 8px !important;
+    border: 1px solid #ddd !important;
+    font-size: 1em !important;
+    letter-spacing: 0.5px !important;
 }
 
 .open-source {
-    background-color: #ffffe0;
+    background-color: #ffffe0 !important;
     /* Light Yellow */
+    font-weight: bold !important;
+    color: #2c3e50 !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    padding: 12px 8px !important;
+    border: 1px solid #ddd !important;
+    font-size: 1em !important;
+    letter-spacing: 0.5px !important;
 }
 
 .sort-btn {
