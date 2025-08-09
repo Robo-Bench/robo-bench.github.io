@@ -25,8 +25,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <title>Robobench: A Comprehensive Evaluation Benchmark for Perception, Planning and Reflection of Embodied Multimodal Large Language Models</title>
-    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+    <title>Robobench: A Comprehensive Evaluation Benchmark for Multimodal Large Language Models as Embodied Brain</title>
+    <link rel="icon" type="image/x-icon" href="static/images/R2.jpg">
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
     <link rel="stylesheet" href="static/css/bulma.min.css">
@@ -55,7 +55,7 @@
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
                         <h1 class="title is-1 publication-title">
-                            <img src="static/images/R2.jpg">Robobench: A Comprehensive Evaluation Benchmark for Perception, Planning and Reflection of Embodied Multimodal Large Language Models
+                            <img src="static/images/R2.jpg">Robobench: A Comprehensive Evaluation Benchmark for Multimodal Large Language Models as Embodied Brain
                         </h1>
                         <div class="is-size-5 publication-authors">
                             <!-- Paper authors -->
@@ -66,7 +66,7 @@
                             <span class="author-block">
                 <a>Menghang Dong</a><sup>1*</sup>,</span>
                             <span class="author-block">
-                <a>Jiayu Shi</a><sup>1*</sup>,</span>
+                <a>Jiayu Shi</a><sup>1,2*</sup>,</span>
                             <span class="author-block">                
                 <a>Mengdi Zhao</a><sup>2*</sup>,</span>
                             <span class="author-block">
@@ -98,11 +98,11 @@
                         </div>
 
                         <div class="is-size-5 publication-authors">
-                            <span class="author-block"><sup>1</sup> Peking University, <sup>2</sup> Beijing Academy of Artificial Intelligence, <br><sup>3</sup> Beijing Innovation Center of Humanoid Robotics, <sup>4</sup> Nanjing University</span>
+                            <span class="author-block"><sup>1</sup> State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University, <sup>2</sup> Beijing Academy of Artificial Intelligence, <br><sup>3</sup> Beijing Innovation Center of Humanoid Robotics, <sup>4</sup> Nanjing University</span>
                             <span class="eql-cntrb"><small><br><sup>*</sup>Equal contribution, <sup>†</sup>Project leader, <sup>✉</sup>Corresponding authors</small><br></span>
-                            <span class="eql-cntrb"><sup>‡</sup>Work was done by intern in baai</span><br>
-                            <span class="author-block">2025</span>
                         </div>
+                        
+                        <img src="static/images/robobench_school_logos.png" width="100%" class="img-responsive">
 
                         <div class="column has-text-centered">
                             <div class="publication-links">
@@ -164,9 +164,7 @@
             <div class="hero-body">
                 <img src="static/images/robobench_teaser.jpg">
                 <h2 class="subtitle has-text-centered">
-                    <b>RoboBench</b> is a comprehensive benchmark to evaluate embodied multi-modal language models (MLLMs) with Q&A framework spanning 4 levels and over 25 subcategories. It emulates the execution process of embodied tasks: starting with
-                    the comprehension of instructions, followed by scene perception, strategic planning, and culminating in summarization, reflection, and iterative improvement (top left). The primary metric is further divided into subcategories, demonstrating
-                    both the diversity and complexity of RoboBench (top right; bottom). Tasks are color-coded to aid in distinguishing between task types.
+                    <b>RoboBench</b> is a comprehensive benchmark for evaluating MLLMs as embodied brains, encompassing 5 dimensions, 16 capabilities, and 26 tasks. It reflects the key stages of embodied reasoning: understanding explicit and implicit instructions, perceiving embodiment, objects, and scenes, planning long-horizon tasks through subtask decomposition, generating spatially aligned affordance to support subtask planning, and performing error analysis with reflective correction (top left, top right). Each dimension is illustrated with a demo (bottom), and task types are color-coded to showcase the diversity and complexity of RoboBench.
                 </h2>
             </div>
         </div>
@@ -201,20 +199,8 @@
             <div class="container">
                 <h2 class="title is-3">News</h2>
                 <div class="content has-text-justified">
-                    🎯 RoboOS: An Efficient Open-Source Multi-Robot Coordination System for RoboBrain.
+                    **Aug 9, 2025** - The official RoboBench website is now live. The paper, code, and dataset will be released within two weeks. Stay tuned.
                 </div>
-                <div class="content has-text-justified">
-                    🌍 RoboBrain 1.0: A Unified Brain Model for Robotic Manipulation from Abstract to Concrete.
-                </div>
-                <div class="content has-text-justified">
-                    If you have any questions, feel free to contact us via WeChat or RedNote.
-                </div>
-                <div class="columns is-centered has-text-centered">
-                    <div class="column is-four-fifths">
-                        <img src="static/images/wechat.png">
-                    </div>
-                </div>
-                <div class="container is-max-desktop">21312</div>
             </div>
         </div>
         </div>
@@ -234,7 +220,22 @@
         <div class="hero-body">
             <div class="container">
                 <h2 class="title is-3">Highlight</h2>
-                <div class="content has-text-justified">Text</div>
+                <div class="content has-text-justified">
+                    <b>🔍 Benchmark Overview</b><br>
+                        - The comprehensive benchmark focused on evaluating MLLMs as embodied brains.
+                        - Systematic evaluation across 5 core dimensions, 15 capabilities, 26 task types, and 4,850 high-quality questions.
+                    <b>🧭 Comprehensive Dimensions</b><br>
+                        - Covers key embodied skills tailored to MLLM capabilities, including instruction understanding, perceptual reasoning, generalizable planning, affordance prediction, and error reflection in real-world settings.
+                    <b>🛡️ Robust Evaluation</b><br>
+                        - All questions are manually verified for quality and consistency.
+                        - Long-horizon task planning is evaluated using a novel Directed Acyclic Graph (DAG)-guided approach to ensure rigor and robustness.
+                    <b>🧠 Real-world Data</b><br>
+                        - Built on the latest open-source real-robot datasets and proprietary real-world data.
+                        - Evaluation tasks are grounded in realistic embodied interaction scenarios.
+                    <b>🌍 Diverse Composition</b><br>       
+                        - Sourced from a wide range of data and scenarios.
+                        - Captures the complexity and diversity of real-world embodied tasks.
+                </div>
             </div>
         </div>
         </div>
@@ -247,9 +248,9 @@
                 <h2 class="title is-3">Leaderboard</h2>
                 <div class="tab-container">
                     <div class="tab-buttons">
-                        <button class="tab-btn active" data-tab="text-only">指令理解+感知推理</button>
-                        <button class="tab-btn" data-tab="closed-source">泛化规划</button>
-                        <button class="tab-btn" data-tab="open-source">可操纵性分析+错误分析</button>
+                        <button class="tab-btn active" data-tab="text-only">Embodied Instruction Comprehension & Embodied Perception Reasoning</button>
+                        <button class="tab-btn" data-tab="closed-source">Embodied Generalized Planning</button>
+                        <button class="tab-btn" data-tab="open-source">Embodied Affordance Reasoning & Embodied Failure Analysis</button>
                     </div>
 
                     <div id="text-only" class="tab-content active">
@@ -287,7 +288,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>最终数量</td>
+                                    <td>Total Number</td>
                                     <td>101</td>
                                     <td>101</td>
                                     <td>202</td>
