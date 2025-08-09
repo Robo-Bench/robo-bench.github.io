@@ -511,7 +511,7 @@
                         </table>
                     </div>
 
-                    <div id="closed-source" class="tab-content active">
+                    <div id="text-only" class="tab-content active">
                         <table>
                             <thead>
                                 <tr>
@@ -524,15 +524,15 @@
                                     <th colspan="2" style="vertical-align: middle; text-align: center;">Cross-View Planning</th>
                                 </tr>
                                 <tr>
-                                    <th style="vertical-align: middle; text-align: center;">Single-arm<span class="sort-btn" data-col="0">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Dual-arm<span class="sort-btn" data-col="1">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Mobile-manipulation<span class="sort-btn" data-col="2">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Human<span class="sort-btn" data-col="3">▼</span></th>
+                                    <th rowspan="2" style="vertical-align: middle; text-align: center;">Single-arm<span class="sort-btn" data-col="0">▼</span></th>
+                                    <th rowspan="2" style="vertical-align: middle; text-align: center;">Dual-arm<span class="sort-btn" data-col="1">▼</span></th>
+                                    <th rowspan="2" style="vertical-align: middle; text-align: center;">Mobile-manipulation<span class="sort-btn" data-col="2">▼</span></th>
+                                    <th rowspan="2" style="vertical-align: middle; text-align: center;">Human<span class="sort-btn" data-col="3">▼</span></th>
                                     <th colspan="5" style="vertical-align: middle; text-align: center;">Material Affordance</th>
                                     <th colspan="4" style="vertical-align: middle; text-align: center;">Physical Attribute</th>
-                                    <th style="vertical-align: middle; text-align: center;">World Knowledge<span class="sort-btn" data-col="4">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Single View<span class="sort-btn" data-col="5">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Multi View<span class="sort-btn" data-col="6">▼</span></th>
+                                    <th rowspan="2" style="vertical-align: middle; text-align: center;">World Knowledge<span class="sort-btn" data-col="4">▼</span></th>
+                                    <th rowspan="2" style="vertical-align: middle; text-align: center;">Single View<span class="sort-btn" data-col="5">▼</span></th>
+                                    <th rowspan="2" style="vertical-align: middle; text-align: center;">Multi View<span class="sort-btn" data-col="6">▼</span></th>
                                 </tr>
                                 <tr>
                                     <th>Rigid<span class="sort-btn" data-col="7">▼</span></th>
@@ -861,7 +861,7 @@
                         </table>
                     </div>
 
-                    <div id="open-source" class="tab-content active">
+                    <div id="text-only" class="tab-content active">
                         <table>
                             <thead>
                                 <tr>
@@ -1038,10 +1038,7 @@
                 </div>
                 <div class="container is-max-desktop"></div>
                 <div class="content has-text-justified">
-                    RoboBench consolidates datasets from over 20 recent studies. These datasets have been processed through our three-category conversion workflow, which is color-coded as follows: <span style="color: green;">green</span> for perception,
-                    <span style="color: blue;">blue</span> for planning, and <span style="color: red;">red</span> for reflection. The processing pipeline generally involves preprocessing (employing quality filtering or basic binary classification), followed
-                    by steps with a Vision-Language Model (VLM), detection model, or human experts, culminating data standardization into metadata summaries. These metadata are then utilized to automate Q&A questions across various categories. The final
-                    Q&A format comprises standardized binary classification, multiple choice, and multi-step multiple choice formats, making it adaptable for both open-source and closed-source MLLM models.
+                    RoboBench combines data from recent open-source large-scale datasets and our self-collected real-world datasets. We design dedicated workflows for different task types, color-coded as green for Perception, blue for Planning, and red for Reflection. The pipeline involves preprocessing, tool-assisted human annotation, and metadata standardization. 1) Perception: Tools such as VLM captioning or detection models provide preliminary labels, which are refined by human annotators. 2) Planning: VLMs generate task summaries and segmented captions; these are first converted into predefined function calls for evaluation, then processed by LLMs to extract key information for task categorization. Implicit goal planning tasks are derived by rephrasing explicit task summaries into implicit demand expressions. 3) Reflection: Low-level errors are identified from failed execution videos and manually annotated, while high-level errors are created by modifying instructions in correct cases to form error pairs. The resulting metadata are used to automatically generate Q&A items in standardized binary classification, multiple choice, and multi-step multiple choice formats, ensuring compatibility with both open-source and closed-source MLLM models.
                 </div>
             </div>
         </div>
