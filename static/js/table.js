@@ -84,53 +84,83 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function sortTable(table, col, isAsc) {
+    // static/js/table.js
+
+    function sortTable(table, colIndex, ascending) {
         const tbody = table.querySelector('tbody');
+        // 获取所有行
         const allRows = Array.from(tbody.querySelectorAll('tr'));
 
-        // 1. 识别并保留所有非数据行（表头、分类标题、固定行等）
-        const nonDataRows = allRows.filter(row => {
-            const firstCell = row.cells[0];
+        // 分离普通数据行和分类标题行
+        const dataRows = allRows.filter(row => !row.querySelector('th'));
+        const categoryHeaders = allRows.filter(row => row.querySelector('th'));
 
-            // 分类标题行（有th元素或特定类名）
-            if (row.querySelector('th') ||
-                row.classList.contains('text-only') ||
-                row.classList.contains('closed-source') ||
-                row.classList.contains('open-source')) {
-                return true;
+        // 对普通数据行进行排序
+        const sortedRows = dataRows.sort((a, b) => {
+            const aText = (a.cells[colIndex] && a.cells[colIndex].textContent.trim()) || '';
+            const bText = (b.cells[colIndex] && b.cells[colIndex].textContent.trim()) || '';
+
+            // 处理数值类型排序
+            const aNum = parseFloat(aText);
+            const bNum = parseFloat(bText);
+            if (!isNaN(aNum) && !isNaN(bNum)) {
+                return ascending ? aNum - bNum : bNum - aNum;
             }
 
-            // 固定行（如"Human"、"最终数量"等）
-            if (firstCell && (
-                    firstCell.textContent.trim() === '最终数量' ||
-                    firstCell.textContent.trim() === 'Human')) {
-                return true;
+            // 处理文本类型排序
+            return ascending ? aText.localeCompare(bText) : bText.localeCompare(aText);
+        });
+
+        // 重新组装表格内容
+        tbody.innerHTML = ''; // 清空表格内容
+
+        // 按原始顺序重新插入分类标题和对应的数据行
+        let currentCategory = null;
+        let proprietaryRows = [];
+        let openSourceRows = [];
+
+        // 分离不同类别的数据行
+        sortedRows.forEach(row => {
+            const modelText = row.cells[0].textContent.trim();
+            if (modelText === 'Human' || modelText.includes('最终数量')) {
+                // 这些行应该在Proprietary MLLMs之前
+                tbody.appendChild(row);
+            } else if (modelText.includes('Proprietary') ||
+                (row.querySelector('td') && row.querySelector('td').colSpan &&
+                    row.querySelector('td').colSpan > 10)) {
+                // 这是分类标题行，已经在categoryHeaders中处理
+            } else if (modelText.includes('GPT') || modelText.includes('Claude') ||
+                modelText.includes('Gemini') || modelText.includes('Qwen-VL')) {
+                proprietaryRows.push(row);
+            } else {
+                openSourceRows.push(row);
             }
-
-            return false;
         });
 
-        // 2. 识别所有数据行（非上述行）
-        const dataRows = allRows.filter(row => !nonDataRows.includes(row));
+        // 插入Proprietary MLLMs标题和数据
+        const proprietaryHeader = categoryHeaders.find(header =>
+            header.classList.contains('text-only') ||
+            header.classList.contains('closed-source') ||
+            (header.querySelector('th') &&
+                header.querySelector('th').textContent.includes('Proprietary')));
 
-        // 3. 对数据行进行排序
-        dataRows.sort((a, b) => {
-            // 确保列存在
-            if (col >= a.cells.length || col >= b.cells.length) return 0;
+        if (proprietaryHeader) {
+            tbody.appendChild(proprietaryHeader);
+        }
 
-            const aVal = parseFloat(a.cells[col].textContent) || 0;
-            const bVal = parseFloat(b.cells[col].textContent) || 0;
-            return isAsc ? aVal - bVal : bVal - aVal;
-        });
+        proprietaryRows.forEach(row => tbody.appendChild(row));
 
-        // 4. 重新构建表格
-        tbody.innerHTML = '';
+        // 插入Open-Source Multi-Image MLLMs标题和数据
+        const openSourceHeader = categoryHeaders.find(header =>
+            header.classList.contains('open-source') ||
+            (header.querySelector('th') &&
+                header.querySelector('th').textContent.includes('Open-Source')));
 
-        // 先添加所有非数据行（保持原顺序）
-        nonDataRows.forEach(row => tbody.appendChild(row));
+        if (openSourceHeader) {
+            tbody.appendChild(openSourceHeader);
+        }
 
-        // 然后添加排序后的数据行
-        dataRows.forEach(row => tbody.appendChild(row));
+        openSourceRows.forEach(row => tbody.appendChild(row));
     }
 
     // 初始加载时初始化进度条
