@@ -2,8 +2,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    table-layout: auto;
-    /* 改为自动布局以更好适应内容 */
+    table-layout: fixed;
 }
 
 
@@ -54,21 +53,16 @@ table {
 
 th {
     border: 1px solid #ddd;
-    padding: 6px 4px;
-    /* 减少内边距以节省空间 */
+    padding: 8px;
     text-align: center;
     background-color: #f8f9fa;
     font-weight: bold;
-    white-space: nowrap;
-    /* 防止文字换行 */
+    word-wrap: break-word;
+    /* 允许长单词换行 */
+    white-space: normal;
+    /* 允许文字换行 */
     text-align: center;
     vertical-align: middle;
-    font-size: 0.85em;
-    /* 稍微减小字体以适应单行显示 */
-    line-height: 1.2;
-    /* 调整行高 */
-    min-width: 60px;
-    /* 设置最小宽度 */
 }
 
 /* 确保所有表格具有一致的基础样式 */
@@ -88,54 +82,6 @@ th {
 
 .tab-content table tbody tr:hover {
     background-color: rgba(0, 0, 0, 0.05);
-}
-
-/* 特别针对第二张表格的表头优化 */
-#closed-source table th {
-    white-space: nowrap !important;
-    /* 强制不换行 */
-    font-size: 0.75em !important;
-    /* 进一步减小字体 */
-    padding: 4px 2px !important;
-    /* 减少内边距 */
-    line-height: 1.1 !important;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    /* 如果文字太长则显示省略号 */
-    max-width: 80px;
-    /* 设置最大宽度 */
-    min-width: 45px;
-    /* 设置最小宽度 */
-}
-
-/* 第二张表格的数据单元格也需要调整 */
-#closed-source table td {
-    font-size: 0.85em !important;
-    padding: 4px 2px !important;
-    min-width: 45px !important;
-}
-
-/* 第二张表格整体样式优化 */
-#closed-source table {
-    font-family: 'Arial', sans-serif !important;
-    /* 使用更紧凑的字体 */
-    table-layout: auto !important;
-    /* 自动调整列宽 */
-}
-
-/* 针对特定较长的表头文字进行特殊处理 */
-#closed-source table th:contains("Mobile-manipulation"),
-#closed-source table th:contains("World Knowledge"),
-#closed-source table th:contains("Multi-object") {
-    font-size: 0.7em !important;
-    /* 对特别长的文字使用更小字体 */
-    padding: 3px 1px !important;
-}
-
-/* 排序按钮也需要调整 */
-#closed-source .sort-btn {
-    font-size: 10px !important;
-    margin-left: 2px !important;
 }
 
 /* 特别针对第三张表格的样式统一 */
@@ -168,19 +114,18 @@ tr {
 
 td {
     border: 1px solid #ddd;
-    padding: 6px 4px;
-    /* 减少内边距以匹配表头 */
+    padding: 8px;
     text-align: center;
     position: relative;
-    min-width: 50px;
-    /* 减小最小宽度 */
+    width: 60px;
+    /* 固定单元格宽度 */
+    min-width: 60px;
+    max-width: 60px;
     overflow: hidden;
     text-align: center;
     vertical-align: middle;
     font-weight: 600;
     /* 加粗所有单元格内容 */
-    font-size: 0.9em;
-    /* 稍微减小字体以保持一致性 */
 }
 
 /* 特别加粗数字内容 */
