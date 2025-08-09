@@ -84,6 +84,26 @@ th {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
+/* 特别针对第三张表格的样式统一 */
+#open-source table th {
+    background-color: #f8f9fa !important;
+    font-weight: bold !important;
+    padding: 8px !important;
+    border: 1px solid #ddd !important;
+}
+
+#open-source table td {
+    font-weight: 700 !important;
+    border: 1px solid #ddd !important;
+}
+
+/* 确保模型名称列样式一致 */
+.tab-content table td:first-child {
+    font-weight: 600 !important;
+    text-align: left !important;
+    padding-left: 12px !important;
+}
+
 tr {
     text-align: center;
     vertical-align: middle;
@@ -104,6 +124,14 @@ td {
     overflow: hidden;
     text-align: center;
     vertical-align: middle;
+    font-weight: 600;
+    /* 加粗所有单元格内容 */
+}
+
+/* 特别加粗数字内容 */
+td:not(:first-child) {
+    font-weight: 700;
+    /* 除了第一列（模型名称）外，其他列更加粗 */
 }
 
 .header {
@@ -158,6 +186,16 @@ td {
     border: 1px solid #ddd !important;
     font-size: 1em !important;
     letter-spacing: 0.5px !important;
+}
+
+/* 确保所有分类标题行的样式一致性 */
+th.text-only,
+th.closed-source,
+th.open-source {
+    font-weight: 700 !important;
+    text-transform: none !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid #ddd !important;
 }
 
 .sort-btn {
@@ -244,6 +282,11 @@ td {
 .progress-text {
     position: relative;
     z-index: 1;
+    font-weight: 700 !important;
+    /* 确保进度条文本也加粗 */
+    color: #2c3e50 !important;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+    /* 添加轻微阴影增强可读性 */
 }
 
 
