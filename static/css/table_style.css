@@ -102,7 +102,7 @@ th {
     border: 1px solid #ddd !important;
 }
 
-#open-source table td {
+#open-source table td:not(:first-child) {
     font-weight: 500 !important;
     font-size: 13px !important;
     border: 1px solid #ddd !important;
@@ -110,7 +110,8 @@ th {
 }
 
 /* 确保模型名称列样式一致 */
-.tab-content table td:first-child {
+.tab-content table td:first-child,
+#open-source table td:first-child {
     font-weight: 600 !important;
     font-size: 13px !important;
     text-align: left !important;
