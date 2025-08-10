@@ -85,7 +85,7 @@ th {
 }
 
 /* 特别针对第三张表格的样式统一 */
-#open-source table th {
+#open-source table th:not(.open-source) {
     background-color: #f8f9fa !important;
     font-weight: bold !important;
     padding: 8px !important;
