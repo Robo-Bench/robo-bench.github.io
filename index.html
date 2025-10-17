@@ -27,8 +27,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <title>Robobench: A Comprehensive Evaluation Benchmark for Perception, Planning and Reflection of Embodied Multimodal Large Language Models</title>
-    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+    <title>Robobench: A Comprehensive Evaluation Benchmark for Multimodal Large Language Models as Embodied Brain</title>
+    <link rel="icon" type="image/x-icon" href="static/images/R2.jpg">
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
     <link rel="stylesheet" href="static/css/bulma.min.css">
@@ -57,7 +57,7 @@
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
                         <h1 class="title is-1 publication-title">
-                            <img src="static/images/R2.jpg">Robobench: A Comprehensive Evaluation Benchmark for Perception, Planning and Reflection of Embodied Multimodal Large Language Models
+                            <img src="static/images/R2.jpg">Robobench: A Comprehensive Evaluation Benchmark for Multimodal Large Language Models as Embodied Brain
                         </h1>
                         <div class="is-size-5 publication-authors">
                             <!-- Paper authors -->
@@ -108,11 +108,11 @@
                         </div>
 
                         <div class="is-size-5 publication-authors">
-                            <span class="author-block"><sup>1</sup> Peking University, <sup>2</sup> Beijing Academy of Artificial Intelligence, <br><sup>3</sup> Beijing Innovation Center of Humanoid Robotics, <sup>4</sup> Nanjing University</span>
-                            <span class="eql-cntrb"><small><br><sup>*</sup>Equal contribution, <sup>†</sup>Project leader, <sup>✉</sup>Corresponding authors</small><br></span>
-                            <span class="eql-cntrb"><sup>‡</sup>Work was done by intern in baai</span><br>
-                            <span class="author-block">2025</span>
+                            <span class="author-block" style="font-size: 0.9em;"><sup>1</sup> State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University,<br><sup>2</sup> Beijing Academy of Artificial Intelligence, <sup>3</sup> Beijing Innovation Center of Humanoid Robotics, <sup>4</sup> Nanjing University</span>
+                            <span class="eql-cntrb"><small><br><sup>*</sup>Equal contribution, <sup>†</sup>Project leader, <sup>✉</sup>Corresponding author</small><br></span>
                         </div>
+                        
+                        <img src="static/images/robobench_school_logos.png" width="100%" class="img-responsive">
 
                         <div class="column has-text-centered">
                             <div class="publication-links">
@@ -173,10 +173,8 @@
         <div class="container is-max-desktop">
             <div class="hero-body">
                 <img src="static/images/robobench_teaser.jpg">
-                <h2 class="subtitle has-text-centered">
-                    <b>RoboBench</b> is a comprehensive benchmark to evaluate embodied multi-modal language models (MLLMs) with Q&A framework spanning 4 levels and over 25 subcategories. It emulates the execution process of embodied tasks: starting with
-                    the comprehension of instructions, followed by scene perception, strategic planning, and culminating in summarization, reflection, and iterative improvement (top left). The primary metric is further divided into subcategories, demonstrating
-                    both the diversity and complexity of RoboBench (top right; bottom). Tasks are color-coded to aid in distinguishing between task types.
+                <h2 class="content has-text-justified">
+                    <b>RoboBench</b> is a comprehensive benchmark for evaluating MLLMs as embodied brains, encompassing 5 dimensions, 16 capabilities, and 26 tasks. It reflects the key stages of embodied reasoning: understanding explicit and implicit instructions, perceiving embodiment, objects, and scenes, planning long-horizon tasks through subtask decomposition, generating spatially aligned affordance to support subtask planning, and performing error analysis with reflective correction (top). Each dimension is illustrated with a demo (bottom), and task types are color-coded to showcase the diversity and complexity of RoboBench.
                 </h2>
             </div>
         </div>
@@ -191,13 +189,7 @@
                     <h2 class="title is-3">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
-                            Recently, Multi-modal Large Language Models (MLLMs) have shown great potential to be the “brain” of embodied agents. However, existing benchmarks fail to evaluate the full capabilities essential for embodied tasks in MLLMs, including instruction comprehension,
-                            reasoning in complex environments, decision-making, affordance reasoning, and reflection. To bridge these gaps, we introduce <b>RoboBench</b>, a novel benchmark designed to systematically evaluate
-                            the capabilities of MLLMs as the brain of embodied agents. The evaluation formulation is structured around 5 key skills and 20 sub-dimensions, featuring specially designed tasks such as cross-embodiment planning, cross-object
-                            perception, and cross-view reasoning to ensure a fine-grained and realistic assessment. To assess the robustness of task planning, we introduce a DAG-based LLM evaluation framework that incorporates variations in execution
-                            order and task granularity. Through large-scale evaluations of closed-source and open-source MLLMs, we identify several critical limitations of previous benchmarks. Specifically, we observe that current MLLMs struggle with
-                            understanding implicit demand instructions, cross-embodiment planning, object interaction characteristic analysis, and fine-grained error reflection. RoboBench aims to drive progress in the field by guiding the development
-                            of next-generation MLLMs with enhanced embodied capabilities. Our code and dataset will be released soon.
+                            Multi-modal Large Language Models (MLLMs) are emerging as powerful candidates for the “brain” of embodied agents. However, existing benchmarks fail to capture the full spectrum of capabilities required for embodied tasks, including instruction comprehension, perceptual reasoning, generalizable planning, affordance prediction, and error analysis. To bridge these gaps, we present RoboBench, a large-scale benchmark that systematically evaluates MLLMs as embodied brains across 5 core dimensions, 15 capabilities, and 26 task types. It incorporates specially designed tasks such as cross-embodiment, cross-object, and cross-view planning, together with static and dynamic affordance reasoning, for fine-grained and realistic assessment. To ensure comprehensive and robust planning evaluation, we propose a DAG-based LLM evaluation framework that accounts for skill selection, object identification, task execution order variation, and task completion quality. Extensive evaluations of closed-source and open-source MLLMs reveal critical limitations overlooked by previous benchmarks. Notably, current models struggle with understanding implicit demand instructions, cross-embodiment planning, object interaction affordance reasoning, and execution error analysis. RoboBench provides a rigorous, diverse, and realistic evaluation protocol to guide the development of next-generation MLLMs with stronger embodied intelligence.
                         </p>
                     </div>
                 </div>
@@ -211,26 +203,14 @@
             <div class="container">
                 <h2 class="title is-3">News</h2>
                 <div class="content has-text-justified">
-                    🎯 RoboOS: An Efficient Open-Source Multi-Robot Coordination System for RoboBrain.
+                    <b>🔥 2025.08.09</b> - The official RoboBench website is now live. The paper, code, and dataset will be released within two weeks. Stay tuned ❗️
                 </div>
-                <div class="content has-text-justified">
-                    🌍 RoboBrain 1.0: A Unified Brain Model for Robotic Manipulation from Abstract to Concrete.
-                </div>
-                <div class="content has-text-justified">
-                    If you have any questions, feel free to contact us via WeChat or RedNote.
-                </div>
-                <div class="columns is-centered has-text-centered">
-                    <div class="column is-four-fifths">
-                        <img src="static/images/wechat.png">
-                    </div>
-                </div>
-                <div class="container is-max-desktop">21312</div>
             </div>
         </div>
         </div>
     </section>
 
-    <section class="hero is-small is-light">
+    <!-- <section class="hero is-small is-light">
         <div class="hero-body">
             <div class="container">
                 <h2 class="title is-3">Takeaway</h2>
@@ -238,13 +218,38 @@
             </div>
         </div>
         </div>
-    </section>
+    </section> -->
 
     <section class="hero is-small">
         <div class="hero-body">
             <div class="container">
                 <h2 class="title is-3">Highlight</h2>
-                <div class="content has-text-justified">Text</div>
+                <div class="content has-text-justified">
+                    <b>🔍 Benchmark Overview</b><br>
+                        <ul>
+                            <li>The comprehensive benchmark focused on evaluating MLLMs as embodied brains.</li>
+                            <li>Systematic evaluation across 5 core dimensions, 15 capabilities, 26 task types, and 4,850 high-quality questions.</li>
+                        </ul>
+                    <b>🧭 Comprehensive Dimensions</b><br>
+                        <ul>
+                            <li>Covers key embodied skills tailored to MLLM capabilities, including instruction understanding, perceptual reasoning, generalizable planning, affordance prediction, and error reflection in real-world settings.</li>
+                        </ul>
+                    <b>🛡️ Robust Evaluation</b><br>
+                        <ul>
+                            <li>All questions are manually verified for quality and consistency.</li>
+                            <li>Long-horizon task planning is evaluated using a novel Directed Acyclic Graph (DAG)-guided approach to ensure rigor and robustness.</li>
+                        </ul>
+                    <b>🧠 Real-world Data</b><br>
+                        <ul>
+                            <li>Built on the latest open-source real-robot datasets and proprietary real-world data.</li>
+                            <li>Evaluation tasks are grounded in realistic embodied interaction scenarios.</li>
+                        </ul>
+                    <b>🌍 Diverse Composition</b><br> 
+                        <ul>
+                            <li>Sourced from a wide range of data and scenarios.</li>
+                            <li>Captures the complexity and diversity of real-world embodied tasks.</li>
+                        </ul>
+                </div>
             </div>
         </div>
         </div>
@@ -257,47 +262,41 @@
                 <h2 class="title is-3">Leaderboard</h2>
                 <div class="tab-container">
                     <div class="tab-buttons">
-                        <button class="tab-btn active" data-tab="text-only">指令理解+感知推理</button>
-                        <button class="tab-btn" data-tab="closed-source">泛化规划</button>
-                        <button class="tab-btn" data-tab="open-source">可操纵性分析+错误分析</button>
+                        <button class="tab-btn active" data-tab="text-only">Embodied Instruction Comprehension & Embodied Perception Reasoning</button>
+                        <button class="tab-btn" data-tab="closed-source">Embodied Generalized Planning</button>
+                        <button class="tab-btn" data-tab="open-source">Embodied Affordance Reasoning & Embodied Failure Analysis</button>
                     </div>
 
                     <div id="text-only" class="tab-content active">
                         <table>
                             <thead>
                                 <tr>
-                                    <th colspan="1">Model</th>
-                                    <th colspan="3">Embodied Instruction Comprehension</th>
-                                    <th colspan="9">Embodied Perception Reasoning</th>
+                                    <th rowspan="3" style="vertical-align: middle; text-align: center;">Model</th>
+                                    <th colspan="2" style="vertical-align: middle; text-align: center;">Embodied Instruction Comprehension</th>
+                                    <th colspan="8" style="vertical-align: middle; text-align: center;">Embodied Perception Reasoning</th>
                                 </tr>
                                 <tr>
-                                    <th colspan="1"></th>
-                                    <th colspan="1">Explicit Object Goal<span class="sort-btn" data-col="0">▼</span></th>
-                                    <th colspan="1">Implicit Demand Goal<span class="sort-btn" data-col="1">▼</span></th>
-                                    <th colspan="1">Avg<span class="sort-btn" data-col="2">▼</span></th>
-                                    <th colspan="2">Robotic Centric</th>
-                                    <th colspan="2">Object Centric</th>
-                                    <th colspan="3">Scene Centric</th>
-                                    <th colspan="1">Task Centric</th>
-                                    <th colspan="1"></th>
+                                    <th rowspan="2" style="vertical-align: middle; text-align: center;">Explicit Object Goal<span class="sort-btn" data-col="0">▼</span></th>
+                                    <th rowspan="2" style="vertical-align: middle; text-align: center;">Implicit Demand Goal<span class="sort-btn" data-col="1">▼</span></th>
+                                    <th colspan="2" style="vertical-align: middle; text-align: center;">Robotic Centric</th>
+                                    <th colspan="2" style="vertical-align: middle; text-align: center;">Object Centric</th>
+                                    <th colspan="3" style="vertical-align: middle; text-align: center;">Scene Centric</th>
+                                    <th style="vertical-align: middle; text-align: center;">Task Centric</th>
                                 </tr>
                                 <tr>
-                                    <th colspan="1"></th>
-                                    <th colspan="3"></th>
-                                    <th colspan="1">Robotic Type<span class="sort-btn" data-col="3">▼</span></th>
-                                    <th colspan="1">Robotic View<span class="sort-btn" data-col="4">▼</span></th>
-                                    <th colspan="1">Static Attribute<span class="sort-btn" data-col="5">▼</span></th>
-                                    <th colspan="1">Tool Usage<span class="sort-btn" data-col="6">▼</span></th>
-                                    <th colspan="1">Spatial Relation<span class="sort-btn" data-col="7">▼</span></th>
-                                    <th colspan="1">Temporal Grounding timestamp<span class="sort-btn" data-col="8">▼</span></th>
-                                    <th colspan="1">Spatial-Temporal Causality<span class="sort-btn" data-col="9">▼</span></th>
-                                    <th colspan="1">Reference Detection<span class="sort-btn" data-col="10">▼</span></th>
-                                    <th colspan="1">Avg<span class="sort-btn" data-col="11">▼</span></th>>
+                                    <th style="vertical-align: middle; text-align: center;">Robotic Type<span class="sort-btn" data-col="2">▼</span></th>
+                                    <th style="vertical-align: middle; text-align: center;">Robotic View<span class="sort-btn" data-col="3">▼</span></th>
+                                    <th style="vertical-align: middle; text-align: center;">Static Attribute<span class="sort-btn" data-col="4">▼</span></th>
+                                    <th style="vertical-align: middle; text-align: center;">Tool Usage<span class="sort-btn" data-col="5">▼</span></th>
+                                    <th style="vertical-align: middle; text-align: center;">Spatial Relation<span class="sort-btn" data-col="6">▼</span></th>
+                                    <th style="vertical-align: middle; text-align: center;">Temporal Grounding timestamp<span class="sort-btn" data-col="7">▼</span></th>
+                                    <th style="vertical-align: middle; text-align: center;">Spatial-Temporal Causality<span class="sort-btn" data-col="8">▼</span></th>
+                                    <th style="vertical-align: middle; text-align: center;">Reference Detection<span class="sort-btn" data-col="9">▼</span></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>最终数量</td>
+                                <!-- <tr>
+                                    <td>Total Number</td>
                                     <td>101</td>
                                     <td>101</td>
                                     <td>202</td>
@@ -310,12 +309,11 @@
                                     <td>145</td>
                                     <td>163</td>
                                     <td>1185</td>
-                                </tr>
+                                </tr> -->
                                 <tr>
                                     <td>Human</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>0.00</td>
+                                    <td>80.38</td>
+                                    <td>79.87</td>
                                     <td>80.67</td>
                                     <td>79.08</td>
                                     <td>43.77</td>
@@ -324,16 +322,14 @@
                                     <td>51.61</td>
                                     <td>91.22</td>
                                     <td>93.22</td>
-                                    <td>73.90</td>
                                 </tr>
                                 <tr>
-                                    <th class="text-only" colspan="13">Proprietary MLLMs</th>
+                                    <th class="text-only" colspan="11">Proprietary MLLMs</th>
                                 </tr>
                                 <tr>
                                     <td>GPT4o(Lang)</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>72.45</td>
+                                    <td>55.27</td>
                                     <td>20.51</td>
                                     <td>13.77</td>
                                     <td>5.18</td>
@@ -342,13 +338,11 @@
                                     <td>18.32</td>
                                     <td>25.52</td>
                                     <td>22.09</td>
-                                    <td>20.81</td>
                                 </tr>
                                 <tr>
                                     <td>GPT4o</td>
                                     <td>77.27</td>
                                     <td>66.18</td>
-                                    <td></td>
                                     <td>64.96</td>
                                     <td>39.38</td>
                                     <td>24.92</td>
@@ -357,13 +351,11 @@
                                     <td>20.61</td>
                                     <td>33.10</td>
                                     <td>41.31</td>
-                                    <td>39.16</td>
                                 </tr>
                                 <tr>
                                     <td>GPT4o-mini</td>
                                     <td>67.87</td>
                                     <td>58.21</td>
-                                    <td></td>
                                     <td>38.75</td>
                                     <td>18.84</td>
                                     <td>26.43</td>
@@ -372,13 +364,11 @@
                                     <td>22.65</td>
                                     <td>34.25</td>
                                     <td>39.67</td>
-                                    <td>33.08</td>
                                 </tr>
                                 <tr>
                                     <td>Claude-3.7-Sonnet</td>
                                     <td>75.39</td>
                                     <td>67.17</td>
-                                    <td></td>
                                     <td>40.46</td>
                                     <td>32.37</td>
                                     <td>45.20</td>
@@ -387,13 +377,11 @@
                                     <td>21.09</td>
                                     <td>40.92</td>
                                     <td>28.02</td>
-                                    <td>39.48</td>
                                 </tr>
                                 <tr>
                                     <td>Claude-3.5-Sonnet</td>
                                     <td>76.13</td>
                                     <td>64.01</td>
-                                    <td></td>
                                     <td>41.31</td>
                                     <td>36.23</td>
                                     <td>29.13</td>
@@ -402,13 +390,11 @@
                                     <td>21.88</td>
                                     <td>36.09</td>
                                     <td>25.36</td>
-                                    <td>35.95</td>
                                 </tr>
                                 <tr>
-                                    <td>Gemini-2.5-Pro</td>
+                                    <td>Gemini-2.5-Pro 🥇</td>
                                     <td>79.35</td>
                                     <td>71.63</td>
-                                    <td></td>
                                     <td>64.30</td>
                                     <td>41.71</td>
                                     <td>54.83</td>
@@ -417,13 +403,11 @@
                                     <td>49.68</td>
                                     <td>71.73</td>
                                     <td>78.68</td>
-                                    <td>62.96</td>
                                 </tr>
                                 <tr>
-                                    <td>Gemini-2.5-Flash</td>
+                                    <td>Gemini-2.5-Flash 🥈</td>
                                     <td>75.39</td>
                                     <td>69.40</td>
-                                    <td></td>
                                     <td>62.39</td>
                                     <td>39.38</td>
                                     <td>55.02</td>
@@ -432,13 +416,11 @@
                                     <td>33.58</td>
                                     <td>70.34</td>
                                     <td>74.64</td>
-                                    <td>58.75</td>
                                 </tr>
                                 <tr>
-                                    <td>Gemini-2.0-Flash</td>
+                                    <td>Gemini-2.0-Flash 🥉</td>
                                     <td>75.69</td>
                                     <td>69.01</td>
-                                    <td></td>
                                     <td>56.69</td>
                                     <td>20.77</td>
                                     <td>49.08</td>
@@ -447,13 +429,11 @@
                                     <td>21.37</td>
                                     <td>51.72</td>
                                     <td>72.40</td>
-                                    <td>49.13</td>
                                 </tr>
                                 <tr>
                                     <td>Qwen-VL-Max</td>
                                     <td>73.51</td>
                                     <td>61.18</td>
-                                    <td></td>
                                     <td>47.86</td>
                                     <td>43.48</td>
                                     <td>39.70</td>
@@ -462,13 +442,11 @@
                                     <td>27.45</td>
                                     <td>37.93</td>
                                     <td>41.53</td>
-                                    <td>45.42</td>
                                 </tr>
                                 <tr>
                                     <td>Qwen-VL-Plus</td>
                                     <td>62.07</td>
                                     <td>51.63</td>
-                                    <td></td>
                                     <td>28.21</td>
                                     <td>21.74</td>
                                     <td>34.63</td>
@@ -477,16 +455,14 @@
                                     <td>21.37</td>
                                     <td>31.03</td>
                                     <td>34.36</td>
-                                    <td>32.20</td>
                                 </tr>
                                 <tr>
-                                    <th class="text-only" colspan="13">Open-Source Multi-Image MLLMs</th>
+                                    <th class="text-only" colspan="11">Open-Source Multi-Image MLLMs</th>
                                 </tr>
                                 <tr>
                                     <td>Qwen2.5-VL-72B-Ins</td>
                                     <td>73.51</td>
                                     <td>61.38</td>
-                                    <td></td>
                                     <td>47.72</td>
                                     <td>42.75</td>
                                     <td>41.74</td>
@@ -495,13 +471,11 @@
                                     <td>27.87</td>
                                     <td>40.32</td>
                                     <td>42.13</td>
-                                    <td>45.50</td>
                                 </tr>
                                 <tr>
                                     <td>Qwen2.5-VL-7B-Ins</td>
                                     <td>52.82</td>
                                     <td>44.65</td>
-                                    <td></td>
                                     <td>23.93</td>
                                     <td>26.81</td>
                                     <td>37.86</td>
@@ -510,9 +484,8 @@
                                     <td>22.90</td>
                                     <td>14.48</td>
                                     <td>36.81</td>
-                                    <td>30.10</td>
                                 </tr>
-                                <tr>
+                                <!-- <tr>
                                     <td>Qwen2-VL-72B-Ins</td>
                                     <td>69.80</td>
                                     <td>55.19</td>
@@ -524,14 +497,11 @@
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
+                                </tr> -->
                                 <tr>
                                     <td>Qwen2-VL-7B-Ins</td>
                                     <td>50.54</td>
                                     <td>36.23</td>
-                                    <td></td>
                                     <td>17.19</td>
                                     <td>21.55</td>
                                     <td>17.26</td>
@@ -540,7 +510,6 @@
                                     <td>24.19</td>
                                     <td>23.45</td>
                                     <td>21.88</td>
-                                    <td>26.49</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -550,49 +519,39 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th colspan="1">Model</th>
-                                    <th colspan="19">Embodied Generalized Planning</th>
+                                    <th rowspan="4" style="vertical-align: middle; text-align: center;">Model</th>
+                                    <th colspan="16" style="vertical-align: middle; text-align: center;">Embodied Generalized Planning</th>
                                 </tr>
                                 <tr>
-                                    <th colspan="1"></th>
-                                    <th colspan="4">Cross Embodiment Planning</th>
-                                    <th colspan="10">Cross Object Planning</th>
-                                    <th colspan="2">Cross-View Planning</th>
-                                    <th colspan="1">Cross Task Planning</th>
-                                    <th colspan="1">Cross Loop Planning</th>
-                                    <th colspan="1">Avg<span class="sort-btn" data-col="0">▼</span></th>
+                                    <th colspan="4" style="vertical-align: middle; text-align: center;">Cross Embodiment Planning</th>
+                                    <th colspan="10" style="vertical-align: middle; text-align: center;">Cross Object Planning</th>
+                                    <th colspan="2" style="vertical-align: middle; text-align: center;">Cross-View Planning</th>
                                 </tr>
                                 <tr>
-                                    <th colspan="1"></th>
-                                    <th colspan="1">Single-arm<span class="sort-btn" data-col="1">▼</span></th>
-                                    <th colspan="1">Dual-arm<span class="sort-btn" data-col="2">▼</span></th>
-                                    <th colspan="1">Mobile-manipulation<span class="sort-btn" data-col="3">▼</span></th>
-                                    <th colspan="1">Human<span class="sort-btn" data-col="4">▼</span></th>
-                                    <th colspan="5">Material Affordance</th>
-                                    <th colspan="4">Physical Attribute</th>
-                                    <th colspan="1">World Knowledge<span class="sort-btn" data-col="5">▼</span></th>
-                                    <th colspan="1">Single View<span class="sort-btn" data-col="6">▼</span></th>
-                                    <th colspan="1">Multi View<span class="sort-btn" data-col="7">▼</span></th>
-                                    <th colspan="1">Navigation<span class="sort-btn" data-col="8">▼</span></th>
-                                    <th colspan="1">Close Loop<span class="sort-btn" data-col="9">▼</span></th>
-                                    <th colspan="1"></th>
+                                    <th rowspan="2" style="vertical-align: middle; text-align: center;">Single-arm<span class="sort-btn" data-col="0">▼</span></th>
+                                    <th rowspan="2" style="vertical-align: middle; text-align: center;">Dual-arm<span class="sort-btn" data-col="1">▼</span></th>
+                                    <th rowspan="2" style="vertical-align: middle; text-align: center;">Mobile-manipulation<span class="sort-btn" data-col="2">▼</span></th>
+                                    <th rowspan="2" style="vertical-align: middle; text-align: center;">Human<span class="sort-btn" data-col="3">▼</span></th>
+                                    <th colspan="5" style="vertical-align: middle; text-align: center;">Material Affordance</th>
+                                    <th colspan="4" style="vertical-align: middle; text-align: center;">Physical Attribute</th>
+                                    <th rowspan="2" style="vertical-align: middle; text-align: center;">World Knowledge<span class="sort-btn" data-col="4">▼</span></th>
+                                    <th rowspan="2" style="vertical-align: middle; text-align: center;">Single View<span class="sort-btn" data-col="5">▼</span></th>
+                                    <th rowspan="2" style="vertical-align: middle; text-align: center;">Multi View<span class="sort-btn" data-col="6">▼</span></th>
                                 </tr>
                                 <tr>
-                                    <th colspan="5"></th>
-                                    <th colspan="1">Rigid<span class="sort-btn" data-col="10">▼</span></th>
-                                    <th colspan="1">Articulated<span class="sort-btn" data-col="11">▼</span></th>
-                                    <th colspan="1">Deformable<span class="sort-btn" data-col="12">▼</span></th>
-                                    <th colspan="1">Special<span class="sort-btn" data-col="13">▼</span></th>
-                                    <th colspan="1">Multi-object<span class="sort-btn" data-col="14">▼</span></th>
-                                    <th colspan="1">Color<span class="sort-btn" data-col="15">▼</span></th>
-                                    <th colspan="1">Number<span class="sort-btn" data-col="16">▼</span></th>
-                                    <th colspan="1">Shape<span class="sort-btn" data-col="17">▼</span></th>
-                                    <th colspan="1">Size<span class="sort-btn" data-col="18">▼</span></th>
-                                    <th colspan="6"></th>
+                                    <th>Rigid<span class="sort-btn" data-col="7">▼</span></th>
+                                    <th>Articulated<span class="sort-btn" data-col="8">▼</span></th>
+                                    <th>Deformable<span class="sort-btn" data-col="9">▼</span></th>
+                                    <th>Special<span class="sort-btn" data-col="10">▼</span></th>
+                                    <th>Multi-object<span class="sort-btn" data-col="11">▼</span></th>
+                                    <th>Color<span class="sort-btn" data-col="12">▼</span></th>
+                                    <th>Number<span class="sort-btn" data-col="13">▼</span></th>
+                                    <th>Shape<span class="sort-btn" data-col="14">▼</span></th>
+                                    <th>Size<span class="sort-btn" data-col="15">▼</span></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <!-- <tr>
                                     <td>最终数量</td>
                                     <td>136</td>
                                     <td>164</td>
@@ -610,10 +569,7 @@
                                     <td>38</td>
                                     <td>85</td>
                                     <td>86</td>
-                                    <td>190</td>
-                                    <td></td>
-                                    <td>190</td>
-                                </tr>
+                                </tr> -->
                                 <tr>
                                     <td>Human</td>
                                     <td>88.75</td>
@@ -632,12 +588,9 @@
                                     <td>73.24</td>
                                     <td>72.99</td>
                                     <td>73.13</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>73.42</td>
                                 </tr>
                                 <tr>
-                                    <th class="closed-source" colspan="20">Proprietary MLLMs</th>
+                                    <th class="closed-source" colspan="17">Proprietary MLLMs</th>
                                 </tr>
                                 <tr>
                                     <td>GPT4o(Lang)</td>
@@ -657,9 +610,6 @@
                                     <td>59.47</td>
                                     <td>65.29</td>
                                     <td>63.95</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>64.37</td>
                                 </tr>
                                 <tr>
                                     <td>GPT4o</td>
@@ -679,9 +629,6 @@
                                     <td>63.55</td>
                                     <td>60.65</td>
                                     <td>65.06</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>63.22</td>
                                 </tr>
                                 <tr>
                                     <td>GPT4o-mini</td>
@@ -701,9 +648,6 @@
                                     <td>58.03</td>
                                     <td>54.29</td>
                                     <td>52.91</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>57.05</td>
                                 </tr>
                                 <tr>
                                     <td>Claude-3.7-Sonnet</td>
@@ -723,9 +667,6 @@
                                     <td>62.37</td>
                                     <td>71.23</td>
                                     <td>71.16</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>62.81</td>
                                 </tr>
                                 <tr>
                                     <td>Claude-3.5-Sonnet</td>
@@ -745,12 +686,9 @@
                                     <td>62.24</td>
                                     <td>70.82</td>
                                     <td>71.34</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>63.14</td>
                                 </tr>
                                 <tr>
-                                    <td>Gemini-2.5-Pro</td>
+                                    <td>Gemini-2.5-Pro 🥇</td>
                                     <td>74.19</td>
                                     <td>57.47</td>
                                     <td>63.00</td>
@@ -767,12 +705,9 @@
                                     <td>65.39</td>
                                     <td>70.53</td>
                                     <td>68.14</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>65.07</td>
                                 </tr>
                                 <tr>
-                                    <td>Gemini-2.5-Flash</td>
+                                    <td>Gemini-2.5-Flash 🥈</td>
                                     <td>76.58</td>
                                     <td>58.54</td>
                                     <td>66.00</td>
@@ -789,12 +724,9 @@
                                     <td>61.58</td>
                                     <td>69.00</td>
                                     <td>65.29</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>63.99</td>
                                 </tr>
                                 <tr>
-                                    <td>Gemini-2.0-Flash</td>
+                                    <td>Gemini-2.0-Flash 🥉</td>
                                     <td>75.99</td>
                                     <td>54.91</td>
                                     <td>56.91</td>
@@ -811,9 +743,6 @@
                                     <td>64.47</td>
                                     <td>67.59</td>
                                     <td>68.37</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>63.30</td>
                                 </tr>
                                 <tr>
                                     <td>Qwen-VL-Max</td>
@@ -833,9 +762,6 @@
                                     <td>61.84</td>
                                     <td>65.65</td>
                                     <td>65.17</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>61.89</td>
                                 </tr>
                                 <tr>
                                     <td>Qwen-VL-Plus</td>
@@ -855,12 +781,9 @@
                                     <td>49.08</td>
                                     <td>52.12</td>
                                     <td>56.98</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>51.62</td>
                                 </tr>
                                 <tr>
-                                    <th class="closed-source" colspan="20">Open-Source Multi-Image MLLMs</th>
+                                    <th class="closed-source" colspan="17">Open-Source Multi-Image MLLMs</th>
                                 </tr>
                                 <tr>
                                     <td>Qwen2.5-VL-72B-Ins</td>
@@ -880,9 +803,6 @@
                                     <td>63.03</td>
                                     <td>65.53</td>
                                     <td>62.62</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>61.35</td>
                                 </tr>
                                 <tr>
                                     <td>Qwen2.5-VL-7B-Ins</td>
@@ -902,9 +822,6 @@
                                     <td>38.42</td>
                                     <td>45.41</td>
                                     <td>33.84</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>43.30</td>
                                 </tr>
                                 <tr>
                                     <td>Qwen2-VL-72B-Ins</td>
@@ -924,9 +841,6 @@
                                     <td>60.92</td>
                                     <td>62.12</td>
                                     <td>59.13</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>58.11</td>
                                 </tr>
                                 <tr>
                                     <td>Qwen2-VL-7B-Ins</td>
@@ -946,9 +860,6 @@
                                     <td>36.05</td>
                                     <td>44.82</td>
                                     <td>43.43</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>41.18</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -958,187 +869,152 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th colspan="1">Model</th>
-                                    <th colspan="4">Embodied Affordance Reasoning</th>
-                                    <th colspan="3">Embodied Failure Analysis</th>
+                                    <th rowspan="2" style="vertical-align: middle; text-align: center;">Model</th>
+                                    <th colspan="3" style="vertical-align: middle; text-align: center;">Embodied Affordance Reasoning</th>
+                                    <th colspan="2" style="vertical-align: middle; text-align: center;">Embodied Failure Analysis</th>
                                 </tr>
                                 <tr>
-                                    <th colspan="1"></th>
-                                    <th colspan="1">Manipulation Static Affordance<span class="sort-btn" data-col="0">▼</span></th>
-                                    <th colspan="1">Manipulation Dynamic Affordance<span class="sort-btn" data-col="1">▼</span></th>
-                                    <th colspan="1">Navigation Reference Affordance<span class="sort-btn" data-col="2">▼</span></th>
-                                    <th colspan="1">Avg<span class="sort-btn" data-col="3">▼</span></th>
-                                    <th colspan="1">Execution Error<span class="sort-btn" data-col="4">▼</span></th>
-                                    <th colspan="1">Planning Error<span class="sort-btn" data-col="5">▼</span></th>
-                                    <th colspan="1">Avg<span class="sort-btn" data-col="6">▼</span></th>
+                                    <th style="vertical-align: middle; text-align: center;">Manipulation Static Affordance<span class="sort-btn" data-col="0">▼</span></th>
+                                    <th style="vertical-align: middle; text-align: center;">Manipulation Dynamic Affordance<span class="sort-btn" data-col="1">▼</span></th>
+                                    <th style="vertical-align: middle; text-align: center;">Navigation Reference Affordance<span class="sort-btn" data-col="2">▼</span></th>
+                                    <th style="vertical-align: middle; text-align: center;">Execution Error<span class="sort-btn" data-col="3">▼</span></th>
+                                    <th style="vertical-align: middle; text-align: center;">Planning Error<span class="sort-btn" data-col="4">▼</span></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <!-- <tr>
                                     <td>最终数量</td>
                                     <td>150</td>
                                     <td>151</td>
                                     <td>102</td>
-                                    <td>403</td>
                                     <td>151</td>
                                     <td>145</td>
-                                    <td>0</td>
-                                </tr>
+                                </tr> -->
                                 <tr>
                                     <td>Human</td>
                                     <td>0.0582</td>
                                     <td>0.0853</td>
                                     <td>0.0770</td>
-                                    <td>0.0735</td>
                                     <td>47.30</td>
                                     <td>80.67</td>
-                                    <td>63.99</td>
                                 </tr>
                                 <tr>
-                                    <th class="open-source" colspan="8">Proprietary MLLMs</th>
+                                    <th class="open-source" colspan="6">Proprietary MLLMs</th>
                                 </tr>
                                 <tr>
                                     <td>GPT4o(Lang)</td>
                                     <td>0.2741</td>
                                     <td>0.3020</td>
                                     <td>0.3196</td>
-                                    <td>0.3077</td>
                                     <td>25.17</td>
                                     <td>37.93</td>
-                                    <td>31.5500</td>
                                 </tr>
                                 <tr>
                                     <td>GPT4o</td>
                                     <td>0.2092</td>
                                     <td>0.2474</td>
                                     <td>0.2427</td>
-                                    <td>0.2307</td>
                                     <td>22.29</td>
                                     <td>57.01</td>
-                                    <td>39.6500</td>
                                 </tr>
                                 <tr>
                                     <td>GPT4o-mini</td>
                                     <td>0.2383</td>
                                     <td>0.2873</td>
                                     <td>0.2912</td>
-                                    <td>0.2645</td>
                                     <td>17.66</td>
                                     <td>44.60</td>
-                                    <td>31.1300</td>
                                 </tr>
                                 <tr>
                                     <td>Claude-3.7-Sonnet</td>
                                     <td>0.1847</td>
                                     <td>0.2279</td>
                                     <td>0.2417</td>
-                                    <td>0.2181</td>
                                     <td>18.32</td>
                                     <td>54.24</td>
-                                    <td>36.2800</td>
                                 </tr>
                                 <tr>
                                     <td>Claude-3.5-Sonnet</td>
                                     <td>0.2055</td>
                                     <td>0.2170</td>
                                     <td>0.2194</td>
-                                    <td>0.2140</td>
                                     <td>16.12</td>
                                     <td>47.52</td>
-                                    <td>31.8200</td>
                                 </tr>
                                 <tr>
-                                    <td>Gemini-2.5-Pro</td>
+                                    <td>Gemini-2.5-Pro 🥇</td>
                                     <td>0.1303</td>
                                     <td>0.1739</td>
                                     <td>0.1637</td>
-                                    <td>0.1572</td>
                                     <td>15.96</td>
                                     <td>74.31</td>
-                                    <td>45.1350</td>
                                 </tr>
                                 <tr>
-                                    <td>Gemini-2.5-Flash</td>
+                                    <td>Gemini-2.5-Flash 🥉</td>
                                     <td>0.1783</td>
                                     <td>0.2299</td>
                                     <td>0.2301</td>
-                                    <td>0.2168</td>
                                     <td>18.54</td>
                                     <td>67.65</td>
-                                    <td>43.0950</td>
                                 </tr>
                                 <tr>
-                                    <td>Gemini-2.0-Flash</td>
+                                    <td>Gemini-2.0-Flash 🥈</td>
                                     <td>0.1759</td>
                                     <td>0.1753</td>
                                     <td>0.1486</td>
-                                    <td>0.1668</td>
                                     <td>28.48</td>
                                     <td>59.80</td>
-                                    <td>44.1400</td>
                                 </tr>
                                 <tr>
                                     <td>Qwen-VL-Max</td>
                                     <td>0.1329</td>
                                     <td>0.2055</td>
                                     <td>0.2370</td>
-                                    <td>0.1879</td>
                                     <td>17.22</td>
                                     <td>57.93</td>
-                                    <td>37.5750</td>
                                 </tr>
                                 <tr>
                                     <td>Qwen-VL-Plus</td>
                                     <td>0.2317</td>
                                     <td>0.3251</td>
                                     <td>0.2546</td>
-                                    <td>0.2533</td>
                                     <td>13.91</td>
                                     <td>40.00</td>
-                                    <td>26.9550</td>
                                 </tr>
                                 <tr>
-                                    <th class="open-source" colspan="8">Open-Source Multi-Image MLLMs</th>
+                                    <th class="open-source" colspan="6">Open-Source Multi-Image MLLMs</th>
                                 </tr>
                                 <tr>
                                     <td>Qwen2.5-VL-72B-Ins</td>
                                     <td>0.1254</td>
                                     <td>0.2305</td>
                                     <td>0.2565</td>
-                                    <td>0.2032</td>
                                     <td>12.59</td>
                                     <td>50.72</td>
-                                    <td>31.6550</td>
                                 </tr>
                                 <tr>
                                     <td>Qwen2.5-VL-7B-Ins</td>
                                     <td>0.2438</td>
                                     <td>0.3207</td>
                                     <td>0.2921</td>
-                                    <td>0.2855</td>
                                     <td>13.91</td>
                                     <td>26.90</td>
-                                    <td>20.4050</td>
                                 </tr>
-                                <tr>
+                                <!-- <tr>
                                     <td>Qwen2-VL-72B-Ins</td>
                                     <td>0.1382</td>
                                     <td>0.2368</td>
                                     <td>0.1743</td>
-                                    <td>0.1833</td>
                                     <td></td>
                                     <td></td>
-                                    <td></td>
-                                </tr>
+                                </tr> -->
                                 <tr>
                                     <td>Qwen2-VL-7B-Ins</td>
                                     <td>0.1756</td>
                                     <td>0.3316</td>
                                     <td>0.2611</td>
-                                    <td>0.2509</td>
                                     <td>15.33</td>
                                     <td>38.30</td>
-                                    <td>26.8150</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1166,17 +1042,62 @@
                 </div>
                 <div class="container is-max-desktop"></div>
                 <div class="content has-text-justified">
-                    RoboBench consolidates datasets from over 20 recent studies. These datasets have been processed through our three-category conversion workflow, which is color-coded as follows: <span style="color: green;">green</span> for perception,
-                    <span style="color: blue;">blue</span> for planning, and <span style="color: red;">red</span> for reflection. The processing pipeline generally involves preprocessing (employing quality filtering or basic binary classification), followed
-                    by steps with a Vision-Language Model (VLM), detection model, or human experts, culminating data standardization into metadata summaries. These metadata are then utilized to automate Q&A questions across various categories. The final
-                    Q&A format comprises standardized binary classification, multiple choice, and multi-step multiple choice formats, making it adaptable for both open-source and closed-source MLLM models.
+                    RoboBench combines data from recent open-source large-scale datasets and our self-collected real-world datasets. We design dedicated workflows for different task types, color-coded as green for Perception, blue for Planning, and red for Reflection. The pipeline involves preprocessing, tool-assisted human annotation, and metadata standardization. 1) Perception: Tools such as VLM captioning or detection models provide preliminary labels, which are refined by human annotators. 2) Planning: VLMs generate task summaries and segmented captions; these are first converted into predefined function calls for evaluation, then processed by LLMs to extract key information for task categorization. Implicit goal planning tasks are derived by rephrasing explicit task summaries into implicit demand expressions. 3) Reflection: Low-level errors are identified from failed execution videos and manually annotated, while high-level errors are created by modifying instructions in correct cases to form error pairs. The resulting metadata are used to automatically generate Q&A items in standardized binary classification, multiple choice, and multi-step multiple choice formats, ensuring compatibility with both open and closed-source MLLM models.
                 </div>
             </div>
         </div>
         </div>
     </section>
 
-
+  <!-- Case Study -->
+  <section class="section" id="case-study" style="padding-top:2rem;">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3" style="text-align:center; margin-bottom:1rem; font-size: 2.3em;">Demo Case</h2>
+      <br>
+        <div id="results-carousel" class="carousel results-carousel" style="margin-bottom: 2rem;">
+            <div class="box mx-auto my-4" style="max-width: 100%;">
+              <div class="content has-text-centered" style="margin-bottom: 2rem;">
+                <img src="static/images/Demo_case_instruction.png" alt="" width="100%"/>
+                <p class="image-subtitle" style="font-size: 1.1em; margin-top: 1rem;">
+                  <b>Figure 3.</b> Demo case of Embodied Instruction Comprehension.
+                </p>
+              </div>
+            </div>
+            <div class="box mx-auto my-4" style="max-width: 100%;">
+              <div class="content has-text-centered" style="margin-bottom: 2rem;">
+                <img src="static/images/Demo_case_perception.png" alt="" width="100%"/>
+                <p class="image-subtitle" style="font-size: 1.1em; margin-top: 1rem;">
+                  <b>Figure 4.</b> Demo case of Embodied Perception Reasoning.
+                </p>
+              </div>
+            </div>
+            <div class="box mx-auto my-4" style="max-width: 100%;">
+              <div class="content has-text-centered" style="margin-bottom: 2rem;">
+                <img src="static/images/Demo_case_planning.png" alt="" width="100%" />
+                <p class="image-subtitle" style="font-size: 1.1em; margin-top: 1rem;">
+                  <b>Figure 5.</b> Demo case of Embodied Generalized Planning.
+                </p>
+              </div>
+            </div>
+            <div class="box mx-auto my-4" style="max-width: 100%;">
+                <div class="content has-text-centered" style="margin-bottom: 2rem;">
+                    <img src="static/images/Demo_case_affordance.png" alt="" width="100%" />
+                    <p class="image-subtitle" style="font-size: 1.1em; margin-top: 1rem;">
+                        <b>Figure 6.</b> Demo case of Embodied Affordance Reasoning.
+                    </p>
+                </div>
+            </div>
+            <div class="box mx-auto my-4" style="max-width: 100%;">
+              <div class="content has-text-centered" style="margin-bottom: 2rem;">
+                <img src="static/images/Demo_case_failure.png" alt="" width="100%" />
+                <p class="image-subtitle" style="font-size: 1.1em; margin-top: 1rem;">
+                  <b>Figure 7.</b> Demo case of Embodied Failure Analysis.
+                </p>
+              </div>
+            </div>
+        </div>
+    </div>
+  </section>
 
     <!-- Paper poster -->
     <!-- <section class="hero is-small is-light">

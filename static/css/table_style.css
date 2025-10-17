@@ -3,6 +3,9 @@ table {
     border-collapse: collapse;
     margin-top: 20px;
     table-layout: fixed;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
 }
 
 
@@ -53,16 +56,67 @@ table {
 
 th {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 10px 8px;
     text-align: center;
     background-color: #f8f9fa;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 13px;
     word-wrap: break-word;
     /* 允许长单词换行 */
     white-space: normal;
     /* 允许文字换行 */
     text-align: center;
     vertical-align: middle;
+    color: #333;
+    letter-spacing: 0.3px;
+}
+
+/* 确保所有表格具有一致的基础样式 */
+.tab-content table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tab-content table th,
+.tab-content table td {
+    border: 1px solid #ddd;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.tab-content table tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+    transition: background-color 0.2s ease;
+}
+
+/* 特别针对第三张表格的样式统一 */
+#open-source table th:not(.open-source) {
+    background-color: #f8f9fa !important;
+    font-weight: bold !important;
+    padding: 8px !important;
+    border: 1px solid #ddd !important;
+}
+
+#open-source table td:not(:first-child) {
+    font-weight: 500 !important;
+    font-size: 13px !important;
+    border: 1px solid #ddd !important;
+    color: #333 !important;
+}
+
+/* 确保模型名称列样式一致 */
+.tab-content table td:first-child,
+#open-source table td:first-child {
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    text-align: left !important;
+    padding-left: 12px !important;
+    color: #333 !important;
 }
 
 tr {
@@ -75,7 +129,7 @@ tr {
 
 td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 10px 8px;
     text-align: center;
     position: relative;
     width: 60px;
@@ -85,6 +139,17 @@ td {
     overflow: hidden;
     text-align: center;
     vertical-align: middle;
+    font-weight: 500;
+    font-size: 13px;
+    color: #333;
+    /* 数据单元格内容 */
+}
+
+/* 特别加粗数字内容 */
+td:not(:first-child) {
+    font-weight: 600;
+    font-size: 13px;
+    /* 除了第一列（模型名称）外，其他列更加粗 */
 }
 
 .header {
@@ -100,31 +165,68 @@ td {
 }
 
 
-/* 背景色 */
+/* 分类标题行样式 - 保持不同背景色但统一其他样式 */
 
 .text-only {
-    background-color: #add8e6;
+    background-color: #add8e6 !important;
     /* Light Blue */
+    font-weight: 600 !important;
+    color: #2c3e50 !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    padding: 12px 8px !important;
+    border: 1px solid #ddd !important;
+    font-size: 14px !important;
+    letter-spacing: 0.5px !important;
 }
 
 .closed-source {
-    background-color: #ffcccb;
+    background-color: #ffcccb !important;
     /* Light Pink */
+    font-weight: 600 !important;
+    color: #2c3e50 !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    padding: 12px 8px !important;
+    border: 1px solid #ddd !important;
+    font-size: 14px !important;
+    letter-spacing: 0.5px !important;
 }
 
 .open-source {
-    background-color: #ffffe0;
+    background-color: #fcfcd6 !important;
     /* Light Yellow */
+    font-weight: 600 !important;
+    color: #2c3e50 !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    padding: 12px 8px !important;
+    border: 1px solid #ddd !important;
+    font-size: 14px !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* 确保所有分类标题行的样式一致性 */
+th.text-only,
+th.closed-source,
+th.open-source {
+    font-weight: 700 !important;
+    text-transform: none !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid #ddd !important;
 }
 
 .sort-btn {
     cursor: pointer;
-    font-size: 12px;
-    margin-left: 5px;
+    font-size: 10px;
+    margin-left: 4px;
     user-select: none;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
 }
 
 .sort-btn:hover {
+    opacity: 1;
     color: #007bff;
 }
 
@@ -201,6 +303,11 @@ td {
 .progress-text {
     position: relative;
     z-index: 1;
+    font-weight: 700 !important;
+    /* 确保进度条文本也加粗 */
+    color: #2c3e50 !important;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+    /* 添加轻微阴影增强可读性 */
 }
 
 
