@@ -1036,20 +1036,26 @@
         </div>
     </section>
 
-    <!-- Planning Evaluation Pipeline -->
-   <section class="hero is-small">
-    <div class="hero-body">
-        <div class="container">
-            <h2 class="title is-3">Planning Evaluation Pipeline</h2>
-            <div class="column is-four-fifths">
-                <img src="static/images/eval_pipeline/eval_pipeline.png" alt="Planning Evaluation Pipeline" width="100%"/>
-                <p class="image-subtitle" style="font-size: 1.1em; margin-top: 1rem;">
-                    <b>Planning Evaluation Framework.</b> Evaluation of the planning dimension (Q1–Q3). Each task is decomposed into a sequence of parameterized atomic actions forming a Directed Acyclic Graph (DAG) that encodes causal and temporal dependencies. For <b>Q1 (Long-horizon planning)</b>, an MLLM-based world simulator assesses both NodeCorrectness (action alignment) and TaskCompletion (goal-state achievement) by simulating action rollouts under visual and physical constraints. <b>Q2 (Next-step planning)</b> evaluates fine-grained step prediction by comparing skill, object, and parameter accuracy, while <b>Q3 (Task state estimation)</b> measures binary correctness on whether a subtask has been completed. Together, the pipeline provides a unified, interpretable framework for assessing structural correctness and embodied feasibility in planning.
-                </p>
-            </div>
-        </div>
-    </div>
-    </section>
+     <!-- Planning Evaluation Pipeline -->
+     <section class="hero is-small">
+     <div class="hero-body">
+         <div class="container">
+             <h2 class="title is-3">Planning Evaluation Pipeline</h2>
+             <div class="columns is-centered">
+                 <div class="column is-four-fifths">
+                     <div class="has-text-centered">
+                         <img src="static/images/eval_pipeline/eval_pipeline.png" alt="Planning Evaluation Pipeline" width="100%"/>
+                     </div>
+                     <div class="content has-text-left" style="margin-top: 1rem;">
+                         <p style="font-size: 1.1em;">
+                             <b>Planning Evaluation Framework.</b> Evaluation of the planning dimension (Q1–Q3). Each task is decomposed into a sequence of parameterized atomic actions forming a Directed Acyclic Graph (DAG) that encodes causal and temporal dependencies. For <b>Q1 (Long-horizon planning)</b>, an MLLM-based world simulator assesses both NodeCorrectness (action alignment) and TaskCompletion (goal-state achievement) by simulating action rollouts under visual and physical constraints. <b>Q2 (Next-step planning)</b> evaluates fine-grained step prediction by comparing skill, object, and parameter accuracy, while <b>Q3 (Task state estimation)</b> measures binary correctness on whether a subtask has been completed. Together, the pipeline provides a unified, interpretable framework for assessing structural correctness and embodied feasibility in planning.
+                         </p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+     </section>
 
    <!-- Case Study -->
    <section class="section" id="case-study" style="padding-top:2rem;">
