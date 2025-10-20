@@ -163,7 +163,7 @@
             <div class="hero-body">
                 <img src="static/images/teaser/teaser.png">
                 <h2 class="content has-text-justified">
-                    <b>Overview of RoboBench</b> We evaluates MLLMs as embodied brains across 5 dimensions, 14 subdimensions, and 25 tasks, with tasks color-coded by type <b>(top left)</b>. These dimensions follow the embodied execution pipeline <b>(bottom)</b>—from understanding intent, perceiving the environment, planning and adapting actions, refining subgoals via affordances, diagnosing failures—capturing the core cognitive roles of System 2. Performance comparison <b>(top right)</b> highlights significant gaps among state-of-the-art MLLMs, with Gemini-2.5-Pro achieving the best results.
+                    <b>Overview of RoboBench.</b> We evaluates MLLMs as embodied brains across 5 dimensions, 14 subdimensions, and 25 tasks, with tasks color-coded by type <b>(top left)</b>. These dimensions follow the embodied execution pipeline <b>(bottom)</b>—from understanding intent, perceiving the environment, planning and adapting actions, refining subgoals via affordances, diagnosing failures—capturing the core cognitive roles of System 2. Performance comparison <b>(top right)</b> highlights significant gaps among state-of-the-art MLLMs, with Gemini-2.5-Pro achieving the best results.
                 </h2>
             </div>
         </div>
@@ -1025,33 +1025,48 @@
                 <!-- Paper video. -->
                 <h2 class="title is-3">Dataset Construction Pipeline</h2>
                 <div class="columns is-centered has-text-centered">
-                    <div class="column is-four-fifths">
-                        <img src="static/images/pipeline/pipeline.png">
-                    </div>
+                    <img src="static/images/pipeline/pipeline.png">
                 </div>
                 <div class="container is-max-desktop"></div>
                 <div class="content has-text-justified">
-                    RoboBench combines data from recent open-source large-scale datasets and our self-collected real-world datasets. We design dedicated workflows for different task types, color-coded as green for Perception, blue for Planning, and red for Reflection. The pipeline involves preprocessing, tool-assisted human annotation, and metadata standardization. 1) Perception: Tools such as VLM captioning or detection models provide preliminary labels, which are refined by human annotators. 2) Planning: VLMs generate task summaries and segmented captions; these are first converted into predefined function calls for evaluation, then processed by LLMs to extract key information for task categorization. Implicit goal planning tasks are derived by rephrasing explicit task summaries into implicit demand expressions. 3) Reflection: Low-level errors are identified from failed execution videos and manually annotated, while high-level errors are created by modifying instructions in correct cases to form error pairs. The resulting metadata are used to automatically generate Q&A items in standardized binary classification, multiple choice, and multi-step multiple choice formats, ensuring compatibility with both open and closed-source MLLM models.
+                    <b>Dataset Construction Pipeline.</b> RoboBench integrates open-source and self-collected robot data under a shared process—preprocessing → tool-assisted + human-in-the-loop annotation → unified schema → auto-generated QA—and builds datasets for five dimensions: <b>Instruction Comprehension:</b> pair explicit instructions with LLM-rewritten implicit variants to test intent understanding. <b>Perception Reasoning:</b> use captioning/detection/segmentation tools to draft labels across robotic/object/scene/task views, then human-refine and standardize. <b>Generalized Planning:</b> construct a planning pool from robot videos; VLMs produce step/timestamp summaries and metadata, which are mapped to function templates to support Q1/Q2/Q3 evaluations. <b>Affordance Prediction:</b> sample key frames and annotate static (contact points), dynamic (trajectories), and mobile (base positions) affordances. <b>Failure Analysis:</b> mine execution-level failures from real trials and synthesize planning-level errors by perturbing correct instructions. All outputs follow one schema and are rendered into binary, single-choice, and multi-step multiple-choice QA formats for open- and closed-source MLLMs.
                 </div>
             </div>
         </div>
         </div>
     </section>
 
-  <!-- Case Study -->
-  <section class="section" id="case-study" style="padding-top:2rem;">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3" style="text-align:center; margin-bottom:1rem; font-size: 2.3em;">Demo Case</h2>
-      <br>
-        <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
-                <img src="static/images/demo_case/demo_case.png" alt="Demo Case" width="100%"/>
-            </div>
-        </div>
-    </div>
-  </section>
+   <!-- Case Study -->
+   <section class="section" id="case-study" style="padding-top:2rem;">
+     <div class="container is-max-desktop">
+       <h2 class="title is-3" style="text-align:center; margin-bottom:1rem; font-size: 2.3em;">Demo Case</h2>
+       <br>
+         <div class="columns is-centered has-text-centered">
+             <div class="column is-four-fifths">
+                 <img src="static/images/demo_case/demo_case.png" alt="Demo Case" width="100%"/>
+             </div>
+         </div>
+     </div>
+   </section>
 
-    <!-- Paper poster -->
+   <!-- Planning Evaluation Pipeline -->
+   <section class="hero is-small">
+       <div class="hero-body">
+           <div class="container">
+               <h2 class="title is-3">Planning Evaluation Pipeline</h2>
+               <div class="columns is-centered has-text-centered">
+                   <div class="column is-four-fifths">
+                       <img src="static/images/eval_pipeline/eval_pipeline.png" alt="Planning Evaluation Pipeline" width="100%"/>
+                       <p class="image-subtitle" style="font-size: 1.1em; margin-top: 1rem;">
+                           <b>Figure X. Planning Evaluation Framework.</b> Evaluation of the planning dimension (Q1–Q3). Each task is decomposed into a sequence of parameterized atomic actions forming a Directed Acyclic Graph (DAG) that encodes causal and temporal dependencies. For <b>Q1 (Long-horizon planning)</b>, an MLLM-based world simulator assesses both NodeCorrectness (action alignment) and TaskCompletion (goal-state achievement) by simulating action rollouts under visual and physical constraints. <b>Q2 (Next-step planning)</b> evaluates fine-grained step prediction by comparing skill, object, and parameter accuracy, while <b>Q3 (Task state estimation)</b> measures binary correctness on whether a subtask has been completed. Together, the pipeline provides a unified, interpretable framework for assessing structural correctness and embodied feasibility in planning.
+                       </p>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
+
+     <!-- Paper poster -->
     <!-- <section class="hero is-small is-light">
         <div class="hero-body">
             <div class="container">
