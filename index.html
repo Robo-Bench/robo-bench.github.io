@@ -28,7 +28,7 @@
 
 
     <title>Robobench: A Comprehensive Evaluation Benchmark for Multimodal Large Language Models as Embodied Brain</title>
-    <link rel="icon" type="image/x-icon" href="static/images/R1.jpg">
+    <link rel="icon" type="image/x-icon" href="static/images/log/R1.png">
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
     <link rel="stylesheet" href="static/css/bulma.min.css">
@@ -57,7 +57,7 @@
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
                         <h1 class="title is-1 publication-title">
-                            <img src="static/images/R1.jpg">Robobench: A Comprehensive Evaluation Benchmark for Multimodal Large Language Models as Embodied Brain
+                            <img src="static/images/log/R1.png">Robobench: A Comprehensive Evaluation Benchmark for Multimodal Large Language Models as Embodied Brain
                         </h1>
                         <div class="is-size-5 publication-authors">
                             <!-- Paper authors -->
@@ -161,7 +161,7 @@
     <section class="hero teaser">
         <div class="container is-max-desktop">
             <div class="hero-body">
-                <img src="static/images/teaser/teaser.pdf">
+                <img src="static/images/teaser/teaser.png">
                 <h2 class="content has-text-justified">
                     <b>Overview of RoboBench</b> We evaluates MLLMs as embodied brains across 5 dimensions, 14 subdimensions, and 25 tasks, with tasks color-coded by type <b>(top left)<b>. These dimensions follow the embodied execution pipeline <b>(bottom)<b>—from understanding intent, perceiving the environment, planning and adapting actions, refining subgoals via affordances, diagnosing failures—capturing the core cognitive roles of System 2. Performance comparison <b>(top right)<b> highlights significant gaps among state-of-the-art MLLMs, with Gemini-2.5-Pro achieving the best results.
                 </h2>
@@ -178,7 +178,7 @@
                     <h2 class="title is-3">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
-                            Multi-modal Large Language Models (MLLMs) are emerging as powerful candidates for the “brain” of embodied agents. However, existing benchmarks fail to capture the full spectrum of capabilities required for embodied tasks, including instruction comprehension, perceptual reasoning, generalizable planning, affordance prediction, and error analysis. To bridge these gaps, we present RoboBench, a large-scale benchmark that systematically evaluates MLLMs as embodied brains across 5 core dimensions, 15 capabilities, and 26 task types. It incorporates specially designed tasks such as cross-embodiment, cross-object, and cross-view planning, together with static and dynamic affordance reasoning, for fine-grained and realistic assessment. To ensure comprehensive and robust planning evaluation, we propose a DAG-based LLM evaluation framework that accounts for skill selection, object identification, task execution order variation, and task completion quality. Extensive evaluations of closed-source and open-source MLLMs reveal critical limitations overlooked by previous benchmarks. Notably, current models struggle with understanding implicit demand instructions, cross-embodiment planning, object interaction affordance reasoning, and execution error analysis. RoboBench provides a rigorous, diverse, and realistic evaluation protocol to guide the development of next-generation MLLMs with stronger embodied intelligence.
+                            Building robots that can perceive, reason, and act in dynamic, unstructured environments remains a core challenge. Recent embodied systems often adopt a dual-system paradigm, where System~2 handles high-level reasoning while System~1 executes low-level control. In this work, we refer to System~2 as the embodied brain, emphasizing its role as the cognitive core for reasoning and decision-making in manipulation tasks. Given this role, systematic evaluation of the embodied brain is essential for advancing robotic intelligence. Yet existing benchmarks emphasize execution success, or when targeting high-level reasoning, suffer from incomplete dimensions and limited task realism, offering only a partial picture of cognitive capability. To bridge this gap, we introduce RoboBench, a benchmark that systematically evaluates multimodal large language models (MLLMs) as embodied brains. Motivated by the critical roles across the full manipulation pipeline, RoboBench defines five dimensions—instruction comprehension, perception reasoning, generalized planning, affordance prediction, and failure analysis—spanning 14 capabilities, 25 tasks, and 6092 QA pairs. To ensure realism, we curate datasets across diverse embodiments, attribute-rich objects, multi-view scenes, and memory-driven navigation, drawing from large-scale real robotic data and in-house collection. For planning, RoboBench introduces an evaluation framework that uses an MLLM as a world simulator. It moves beyond symbolic matching to evaluate embodied feasibility by simulating whether predicted plans can achieve critical object-state changes under physical and visual constraints, enabling faithful assessment of long-horizon reasoning. Experiments on 14 state-of-the-art MLLMs reveal fundamental limitations: difficulties with implicit instruction comprehension, spatiotemporal reasoning, cross-scenario planning, fine-grained affordance understanding, and execution failure diagnosis. RoboBench provides a comprehensive scaffold to quantify high-level cognition, clarify the role of the embodied brain, and guide the development of next-generation MLLMs toward more robust robotic intelligence.
                         </p>
                     </div>
                 </div>
@@ -192,7 +192,7 @@
             <div class="container">
                 <h2 class="title is-3">News</h2>
                 <div class="content has-text-justified">
-                    <b>🔥 2025.08.09</b> - The official RoboBench website is now live. The paper, code, and dataset will be released within two weeks. Stay tuned ❗️
+                    <b>🔥 2025.10.21</b> - The paper, code, and dataset have been released❗️
                 </div>
             </div>
         </div>
@@ -216,12 +216,12 @@
                 <div class="content has-text-justified">
                     <b>🔍 Benchmark Overview</b><br>
                         <ul>
-                            <li>The comprehensive benchmark focused on evaluating MLLMs as embodied brains.</li>
-                            <li>Systematic evaluation across 5 core dimensions, 15 capabilities, 26 task types, and 4,850 high-quality questions.</li>
+                            <li>The first comprehensive benchmark focused on evaluating MLLMs as embodied brains.</li>
+                            <li>Systematic evaluation across 5 core dimensions, 14 capabilities, 25 task types, and 6,092 high-quality questions.</li>
                         </ul>
                     <b>🧭 Comprehensive Dimensions</b><br>
                         <ul>
-                            <li>Covers key embodied skills tailored to MLLM capabilities, including instruction understanding, perceptual reasoning, generalizable planning, affordance prediction, and error reflection in real-world settings.</li>
+                            <li>Covers key embodied skills tailored to MLLM capabilities, including instruction comprehension, perception reasoning, generalized planning, affordance prediction, and failure analysis in real-world settings.</li>
                         </ul>
                     <b>🛡️ Robust Evaluation</b><br>
                         <ul>
@@ -1026,7 +1026,7 @@
                 <h2 class="title is-3">Dataset Construction Pipeline</h2>
                 <div class="columns is-centered has-text-centered">
                     <div class="column is-four-fifths">
-                        <img src="static/images/robobench_pipeline.jpg">
+                        <img src="static/images/pipeline/pipeline.png">
                     </div>
                 </div>
                 <div class="container is-max-desktop"></div>
