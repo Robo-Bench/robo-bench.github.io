@@ -251,8 +251,8 @@
                 <h2 class="title is-3">Leaderboard</h2>
                 <div class="tab-container">
                     <div class="tab-buttons">
-                        <button class="tab-btn active" data-tab="text-only">Embodied Instruction Comprehension & Embodied Perception Reasoning</button>
-                        <button class="tab-btn" data-tab="closed-source">Embodied Generalized Planning</button>
+                        <button class="tab-btn active" data-tab="text-only">Embodied Perception Reasoning</button>
+                        <button class="tab-btn" data-tab="closed-source">Embodied Instruction Comprehension & Embodied Generalized Planning</button>
                         <button class="tab-btn" data-tab="open-source">Embodied Affordance Reasoning & Embodied Failure Analysis</button>
                     </div>
 
@@ -261,26 +261,24 @@
                             <thead>
                                 <tr>
                                     <th rowspan="3" style="vertical-align: middle; text-align: center;">Model</th>
-                                    <th colspan="2" style="vertical-align: middle; text-align: center;">Embodied Instruction Comprehension</th>
-                                    <th colspan="8" style="vertical-align: middle; text-align: center;">Embodied Perception Reasoning</th>
+                                    <th colspan="9" style="vertical-align: middle; text-align: center;">Perception Reasoning</th>
                                 </tr>
                                 <tr>
-                                    <th rowspan="2" style="vertical-align: middle; text-align: center;">Explicit Object Goal<span class="sort-btn" data-col="0">▼</span></th>
-                                    <th rowspan="2" style="vertical-align: middle; text-align: center;">Implicit Demand Goal<span class="sort-btn" data-col="1">▼</span></th>
-                                    <th colspan="2" style="vertical-align: middle; text-align: center;">Robotic Centric</th>
-                                    <th colspan="2" style="vertical-align: middle; text-align: center;">Object Centric</th>
-                                    <th colspan="3" style="vertical-align: middle; text-align: center;">Scene Centric</th>
-                                    <th style="vertical-align: middle; text-align: center;">Task Centric</th>
+                                    <th colspan="2" style="vertical-align: middle; text-align: center;">Robotic-centric</th>
+                                    <th colspan="2" style="vertical-align: middle; text-align: center;">Object-centric</th>
+                                    <th colspan="3" style="vertical-align: middle; text-align: center;">Scene-centric</th>
+                                    <th style="vertical-align: middle; text-align: center;">Task-centric</th>
+                                    <th rowspan="2" style="vertical-align: middle; text-align: center;">Avg</th>
                                 </tr>
                                 <tr>
-                                    <th style="vertical-align: middle; text-align: center;">Robotic Type<span class="sort-btn" data-col="2">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Robotic View<span class="sort-btn" data-col="3">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Static Attribute<span class="sort-btn" data-col="4">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Tool Usage<span class="sort-btn" data-col="5">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Spatial Relation<span class="sort-btn" data-col="6">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Temporal Grounding timestamp<span class="sort-btn" data-col="7">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Spatial-Temporal Causality<span class="sort-btn" data-col="8">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Reference Detection<span class="sort-btn" data-col="9">▼</span></th>
+                                    <th style="vertical-align: middle; text-align: center;">Robot-type<span class="sort-btn" data-col="0">▼</span></th>
+                                    <th style="vertical-align: middle; text-align: center;">Robot-view<span class="sort-btn" data-col="1">▼</span></th>
+                                    <th style="vertical-align: middle; text-align: center;">Static Attr.<span class="sort-btn" data-col="2">▼</span></th>
+                                    <th style="vertical-align: middle; text-align: center;">Functional Attr.<span class="sort-btn" data-col="3">▼</span></th>
+                                    <th style="vertical-align: middle; text-align: center;">Spatial Relation<span class="sort-btn" data-col="4">▼</span></th>
+                                    <th style="vertical-align: middle; text-align: center;">Temp. Grounding<span class="sort-btn" data-col="5">▼</span></th>
+                                    <th style="vertical-align: middle; text-align: center;">Causality<span class="sort-btn" data-col="6">▼</span></th>
+                                    <th style="vertical-align: middle; text-align: center;">Refer. Comprehen.<span class="sort-btn" data-col="7">▼</span></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -300,9 +298,10 @@
                                     <td>1185</td>
                                 </tr> -->
                                 <tr>
-                                    <td>Human</td>
-                                    <td>80.38</td>
-                                    <td>79.87</td>
+                                    <th class="text-only" colspan="10">Basic Reference</th>
+                                </tr>
+                                <tr>
+                                    <td>Human Evaluation</td>
                                     <td>80.67</td>
                                     <td>79.08</td>
                                     <td>43.77</td>
@@ -311,14 +310,10 @@
                                     <td>51.61</td>
                                     <td>91.22</td>
                                     <td>93.22</td>
+                                    <td>74.30</td>
                                 </tr>
                                 <tr>
-                                    <th class="text-only" colspan="11">Proprietary MLLMs</th>
-                                </tr>
-                                <tr>
-                                    <td>GPT4o(Lang)</td>
-                                    <td>72.45</td>
-                                    <td>55.27</td>
+                                    <td>GPT-4o-text-only</td>
                                     <td>20.51</td>
                                     <td>13.77</td>
                                     <td>5.18</td>
@@ -327,24 +322,13 @@
                                     <td>18.32</td>
                                     <td>25.52</td>
                                     <td>22.09</td>
+                                    <td>20.81</td>
                                 </tr>
                                 <tr>
-                                    <td>GPT4o</td>
-                                    <td>77.27</td>
-                                    <td>66.18</td>
-                                    <td>64.96</td>
-                                    <td>39.38</td>
-                                    <td>24.92</td>
-                                    <td>46.75</td>
-                                    <td>42.24</td>
-                                    <td>20.61</td>
-                                    <td>33.10</td>
-                                    <td>41.31</td>
+                                    <th class="text-only" colspan="10">Closed-Source MLLMs</th>
                                 </tr>
                                 <tr>
-                                    <td>GPT4o-mini</td>
-                                    <td>67.87</td>
-                                    <td>58.21</td>
+                                    <td>GPT-4o-Mini</td>
                                     <td>38.75</td>
                                     <td>18.84</td>
                                     <td>26.43</td>
@@ -353,24 +337,22 @@
                                     <td>22.65</td>
                                     <td>34.25</td>
                                     <td>39.67</td>
+                                    <td>33.08</td>
                                 </tr>
                                 <tr>
-                                    <td>Claude-3.7-Sonnet</td>
-                                    <td>75.39</td>
-                                    <td>67.17</td>
-                                    <td>40.46</td>
-                                    <td>32.37</td>
-                                    <td>45.20</td>
-                                    <td>71.14</td>
-                                    <td>36.63</td>
-                                    <td>21.09</td>
-                                    <td>40.92</td>
-                                    <td>28.02</td>
+                                    <td>GPT-4o</td>
+                                    <td><strong>64.96</strong></td>
+                                    <td>39.38</td>
+                                    <td>24.92</td>
+                                    <td>46.75</td>
+                                    <td>42.24</td>
+                                    <td>20.61</td>
+                                    <td>33.10</td>
+                                    <td>41.31</td>
+                                    <td>39.16</td>
                                 </tr>
                                 <tr>
                                     <td>Claude-3.5-Sonnet</td>
-                                    <td>76.13</td>
-                                    <td>64.01</td>
                                     <td>41.31</td>
                                     <td>36.23</td>
                                     <td>29.13</td>
@@ -379,63 +361,58 @@
                                     <td>21.88</td>
                                     <td>36.09</td>
                                     <td>25.36</td>
+                                    <td>35.95</td>
                                 </tr>
                                 <tr>
-                                    <td>Gemini-2.5-Pro 🥇</td>
-                                    <td>79.35</td>
-                                    <td>71.63</td>
-                                    <td>64.30</td>
-                                    <td>41.71</td>
-                                    <td>54.83</td>
-                                    <td>82.27</td>
-                                    <td>60.44</td>
-                                    <td>49.68</td>
-                                    <td>71.73</td>
-                                    <td>78.68</td>
+                                    <td>Claude-3.7-Sonnet</td>
+                                    <td>40.46</td>
+                                    <td>32.37</td>
+                                    <td>45.20</td>
+                                    <td>71.14</td>
+                                    <td>36.63</td>
+                                    <td>21.09</td>
+                                    <td>40.92</td>
+                                    <td>28.02</td>
+                                    <td>39.48</td>
                                 </tr>
                                 <tr>
-                                    <td>Gemini-2.5-Flash 🥈</td>
-                                    <td>75.39</td>
-                                    <td>69.40</td>
-                                    <td>62.39</td>
-                                    <td>39.38</td>
-                                    <td>55.02</td>
-                                    <td>77.24</td>
-                                    <td>57.43</td>
-                                    <td>33.58</td>
-                                    <td>70.34</td>
-                                    <td>74.64</td>
-                                </tr>
-                                <tr>
-                                    <td>Gemini-2.0-Flash 🥉</td>
-                                    <td>75.69</td>
-                                    <td>69.01</td>
+                                    <td>Gemini-2.0-Flash</td>
                                     <td>56.69</td>
                                     <td>20.77</td>
                                     <td>49.08</td>
-                                    <td>78.46</td>
+                                    <td><u>78.46</u></td>
                                     <td>42.57</td>
                                     <td>21.37</td>
                                     <td>51.72</td>
                                     <td>72.40</td>
+                                    <td>49.13</td>
                                 </tr>
                                 <tr>
-                                    <td>Qwen-VL-Max</td>
-                                    <td>73.51</td>
-                                    <td>61.18</td>
-                                    <td>47.86</td>
-                                    <td>43.48</td>
-                                    <td>39.70</td>
-                                    <td>75.20</td>
-                                    <td>50.17</td>
-                                    <td>27.45</td>
-                                    <td>37.93</td>
-                                    <td>41.53</td>
+                                    <td>Gemini-2.5-Flash</td>
+                                    <td>62.39</td>
+                                    <td>39.38</td>
+                                    <td><strong>55.02</strong></td>
+                                    <td>77.24</td>
+                                    <td><u>57.43</u></td>
+                                    <td><u>33.58</u></td>
+                                    <td><u>70.34</u></td>
+                                    <td><u>74.64</u></td>
+                                    <td><u>58.75</u></td>
+                                </tr>
+                                <tr>
+                                    <td>Gemini-2.5-Pro</td>
+                                    <td><u>64.30</u></td>
+                                    <td>41.71</td>
+                                    <td><u>54.83</u></td>
+                                    <td><strong>82.27</strong></td>
+                                    <td><strong>60.44</strong></td>
+                                    <td><strong>49.68</strong></td>
+                                    <td><strong>71.73</strong></td>
+                                    <td><strong>78.68</strong></td>
+                                    <td><strong>62.96</strong></td>
                                 </tr>
                                 <tr>
                                     <td>Qwen-VL-Plus</td>
-                                    <td>62.07</td>
-                                    <td>51.63</td>
                                     <td>28.21</td>
                                     <td>21.74</td>
                                     <td>34.63</td>
@@ -444,27 +421,49 @@
                                     <td>21.37</td>
                                     <td>31.03</td>
                                     <td>34.36</td>
+                                    <td>32.20</td>
                                 </tr>
                                 <tr>
-                                    <th class="text-only" colspan="11">Open-Source Multi-Image MLLMs</th>
+                                    <td>Qwen-VL-Max</td>
+                                    <td>47.86</td>
+                                    <td><strong>43.48</strong></td>
+                                    <td>39.70</td>
+                                    <td>75.20</td>
+                                    <td>50.17</td>
+                                    <td>27.45</td>
+                                    <td>37.93</td>
+                                    <td>41.53</td>
+                                    <td>45.42</td>
                                 </tr>
                                 <tr>
-                                    <td>Qwen2.5-VL-72B-Ins</td>
-                                    <td>73.51</td>
-                                    <td>61.38</td>
-                                    <td>47.72</td>
-                                    <td>42.75</td>
-                                    <td>41.74</td>
-                                    <td>72.95</td>
-                                    <td>48.51</td>
-                                    <td>27.87</td>
-                                    <td>40.32</td>
-                                    <td>42.13</td>
+                                    <th class="text-only" colspan="10">Open-Source Multi-Image MLLMs</th>
+                                </tr>
+                                <tr>
+                                    <td>LLaVA-OneVision-0.5B</td>
+                                    <td>30.34</td>
+                                    <td>23.68</td>
+                                    <td>37.08</td>
+                                    <td>49.66</td>
+                                    <td>27.27</td>
+                                    <td>18.42</td>
+                                    <td>23.65</td>
+                                    <td>19.21</td>
+                                    <td>28.66</td>
+                                </tr>
+                                <tr>
+                                    <td>LLaVA-OneVision-7B</td>
+                                    <td>44.83</td>
+                                    <td>30.26</td>
+                                    <td>33.43</td>
+                                    <td>75.84</td>
+                                    <td>45.45</td>
+                                    <td>23.68</td>
+                                    <td>25.68</td>
+                                    <td>44.63</td>
+                                    <td>40.48</td>
                                 </tr>
                                 <tr>
                                     <td>Qwen2.5-VL-7B-Ins</td>
-                                    <td>52.82</td>
-                                    <td>44.65</td>
                                     <td>23.93</td>
                                     <td>26.81</td>
                                     <td>37.86</td>
@@ -473,32 +472,34 @@
                                     <td>22.90</td>
                                     <td>14.48</td>
                                     <td>36.81</td>
+                                    <td>30.10</td>
                                 </tr>
-                                <!-- <tr>
-                                    <td>Qwen2-VL-72B-Ins</td>
-                                    <td>69.80</td>
-                                    <td>55.19</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr> -->
                                 <tr>
-                                    <td>Qwen2-VL-7B-Ins</td>
-                                    <td>50.54</td>
-                                    <td>36.23</td>
-                                    <td>17.19</td>
-                                    <td>21.55</td>
-                                    <td>17.26</td>
-                                    <td>57.32</td>
-                                    <td>29.04</td>
-                                    <td>24.19</td>
-                                    <td>23.45</td>
-                                    <td>21.88</td>
+                                    <td>Qwen2.5-VL-72B-Ins</td>
+                                    <td>47.72</td>
+                                    <td><u>42.75</u></td>
+                                    <td>41.74</td>
+                                    <td>72.95</td>
+                                    <td>48.51</td>
+                                    <td>27.87</td>
+                                    <td>40.32</td>
+                                    <td>42.13</td>
+                                    <td>45.50</td>
+                                </tr>
+                                <tr>
+                                    <th class="text-only" colspan="10">Embodied MLLMs</th>
+                                </tr>
+                                <tr>
+                                    <td>RoboBrain-2.0-7B</td>
+                                    <td>44.97</td>
+                                    <td>24.84</td>
+                                    <td>40.43</td>
+                                    <td>79.19</td>
+                                    <td>48.18</td>
+                                    <td>23.48</td>
+                                    <td>41.22</td>
+                                    <td>53.67</td>
+                                    <td>44.50</td>
                                 </tr>
                             </tbody>
                         </table>
