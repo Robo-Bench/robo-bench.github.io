@@ -163,7 +163,7 @@
             <div class="hero-body">
                 <img src="static/images/teaser/teaser.png">
                 <h2 class="content has-text-justified">
-                    <b>Overview of RoboBench</b> We evaluates MLLMs as embodied brains across 5 dimensions, 14 subdimensions, and 25 tasks, with tasks color-coded by type <b>(top left)<b>. These dimensions follow the embodied execution pipeline <b>(bottom)<b>—from understanding intent, perceiving the environment, planning and adapting actions, refining subgoals via affordances, diagnosing failures—capturing the core cognitive roles of System 2. Performance comparison <b>(top right)<b> highlights significant gaps among state-of-the-art MLLMs, with Gemini-2.5-Pro achieving the best results.
+                    <b>Overview of RoboBench</b> We evaluates MLLMs as embodied brains across 5 dimensions, 14 subdimensions, and 25 tasks, with tasks color-coded by type <b>(top left)</b>. These dimensions follow the embodied execution pipeline <b>(bottom)</b>—from understanding intent, perceiving the environment, planning and adapting actions, refining subgoals via affordances, diagnosing failures—capturing the core cognitive roles of System 2. Performance comparison <b>(top right)</b> highlights significant gaps among state-of-the-art MLLMs, with Gemini-2.5-Pro achieving the best results.
                 </h2>
             </div>
         </div>
@@ -177,9 +177,9 @@
                 <div class="column is-four-fifths">
                     <h2 class="title is-3">Abstract</h2>
                     <div class="content has-text-justified">
-                        <p>
+                        <!-- <p> -->
                             Building robots that can perceive, reason, and act in dynamic, unstructured environments remains a core challenge. Recent embodied systems often adopt a dual-system paradigm, where System~2 handles high-level reasoning while System~1 executes low-level control. In this work, we refer to System~2 as the embodied brain, emphasizing its role as the cognitive core for reasoning and decision-making in manipulation tasks. Given this role, systematic evaluation of the embodied brain is essential for advancing robotic intelligence. Yet existing benchmarks emphasize execution success, or when targeting high-level reasoning, suffer from incomplete dimensions and limited task realism, offering only a partial picture of cognitive capability. To bridge this gap, we introduce RoboBench, a benchmark that systematically evaluates multimodal large language models (MLLMs) as embodied brains. Motivated by the critical roles across the full manipulation pipeline, RoboBench defines five dimensions—instruction comprehension, perception reasoning, generalized planning, affordance prediction, and failure analysis—spanning 14 capabilities, 25 tasks, and 6092 QA pairs. To ensure realism, we curate datasets across diverse embodiments, attribute-rich objects, multi-view scenes, and memory-driven navigation, drawing from large-scale real robotic data and in-house collection. For planning, RoboBench introduces an evaluation framework that uses an MLLM as a world simulator. It moves beyond symbolic matching to evaluate embodied feasibility by simulating whether predicted plans can achieve critical object-state changes under physical and visual constraints, enabling faithful assessment of long-horizon reasoning. Experiments on 14 state-of-the-art MLLMs reveal fundamental limitations: difficulties with implicit instruction comprehension, spatiotemporal reasoning, cross-scenario planning, fine-grained affordance understanding, and execution failure diagnosis. RoboBench provides a comprehensive scaffold to quantify high-level cognition, clarify the role of the embodied brain, and guide the development of next-generation MLLMs toward more robust robotic intelligence.
-                        </p>
+                        <!-- </p> -->
                     </div>
                 </div>
             </div>
