@@ -1,11 +1,12 @@
 table {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 18px;
     table-layout: fixed;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.4;
+    font-size: 13px;
+    line-height: 1.35;
 }
 
 
@@ -55,68 +56,72 @@ table {
 }
 
 th {
-    border: 1px solid #ddd;
-    padding: 10px 8px;
+    border: 1px solid #d9e1ea;
+    padding: 9px 7px;
     text-align: center;
-    background-color: #f8f9fa;
+    background-color: #eef3f8;
     font-weight: 600;
-    font-size: 13px;
+    font-size: 12px;
     word-wrap: break-word;
     /* 允许长单词换行 */
     white-space: normal;
     /* 允许文字换行 */
     text-align: center;
     vertical-align: middle;
-    color: #333;
-    letter-spacing: 0.3px;
+    color: #243447;
+    letter-spacing: 0;
 }
 
 /* 确保所有表格具有一致的基础样式 */
 .tab-content table {
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     width: 100%;
-    margin-top: 20px;
+    min-width: 980px;
+    margin-top: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    border-radius: 8px;
+    border-radius: 6px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #d8e0ea;
+    box-shadow: 0 10px 28px rgba(31, 45, 61, 0.08);
 }
 
 .tab-content table th,
 .tab-content table td {
-    border: 1px solid #ddd;
+    border-right: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
     text-align: center;
     vertical-align: middle;
 }
 
 .tab-content table tbody tr:hover {
-    background-color: rgba(0, 0, 0, 0.03);
+    background-color: rgba(49, 120, 198, 0.06);
     transition: background-color 0.2s ease;
 }
 
 /* 特别针对第三张表格的样式统一 */
 #open-source table th:not(.open-source) {
-    background-color: #f8f9fa !important;
+    background-color: #eef3f8 !important;
     font-weight: bold !important;
     padding: 8px !important;
-    border: 1px solid #ddd !important;
+    border: 1px solid #d9e1ea !important;
 }
 
 #open-source table td:not(:first-child) {
     font-weight: 500 !important;
     font-size: 13px !important;
-    border: 1px solid #ddd !important;
-    color: #333 !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #243447 !important;
 }
 
 /* 确保模型名称列样式一致 */
 .tab-content table td:first-child,
 #open-source table td:first-child {
     font-weight: 600 !important;
-    font-size: 13px !important;
+    font-size: 12px !important;
     text-align: left !important;
     padding-left: 12px !important;
-    color: #333 !important;
+    color: #1f2d3d !important;
 }
 
 tr {
@@ -128,27 +133,27 @@ tr {
 /* 数据单元格样式 */
 
 td {
-    border: 1px solid #ddd;
-    padding: 10px 8px;
+    border: 1px solid #e2e8f0;
+    padding: 8px 7px;
     text-align: center;
     position: relative;
-    width: 60px;
+    width: 58px;
     /* 固定单元格宽度 */
-    min-width: 60px;
-    max-width: 60px;
+    min-width: 58px;
+    max-width: 58px;
     overflow: hidden;
     text-align: center;
     vertical-align: middle;
     font-weight: 500;
-    font-size: 13px;
-    color: #333;
+    font-size: 12px;
+    color: #243447;
     /* 数据单元格内容 */
 }
 
 /* 特别加粗数字内容 */
 td:not(:first-child) {
     font-weight: 600;
-    font-size: 13px;
+    font-size: 12px;
     /* 除了第一列（模型名称）外，其他列更加粗 */
 }
 
@@ -168,40 +173,40 @@ td:not(:first-child) {
 /* 分类标题行样式 - 保持不同背景色但统一其他样式 */
 
 .text-only {
-    background-color: #add8e6 !important;
+    background-color: #d7e9f7 !important;
     /* Light Blue */
     font-weight: 600 !important;
-    color: #2c3e50 !important;
+    color: #1f3a52 !important;
     text-align: center !important;
     vertical-align: middle !important;
     padding: 12px 8px !important;
-    border: 1px solid #ddd !important;
+    border: 1px solid #c8d7e4 !important;
     font-size: 14px !important;
     letter-spacing: 0.5px !important;
 }
 
 .closed-source {
-    background-color: #ffcccb !important;
+    background-color: #f7dddd !important;
     /* Light Pink */
     font-weight: 600 !important;
-    color: #2c3e50 !important;
+    color: #533030 !important;
     text-align: center !important;
     vertical-align: middle !important;
     padding: 12px 8px !important;
-    border: 1px solid #ddd !important;
+    border: 1px solid #e6c8c8 !important;
     font-size: 14px !important;
     letter-spacing: 0.5px !important;
 }
 
 .open-source {
-    background-color: #fcfcd6 !important;
+    background-color: #f3edc8 !important;
     /* Light Yellow */
     font-weight: 600 !important;
-    color: #2c3e50 !important;
+    color: #4c421b !important;
     text-align: center !important;
     vertical-align: middle !important;
     padding: 12px 8px !important;
-    border: 1px solid #ddd !important;
+    border: 1px solid #dfd6a6 !important;
     font-size: 14px !important;
     letter-spacing: 0.5px !important;
 }
@@ -212,13 +217,12 @@ th.closed-source,
 th.open-source {
     font-weight: 700 !important;
     text-transform: none !important;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
-    border: 1px solid #ddd !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
 }
 
 .sort-btn {
     cursor: pointer;
-    font-size: 10px;
+    font-size: 9px;
     margin-left: 4px;
     user-select: none;
     opacity: 0.6;
@@ -234,31 +238,39 @@ th.open-source {
 /* 标签页样式 */
 
 .tab-container {
-    margin-top: 20px;
+    margin-top: 18px;
+    background: #ffffff;
+    border: 1px solid #d8e0ea;
+    border-radius: 8px;
+    padding: 14px;
+    box-shadow: 0 16px 36px rgba(31, 45, 61, 0.08);
 }
 
 .tab-buttons {
     display: flex;
-    margin-bottom: 20px;
-    background: linear-gradient(90deg, #f8f9fa 0%, #e9ecef 100%);
-    padding: 8px;
-    border-radius: 12px;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+    background: #f4f7fa;
+    padding: 6px;
+    border-radius: 8px;
+    border: 1px solid #e0e7ef;
 }
 
 .tab-btn {
-    padding: 10px 20px;
+    padding: 9px 12px;
     cursor: pointer;
     background: transparent;
     border: none;
     outline: none;
-    transition: all 0.3s ease;
-    font-size: 14px;
+    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    font-size: 13px;
     font-weight: 600;
-    color: #495057;
-    border-radius: 8px;
-    margin-right: 4px;
+    color: #44546a;
+    border-radius: 6px;
+    margin-right: 0;
     flex: 1;
+    min-width: 210px;
     text-align: center;
 }
 
@@ -269,8 +281,8 @@ th.open-source {
 
 .tab-btn.active {
     background: white;
-    color: #0d6efd;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    color: #1f5c99;
+    box-shadow: 0 3px 10px rgba(31, 92, 153, 0.12);
 }
 
 .tab-content {
@@ -279,6 +291,8 @@ th.open-source {
 
 .tab-content.active {
     display: block;
+    overflow-x: auto;
+    padding-bottom: 6px;
 }
 
 
@@ -296,7 +310,7 @@ th.open-source {
 
 .progress-bar {
     height: 100%;
-    opacity: 0.3;
+    opacity: 0.22;
     transition: width 0.3s ease;
 }
 
@@ -367,4 +381,28 @@ th.open-source {
 
 .col-14 {
     background-color: rgba(168, 237, 234, 0.3);
+}
+
+@media (max-width: 768px) {
+    .tab-container {
+        padding: 10px;
+    }
+
+    .tab-btn {
+        min-width: 100%;
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+
+    .tab-content table {
+        min-width: 920px;
+    }
+
+    th,
+    td,
+    td:not(:first-child),
+    .tab-content table td:first-child,
+    #open-source table td:first-child {
+        font-size: 11px !important;
+    }
 }

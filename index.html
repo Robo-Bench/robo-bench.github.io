@@ -251,9 +251,9 @@
      <div class="container">
        <h2 class="title is-3" style="text-align:center; margin-bottom:1rem;">Demo Case</h2>
        <div class="columns is-centered has-text-centered">
-         <div class="column is-11">
-           <img src="static/images/demo_case/demo_case.png" alt="Demo Case" style="width:100%; max-width:1200px;"/>
-           <p class="content has-text-justified" style="margin-top: 0.75rem; font-size: 1.02em;">
+         <div class="column is-10">
+           <img src="static/images/demo_case/demo_case.png" alt="Demo Case" style="width:100%; max-width:960px;"/>
+           <p class="content has-text-justified" style="margin: 0.75rem auto 0; max-width: 960px; font-size: 1.02em;">
              <b>Demo case.</b> A representative RoboBench item illustrates how a robot scene is converted into grounded questions and evaluated across embodied reasoning skills, including perception, planning, affordance prediction, and failure analysis.
            </p>
          </div>
@@ -1478,8 +1478,8 @@
                         
                         <div class="column is-6" style="padding: 0.5rem;">
                             <div class="box" style="height: 100%; padding: 1rem; margin: 0;">
-                                <h4 class="title is-6 has-text-primary">🤖 Embodied Fine-tuning Helps, but Unevenly</h4>
-                                <p style="font-size: 0.9em; line-height: 1.4;"><strong>MiMo-Embodied-7B</strong> leads open-source models in planning (<strong>62.72</strong> on Q1) and instruction comprehension, and <strong>RoboBrain-2.5-4B</strong> achieves the best execution-failure diagnosis of <strong>all</strong> models (<strong>43.71</strong>). Yet embodied models still trail generalist frontier systems on most dimensions, so domain data alone is not sufficient.</p>
+                                <h4 class="title is-6 has-text-primary">🧭 Plans Sound Plausible but Break at Execution</h4>
+                                <p style="font-size: 0.9em; line-height: 1.4;">Planning failures are dominated by a perception-action gap: <strong>45%</strong> are execution errors from missing or incorrect action sequences, while <strong>24%</strong> are identification errors, <strong>25%</strong> commonsense or physical-constraint errors, and <strong>6%</strong> mode-specific format errors. Current MLLMs often reason plausibly but still fail to produce executable embodied actions.</p>
                             </div>
                         </div>
                         
@@ -1532,24 +1532,22 @@
         <div class="hero-body">
             <div class="container is-max-desktop">
                 <h2 class="title is-3 has-text-left">In-depth Analysis: VLM-VLA Consistency</h2>
-                <div class="columns is-vcentered">
-                    <div class="column is-6">
+                <div class="columns is-centered">
+                    <div class="column is-full">
                         <img src="static/images/correlation_vla/robobench_to_vla_heatmap_horizontal_v8.png" alt="RoboBench and VLA correlation heatmap" style="width:100%;"/>
                     </div>
-                    <div class="column is-6">
-                        <div class="content has-text-justified">
-                            <p>
-                                To test whether RoboBench captures abilities that matter for robot control, we convert several open-source VLM backbones into VLA policies with minimal fine-tuning and evaluate them on CALVIN and LIBERO-10.
-                            </p>
-                            <p>
-                                RoboBench perception scores strongly align with long-horizon CALVIN performance: object-centric perception reaches <strong>r=0.884</strong> and scene-centric perception reaches <strong>r=0.833</strong>. For LIBERO-10, the strongest signal shifts toward fine-grained interaction dynamics, where static+dynamic affordance prediction reaches <strong>r=0.677</strong>.
-                            </p>
-                            <p>
-                                These correlations indicate that different VLA benchmarks depend on different cognitive skills. RoboBench therefore serves not only as a leaderboard, but also as a diagnostic tool for identifying which VLM capabilities are likely to transfer into downstream embodied policies.
-                            </p>
-                        </div>
-                    </div>
                 </div>
+                <div class="content has-text-justified" style="margin-top: 1rem;">
+                    <p>
+                        To test whether RoboBench captures abilities that matter for robot control, we convert several open-source VLM backbones into VLA policies with minimal fine-tuning and evaluate them on CALVIN and LIBERO-10.
+                    </p>
+                    <p>
+                        RoboBench perception scores strongly align with long-horizon CALVIN performance: object-centric perception reaches <strong>r=0.884</strong> and scene-centric perception reaches <strong>r=0.833</strong>. For LIBERO-10, the strongest signal shifts toward fine-grained interaction dynamics, where static+dynamic affordance prediction reaches <strong>r=0.677</strong>.
+                    </p>
+                    <p>
+                        These correlations indicate that different VLA benchmarks depend on different cognitive skills. RoboBench therefore serves not only as a leaderboard, but also as a diagnostic tool for identifying which VLM capabilities are likely to transfer into downstream embodied policies.
+                    </p>
+                    </div>
             </div>
         </div>
     </section>

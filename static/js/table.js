@@ -21,7 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const colNum = ((colIndex - 1) % 20) + 1; // 减1是因为第一列是Model名称列
 
             // 保留原始文本
-            const originalText = td.textContent.trim();
+            const originalText = td.querySelector('.progress-text') ?
+                td.querySelector('.progress-text').textContent.trim() :
+                td.textContent.trim();
 
             // 清空并添加进度条结构
             td.innerHTML = `
@@ -55,26 +57,28 @@ document.addEventListener('DOMContentLoaded', function() {
     // 表格排序功能
     const sortBtns = document.querySelectorAll('.sort-btn');
     // 根据实际需要的列数调整数组长度
-    const sortStates = Array.from({ length: 20 }, () => null);
+    const sortStates = new Map();
 
     sortBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             const col = parseInt(this.getAttribute('data-col'));
-            const currentSort = sortStates[col];
             const activeTab = document.querySelector('.tab-content.active');
             const table = activeTab.querySelector('table');
+            const tabId = activeTab.id;
+            const sortKey = `${tabId}-${col}`;
+            const currentSort = sortStates.get(sortKey);
 
             const isAsc = currentSort !== 'asc';
-            sortStates[col] = isAsc ? 'asc' : 'desc';
+            sortStates.set(sortKey, isAsc ? 'asc' : 'desc');
 
-            updateSortIcons(col, isAsc);
+            updateSortIcons(activeTab, col, isAsc);
             sortTable(table, col, isAsc);
             initProgressBars(); // 排序后重新初始化进度条
         });
     });
 
-    function updateSortIcons(activeCol, isAsc) {
-        sortBtns.forEach(btn => {
+    function updateSortIcons(activeTab, activeCol, isAsc) {
+        activeTab.querySelectorAll('.sort-btn').forEach(btn => {
             const col = parseInt(btn.getAttribute('data-col'));
             if (col === activeCol) {
                 btn.textContent = isAsc ? '▲' : '▼';
