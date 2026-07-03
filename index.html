@@ -105,8 +105,6 @@
                 <a>Tiejun Huang</a><sup>1,2</sup>,</span>
                             <span class="author-block">
                 <a>Shanghang Zhang</a><sup>1,2✉</sup></span>
-                            <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank"></a></span>
                         </div>
 
                         <div class="is-size-5 publication-authors">
@@ -131,7 +129,7 @@
 
                                 <!-- Github link -->
                                 <span class="link-block">
-                    <a href="https://github.com/lyl750697268/RoboBench.git" target="_blank"
+                    <a href="https://github.com/yulin-luo/RoboBench" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -195,7 +193,7 @@
                 <h2 class="title is-3">News</h2>
                 <div class="content has-text-justified">
                     <b>🎉 2026.07</b> - RoboBench is accepted to <b>ECCV 2026</b>! This page has been updated to the camera-ready version: the leaderboard now covers <b>18 state-of-the-art MLLMs</b> (GPT-5.4 / GPT-5, Claude-Opus-4.7 / Sonnet-4.6, Gemini-3.1-Pro, Qwen3-VL, MiMo-Embodied, RoboBrain-2.5, and more), evaluated with the MLLM-as-world-simulator planning framework.<br>
-                    <b>🔥 2025.10.23</b> - Dataset and code have been released! If you encounter any issues, please feel free to submit an issue on <a href="https://github.com/lyl750697268/RoboBench" target="_blank">GitHub</a>, and we will check and address them as soon as possible❗️<br>
+                    <b>🔥 2025.10.23</b> - Dataset and code have been released! If you encounter any issues, please feel free to submit an issue on <a href="https://github.com/yulin-luo/RoboBench" target="_blank">GitHub</a>, and we will check and address them as soon as possible❗️<br>
                     <b>🔥 2025.10.21</b> - The paper has been released! Code and dataset are being organized and will be released soon. Stay tuned❗️
                 </div>
             </div>
@@ -220,33 +218,48 @@
                 <div class="content has-text-justified">
                     <b>🔍 Benchmark Overview</b><br>
                         <ul>
-                            <li>The first comprehensive benchmark focused on evaluating MLLMs as embodied brains.</li>
-                            <li>Systematic evaluation across 5 core dimensions, 14 capabilities, 25 task types, and 6,092 high-quality questions.</li>
+                            <li>RoboBench systematically evaluates MLLMs as embodied brains rather than only measuring final robot execution success.</li>
+                            <li>The benchmark spans 5 core dimensions, 14 capabilities, 25 task types, and 6,092 high-quality QA pairs.</li>
                         </ul>
-                    <b>🧭 Comprehensive Dimensions</b><br>
+                    <b>🧭 Embodied Execution Pipeline</b><br>
                         <ul>
-                            <li>Covers key embodied skills tailored to MLLM capabilities, including instruction comprehension, perception reasoning, generalized planning, affordance prediction, and failure analysis in real-world settings.</li>
+                            <li>Tasks cover the full manipulation reasoning pipeline: instruction comprehension, perception reasoning, generalized planning, affordance prediction, and failure analysis.</li>
                         </ul>
-                    <b>🛡️ Robust Evaluation</b><br>
+                    <b>🛡️ Planning Beyond Text Matching</b><br>
                         <ul>
-                            <li>All questions are manually verified for quality and consistency.</li>
-                            <li>Long-horizon task planning is evaluated using a novel Directed Acyclic Graph (DAG)-guided approach to ensure rigor and robustness.</li>
+                            <li>Long-horizon planning is evaluated with a DAG-guided MLLM-as-world-simulator that checks action alignment and task completion under physical and visual constraints.</li>
+                            <li>Q2 and Q3 further test next-step prediction and task-state estimation, making the planning evaluation interpretable at the step level.</li>
                         </ul>
                     <b>🧠 Real-world Data</b><br>
                         <ul>
-                            <li>Built on the latest open-source real-robot datasets and proprietary real-world data.</li>
-                            <li>Evaluation tasks are grounded in realistic embodied interaction scenarios.</li>
+                            <li>Data are curated from open-source real-robot datasets and in-house collection across diverse embodiments, objects, views, and navigation scenarios.</li>
+                            <li>Dimension-specific validation and human review keep QA items grounded in the visible scene and executable task context.</li>
                         </ul>
-                    <b>🌍 Diverse Composition</b><br> 
+                    <b>🌍 Broad Model Audit and Downstream Signal</b><br>
                         <ul>
-                            <li>Sourced from a wide range of data and scenarios.</li>
-                            <li>Captures the complexity and diversity of real-world embodied tasks.</li>
+                            <li>The camera-ready leaderboard covers 18 state-of-the-art closed-source, open-source, and embodied MLLMs, plus a text-only ablation.</li>
+                            <li>RoboBench scores also correlate with downstream VLA success, linking high-level embodied cognition to robot-control transfer.</li>
                         </ul>
                 </div>
             </div>
         </div>
         </div>
     </section>
+
+   <!-- Case Study -->
+   <section class="section" id="case-study" style="padding-top:2rem; padding-bottom:2rem;">
+     <div class="container">
+       <h2 class="title is-3" style="text-align:center; margin-bottom:1rem;">Demo Case</h2>
+       <div class="columns is-centered has-text-centered">
+         <div class="column is-11">
+           <img src="static/images/demo_case/demo_case.png" alt="Demo Case" style="width:100%; max-width:1200px;"/>
+           <p class="content has-text-justified" style="margin-top: 0.75rem; font-size: 1.02em;">
+             <b>Demo case.</b> A representative RoboBench item illustrates how a robot scene is converted into grounded questions and evaluated across embodied reasoning skills, including perception, planning, affordance prediction, and failure analysis.
+           </p>
+         </div>
+       </div>
+     </div>
+   </section>
 
     <section class="hero is-small is-light">
         <div class="hero-body">
@@ -1514,6 +1527,33 @@
         </div>
     </section>
 
+    <!-- In-depth Analysis Section -->
+    <section class="hero is-small" id="vlm-vla-analysis">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <h2 class="title is-3 has-text-left">In-depth Analysis: VLM-VLA Consistency</h2>
+                <div class="columns is-vcentered">
+                    <div class="column is-6">
+                        <img src="static/images/correlation_vla/robobench_to_vla_heatmap_horizontal_v8.png" alt="RoboBench and VLA correlation heatmap" style="width:100%;"/>
+                    </div>
+                    <div class="column is-6">
+                        <div class="content has-text-justified">
+                            <p>
+                                To test whether RoboBench captures abilities that matter for robot control, we convert several open-source VLM backbones into VLA policies with minimal fine-tuning and evaluate them on CALVIN and LIBERO-10.
+                            </p>
+                            <p>
+                                RoboBench perception scores strongly align with long-horizon CALVIN performance: object-centric perception reaches <strong>r=0.884</strong> and scene-centric perception reaches <strong>r=0.833</strong>. For LIBERO-10, the strongest signal shifts toward fine-grained interaction dynamics, where static+dynamic affordance prediction reaches <strong>r=0.677</strong>.
+                            </p>
+                            <p>
+                                These correlations indicate that different VLA benchmarks depend on different cognitive skills. RoboBench therefore serves not only as a leaderboard, but also as a diagnostic tool for identifying which VLM capabilities are likely to transfer into downstream embodied policies.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="hero is-small">
         <div class="hero-body">
             <div class="container">
@@ -1551,19 +1591,6 @@
          </div>
      </div>
      </section>
-
-   <!-- Case Study -->
-   <section class="section" id="case-study" style="padding-top:2rem;">
-     <div class="container is-max-desktop">
-       <h2 class="title is-3" style="text-align:center; margin-bottom:1rem; font-size: 2.3em;">Demo Case</h2>
-       <br>
-         <div class="columns is-centered has-text-centered">
-             <div class="column is-four-fifths">
-                 <img src="static/images/demo_case/demo_case.png" alt="Demo Case" width="100%"/>
-             </div>
-         </div>
-     </div>
-   </section>
 
      <!-- Paper poster -->
     <!-- <section class="hero is-small is-light">
