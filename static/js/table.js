@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.tab-content.active table td:not(:first-child)').forEach((td, index) => {
             const value = parseFloat(td.textContent) || 0;
             const percent = Math.min(100, Math.max(0, value));
+            const isBest = Boolean(td.querySelector('strong'));
+            const isSecond = Boolean(td.querySelector('u'));
 
             // 正确计算列索引：需要考虑表格结构，获取单元格在行中的实际位置
             const row = td.parentElement;
@@ -24,6 +26,13 @@ document.addEventListener('DOMContentLoaded', function() {
             const originalText = td.querySelector('.progress-text') ?
                 td.querySelector('.progress-text').textContent.trim() :
                 td.textContent.trim();
+
+            td.classList.remove('score-best', 'score-second');
+            if (isBest) {
+                td.classList.add('score-best');
+            } else if (isSecond) {
+                td.classList.add('score-second');
+            }
 
             // 清空并添加进度条结构
             td.innerHTML = `

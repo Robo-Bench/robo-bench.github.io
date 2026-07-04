@@ -5,8 +5,8 @@ table {
     margin-top: 18px;
     table-layout: fixed;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    font-size: 13px;
-    line-height: 1.35;
+    font-size: 14px;
+    line-height: 1.38;
 }
 
 
@@ -61,7 +61,7 @@ th {
     text-align: center;
     background-color: #eef3f8;
     font-weight: 600;
-    font-size: 12px;
+    font-size: 13px;
     word-wrap: break-word;
     /* 允许长单词换行 */
     white-space: normal;
@@ -118,7 +118,7 @@ th {
 .tab-content table td:first-child,
 #open-source table td:first-child {
     font-weight: 600 !important;
-    font-size: 12px !important;
+    font-size: 13px !important;
     text-align: left !important;
     padding-left: 12px !important;
     color: #1f2d3d !important;
@@ -145,7 +145,7 @@ td {
     text-align: center;
     vertical-align: middle;
     font-weight: 500;
-    font-size: 12px;
+    font-size: 13px;
     color: #243447;
     /* 数据单元格内容 */
 }
@@ -153,7 +153,7 @@ td {
 /* 特别加粗数字内容 */
 td:not(:first-child) {
     font-weight: 600;
-    font-size: 12px;
+    font-size: 13px;
     /* 除了第一列（模型名称）外，其他列更加粗 */
 }
 
@@ -310,7 +310,7 @@ th.open-source {
 
 .progress-bar {
     height: 100%;
-    opacity: 0.22;
+    opacity: 0;
     transition: width 0.3s ease;
 }
 
@@ -319,68 +319,92 @@ th.open-source {
     z-index: 1;
     font-weight: 700 !important;
     /* 确保进度条文本也加粗 */
-    color: #2c3e50 !important;
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+    color: #1f2d3d !important;
+    text-shadow: none;
     /* 添加轻微阴影增强可读性 */
+}
+
+.score-best,
+.score-second {
+    border-radius: 6px;
+    box-shadow: inset 0 0 0 1px rgba(31, 45, 61, 0.08);
+}
+
+.score-best {
+    background: #fff2b8 !important;
+}
+
+.score-best .progress-text {
+    color: #7a4d00 !important;
+    font-weight: 800 !important;
+}
+
+.score-second {
+    background: #e8f1ff !important;
+}
+
+.score-second .progress-text {
+    color: #164f8f !important;
+    font-weight: 800 !important;
 }
 
 
 /* 列颜色定义 */
 
 .col-1 {
-    background-color: rgba(255, 154, 158, 0.3);
+    background-color: transparent;
 }
 
 .col-2 {
-    background-color: rgba(161, 196, 253, 0.3);
+    background-color: transparent;
 }
 
 .col-3 {
-    background-color: rgba(132, 250, 176, 0.3);
+    background-color: transparent;
 }
 
 .col-4 {
-    background-color: rgba(166, 193, 238, 0.3);
+    background-color: transparent;
 }
 
 .col-5 {
-    background-color: rgba(255, 236, 210, 0.3);
+    background-color: transparent;
 }
 
 .col-6 {
-    background-color: rgba(255, 129, 119, 0.3);
+    background-color: transparent;
 }
 
 .col-7 {
-    background-color: rgba(246, 211, 101, 0.3);
+    background-color: transparent;
 }
 
 .col-8 {
-    background-color: rgba(240, 147, 251, 0.3);
+    background-color: transparent;
 }
 
 .col-9 {
-    background-color: rgba(94, 231, 223, 0.3);
+    background-color: transparent;
 }
 
 .col-10 {
-    background-color: rgba(196, 113, 245, 0.3);
+    background-color: transparent;
 }
 
 .col-11 {
-    background-color: rgba(67, 233, 123, 0.3);
+    background-color: transparent;
 }
 
 .col-12 {
-    background-color: rgba(250, 112, 154, 0.3);
+    background-color: transparent;
 }
 
 .col-13 {
-    background-color: rgba(79, 172, 254, 0.3);
+    background-color: transparent;
 }
 
 .col-14 {
-    background-color: rgba(168, 237, 234, 0.3);
+    background-color: transparent;
 }
 
 @media (max-width: 768px) {

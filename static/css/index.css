@@ -1,5 +1,6 @@
 body {
     font-family: 'Noto Sans', sans-serif;
+    font-size: 16.5px;
 }
 
 .footer .icon-link {
@@ -34,6 +35,23 @@ body {
     /* 防止行高影响对齐 */
 }
 
+.publication-venue-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 12px 0 16px;
+    padding: 8px 18px;
+    border-radius: 999px;
+    background: #f6e9c7;
+    color: #5a3b00;
+    border: 1px solid #e5c778;
+    box-shadow: 0 8px 20px rgba(90, 59, 0, 0.12);
+    font-family: 'Google Sans', sans-serif;
+    font-size: 1.08rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
 .publication-title img {
     height: 1em;
     /* 图片高度与文字大小一致 */
@@ -62,6 +80,27 @@ body {
 
 .publication-authors {
     font-family: 'Google Sans', sans-serif;
+}
+
+.publication-affiliations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px 14px;
+    margin: 10px auto 4px;
+    max-width: 980px;
+    color: #343a40;
+    font-size: 0.96em;
+    line-height: 1.35;
+}
+
+.publication-affiliations > span:not(.eql-cntrb) {
+    display: inline;
+}
+
+.publication-affiliations .eql-cntrb {
+    flex-basis: 100%;
+    margin-top: 2px;
 }
 
 .publication-venue {
