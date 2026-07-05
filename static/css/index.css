@@ -1,6 +1,6 @@
 body {
     font-family: 'Noto Sans', sans-serif;
-    font-size: 16.5px;
+    font-size: 17.5px;
 }
 
 .footer .icon-link {
@@ -24,6 +24,10 @@ body {
 
 .teaser {
     font-family: 'Google Sans', sans-serif;
+}
+
+.hero > .hero-body .container.is-max-desktop {
+    max-width: 1120px;
 }
 
 .publication-title {
@@ -80,22 +84,25 @@ body {
 
 .publication-authors {
     font-family: 'Google Sans', sans-serif;
+    font-size: 1.08rem;
+    line-height: 1.45;
 }
 
 .publication-affiliations {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 5px 14px;
+    gap: 5px 18px;
     margin: 10px auto 4px;
-    max-width: 980px;
+    max-width: 1120px;
     color: #343a40;
-    font-size: 0.96em;
+    font-size: 1.02rem;
     line-height: 1.35;
 }
 
 .publication-affiliations > span:not(.eql-cntrb) {
     display: inline;
+    white-space: nowrap;
 }
 
 .publication-affiliations .eql-cntrb {
@@ -175,4 +182,18 @@ body {
 
 .eql-cntrb {
     font-size: smaller;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 16.5px;
+    }
+
+    .publication-authors {
+        font-size: 1rem;
+    }
+
+    .publication-affiliations > span:not(.eql-cntrb) {
+        white-space: normal;
+    }
 }

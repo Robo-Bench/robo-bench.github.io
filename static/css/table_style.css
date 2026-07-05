@@ -5,7 +5,7 @@ table {
     margin-top: 18px;
     table-layout: fixed;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    font-size: 14px;
+    font-size: 14.5px;
     line-height: 1.38;
 }
 
@@ -61,7 +61,7 @@ th {
     text-align: center;
     background-color: #eef3f8;
     font-weight: 600;
-    font-size: 13px;
+    font-size: 13.5px;
     word-wrap: break-word;
     /* 允许长单词换行 */
     white-space: normal;
@@ -109,7 +109,7 @@ th {
 
 #open-source table td:not(:first-child) {
     font-weight: 500 !important;
-    font-size: 13px !important;
+    font-size: 13.5px !important;
     border: 1px solid #e2e8f0 !important;
     color: #243447 !important;
 }
@@ -145,7 +145,7 @@ td {
     text-align: center;
     vertical-align: middle;
     font-weight: 500;
-    font-size: 13px;
+    font-size: 13.5px;
     color: #243447;
     /* 数据单元格内容 */
 }
@@ -153,7 +153,7 @@ td {
 /* 特别加粗数字内容 */
 td:not(:first-child) {
     font-weight: 600;
-    font-size: 13px;
+    font-size: 13.5px;
     /* 除了第一列（模型名称）外，其他列更加粗 */
 }
 
