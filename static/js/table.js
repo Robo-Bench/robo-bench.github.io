@@ -2,10 +2,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // 初始化进度条
     function initProgressBars() {
         document.querySelectorAll('.tab-content.active table td:not(:first-child)').forEach((td, index) => {
-            const value = parseFloat(td.textContent) || 0;
+            const existingText = td.querySelector('.progress-text');
+            const value = parseFloat(existingText ? existingText.textContent : td.textContent) || 0;
             const percent = Math.min(100, Math.max(0, value));
-            const isBest = Boolean(td.querySelector('strong'));
-            const isSecond = Boolean(td.querySelector('u'));
+            let scoreRank = td.dataset.scoreRank || '';
+            if (!scoreRank) {
+                if (td.querySelector('strong')) {
+                    scoreRank = 'best';
+                } else if (td.querySelector('u')) {
+                    scoreRank = 'second';
+                }
+                if (scoreRank) {
+                    td.dataset.scoreRank = scoreRank;
+                }
+            }
 
             // 正确计算列索引：需要考虑表格结构，获取单元格在行中的实际位置
             const row = td.parentElement;
@@ -23,14 +33,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const colNum = ((colIndex - 1) % 20) + 1; // 减1是因为第一列是Model名称列
 
             // 保留原始文本
-            const originalText = td.querySelector('.progress-text') ?
-                td.querySelector('.progress-text').textContent.trim() :
+            const originalText = existingText ?
+                existingText.textContent.trim() :
                 td.textContent.trim();
 
             td.classList.remove('score-best', 'score-second');
-            if (isBest) {
+            if (scoreRank === 'best') {
                 td.classList.add('score-best');
-            } else if (isSecond) {
+            } else if (scoreRank === 'second') {
                 td.classList.add('score-second');
             }
 
