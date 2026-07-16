@@ -50,28 +50,27 @@
 
 <body id="top">
 
-    <nav class="project-topbar" aria-label="Project navigation">
-        <div class="project-topbar-inner">
-            <a class="topbar-home" href="#top" aria-label="Back to the top of the RoboBench page">
-                <span class="icon"><i class="fas fa-home"></i></span>
-                <span>Home</span>
-            </a>
-            <details class="more-research-menu">
-                <summary aria-label="Show related research projects">
-                    <span>More Research</span>
-                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                </summary>
-                <div class="more-research-panel">
-                    <a class="research-card is-active" href="https://robo-bench.github.io/">
-                        <strong>RoboBench</strong>
-                        <span>ECCV 2026 · current page</span>
-                    </a>
-                    <a class="research-card" href="https://deepvision-vla.github.io/" target="_blank" rel="noopener">
-                        <strong>DeepVision-VLA</strong>
-                        <span>ACM MM 2026 · VLA representations</span>
-                    </a>
+    <nav class="navbar project-navbar" role="navigation" aria-label="Project navigation">
+        <div class="navbar-menu is-active">
+            <div class="navbar-start project-navbar-start">
+                <a class="navbar-item project-home" href="https://github.com/yulin-luo" target="_blank" rel="noopener" aria-label="Yulin Luo GitHub profile">
+                    <span class="icon">
+                        <i class="fas fa-home"></i>
+                    </span>
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable project-research-dropdown">
+                    <a class="navbar-link">More Research</a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item is-active" href="https://robo-bench.github.io/">
+                            RoboBench (ECCV 2026)
+                        </a>
+                        <a class="navbar-item" href="https://deepvision-vla.github.io/" target="_blank" rel="noopener">
+                            DeepVision-VLA (ACM MM 2026)
+                        </a>
+                    </div>
                 </div>
-            </details>
+            </div>
         </div>
     </nav>
 
