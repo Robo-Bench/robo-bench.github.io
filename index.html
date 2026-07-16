@@ -205,7 +205,7 @@
             <div class="hero-body">
                 <img src="static/images/teaser/teaser.png">
                 <h2 class="content has-text-justified">
-                    <b>Overview of RoboBench.</b> We evaluate MLLMs as embodied brains across 5 dimensions, 14 capabilities, and 25 tasks, with tasks color-coded by dimension <b>(top left)</b>. These dimensions follow the embodied execution pipeline <b>(bottom)</b>—from understanding intent, perceiving the environment, planning and adapting actions, refining subgoals via affordances, to diagnosing failures—capturing the core cognitive roles of System 2. Performance comparison <b>(top middle)</b> reveals significant gaps among state-of-the-art MLLMs. <b>(top right)</b> RoboBench scores strongly correlate with downstream VLA performance on CALVIN.
+                    <b>Overview of RoboBench.</b> We evaluate MLLMs as embodied brains across 5 dimensions, 14 capabilities, and 25 tasks, with tasks color-coded by dimension <b>(top left)</b>. These dimensions follow the embodied execution pipeline <b>(bottom)</b>—from understanding intent, perceiving the environment, planning and adapting actions, refining subgoals via affordances, to diagnosing failures—capturing the core cognitive roles of System 2. Performance comparison <b>(top middle)</b> reveals significant gaps among state-of-the-art MLLMs. <b>(top right)</b> Perception-focused RoboBench scores show strong associations with downstream CALVIN performance in our VLM-VLA analysis.
                 </h2>
             </div>
         </div>
@@ -220,7 +220,7 @@
                     <h2 class="title is-3">Abstract</h2>
                     <div class="content has-text-justified">
                         <!-- <p> -->
-                            Building robots that can perceive, reason, and act in dynamic, unstructured environments remains a core challenge. Recent embodied systems often adopt a dual-system paradigm, where System 2 handles high-level reasoning while System 1 executes low-level control. In this work, we refer to System 2 as the embodied brain, emphasizing its role as the cognitive core for reasoning and decision-making in manipulation tasks. Given this role, systematic evaluation of the embodied brain is essential for advancing robotic intelligence. Yet existing benchmarks emphasize execution success, or, when targeting high-level reasoning, suffer from incomplete dimensions and limited task realism, offering only a partial picture of cognitive capability. To bridge this gap, we introduce RoboBench, a benchmark that systematically evaluates multimodal large language models (MLLMs) as embodied brains. Motivated by the distinct cognitive roles required across the full manipulation pipeline, RoboBench defines five dimensions—Instruction Comprehension, Perception Reasoning, Generalized Planning, Affordance Prediction, and Failure Analysis—spanning 14 capabilities, 25 tasks, and 6092 QA pairs. To ensure realism, we curate datasets across diverse embodiments, attribute-rich objects, multi-view scenes, and memory-driven navigation, drawing from large-scale real robotic data and in-house collection. For planning, RoboBench introduces an evaluation framework that uses an MLLM as a world simulator. It moves beyond symbolic matching to evaluate embodied feasibility by simulating whether predicted plans can achieve critical object-state changes under physical and visual constraints, enabling faithful assessment of long-horizon reasoning. Experiments on 18 state-of-the-art MLLMs reveal fundamental limitations: difficulties with implicit instruction comprehension, spatiotemporal reasoning, cross-scenario planning, fine-grained affordance understanding, and execution failure diagnosis. We further analyze how embodied cognitive abilities relate to downstream robotic control. RoboBench provides a comprehensive scaffold to quantify high-level cognition, clarify the role of the embodied brain, and guide the development of next-generation MLLMs for more robust robotic intelligence.
+                            Building robots that can perceive, reason, and act in dynamic, unstructured environments remains a core challenge. Recent embodied systems often adopt a dual-system paradigm, where System 2 handles high-level reasoning while System 1 executes low-level control. In this work, we refer to System 2 as the embodied brain, emphasizing its role as the cognitive core for reasoning and decision-making in manipulation tasks. Given this role, systematic evaluation of the embodied brain is essential for advancing robotic intelligence. Yet existing benchmarks emphasize execution success, or, when targeting high-level reasoning, suffer from incomplete dimensions and limited task realism, offering only a partial picture of cognitive capability. To bridge this gap, we introduce RoboBench, a benchmark that systematically evaluates multimodal large language models (MLLMs) as embodied brains. Motivated by the distinct cognitive roles required across the full manipulation pipeline, RoboBench defines five dimensions—Instruction Comprehension, Perception Reasoning, Generalized Planning, Affordance Prediction, and Failure Analysis—spanning 14 capabilities, 25 tasks, and 6092 QA pairs. To ensure realism, we curate datasets across diverse embodiments, attribute-rich objects, multi-view scenes, and memory-driven navigation, drawing from large-scale real robotic data and in-house collection. For planning, RoboBench introduces an evaluation framework that uses an MLLM as a world simulator. It moves beyond symbolic matching to evaluate embodied feasibility by simulating whether predicted plans can achieve critical object-state changes under physical and visual constraints, enabling structured assessment of long-horizon reasoning. Experiments on 18 state-of-the-art MLLMs reveal persistent limitations: difficulties with implicit instruction comprehension, spatiotemporal reasoning, cross-scenario planning, fine-grained affordance understanding, and execution failure diagnosis. We further analyze how embodied cognitive abilities relate to downstream robotic control. RoboBench provides a comprehensive scaffold to quantify high-level cognition, clarify the role of the embodied brain, and inform the development of next-generation MLLMs for more robust robotic intelligence.
                         <!-- </p> -->
                     </div>
                 </div>
@@ -282,7 +282,7 @@
                     <b>🌍 Broad Model Audit and Downstream Signal</b><br>
                         <ul>
                             <li>The official leaderboard covers 18 state-of-the-art closed-source, open-source, and embodied MLLMs, plus a text-only ablation.</li>
-                            <li>RoboBench scores also correlate with downstream VLA success, linking high-level embodied cognition to robot-control transfer.</li>
+                            <li>Selected RoboBench scores show benchmark-dependent associations with downstream VLA performance, offering diagnostic signals for robot-control evaluation.</li>
                         </ul>
                 </div>
             </div>
@@ -1509,7 +1509,7 @@
                         <div class="column is-6" style="padding: 0.5rem;">
                             <div class="box" style="height: 100%; padding: 1rem; margin: 0;">
                                 <h4 class="title is-6 has-text-primary">🥇 Large Capability Gaps, yet the Frontier Keeps Advancing</h4>
-                                <p style="font-size: 0.9em; line-height: 1.4;">Gemini-3.1-Pro shows the most consistent advantages across perception, affordance, and failure dimensions—<strong>67.32</strong> in perception reasoning (vs. the next-best <strong>63.93</strong> of Gemini-2.5-Pro), <strong>85.70</strong> in affordance prediction, and <strong>52.95</strong> in failure analysis—leaving only a <strong>modest residual gap to the human reference (74.30 in perception)</strong>, while most other MLLMs remain highly uneven or generally weak.</p>
+                                <p style="font-size: 0.9em; line-height: 1.4;">Gemini-3.1-Pro shows the most consistent advantages across perception, affordance, and failure dimensions—<strong>67.32</strong> in perception reasoning (vs. the next-best <strong>63.93</strong> of Gemini-2.5-Pro), <strong>85.70</strong> in affordance prediction, and <strong>52.95</strong> in failure analysis—narrowing the gap on selected perception and affordance subsets while remaining uneven across tasks. Most other MLLMs are still highly uneven or generally weak.</p>
                             </div>
                         </div>
                         
@@ -1575,7 +1575,7 @@
     <section class="hero is-small" id="vlm-vla-analysis">
         <div class="hero-body">
             <div class="container is-max-desktop">
-                <h2 class="title is-3 has-text-left">In-depth Analysis: VLM-VLA Consistency</h2>
+                <h2 class="title is-3 has-text-left">In-depth Analysis: VLM-VLA Association</h2>
                 <div class="columns is-centered">
                     <div class="column is-full">
                         <img src="static/images/correlation_vla/robobench_to_vla_heatmap_horizontal_v8.png" alt="RoboBench and VLA correlation heatmap" style="width:100%;"/>
@@ -1583,13 +1583,13 @@
                 </div>
                 <div class="content has-text-justified" style="margin-top: 1rem;">
                     <p>
-                        To test whether RoboBench captures abilities that matter for robot control, we convert several open-source VLM backbones into VLA policies with minimal fine-tuning and evaluate them on CALVIN and LIBERO-10.
+                        To probe how RoboBench scores relate to downstream robot-control evaluation, we convert several open-source VLM backbones into VLA policies with minimal fine-tuning and evaluate them on CALVIN and LIBERO-10.
                     </p>
                     <p>
-                        RoboBench perception scores strongly align with long-horizon CALVIN performance: object-centric perception reaches <strong>r=0.884</strong> and scene-centric perception reaches <strong>r=0.833</strong>. For LIBERO-10, the strongest signal shifts toward fine-grained interaction dynamics, where static+dynamic affordance prediction reaches <strong>r=0.677</strong>.
+                        In our 8-backbone analysis, RoboBench perception scores show strong associations with long-horizon CALVIN performance: object-centric perception reaches <strong>r=0.884</strong> and scene-centric perception reaches <strong>r=0.833</strong>. For LIBERO-10, the strongest positive trend shifts toward fine-grained interaction dynamics, where static+dynamic affordance prediction reaches <strong>r=0.677</strong>.
                     </p>
                     <p>
-                        These correlations indicate that different VLA benchmarks depend on different cognitive skills. RoboBench therefore serves not only as a leaderboard, but also as a diagnostic tool for identifying which VLM capabilities are likely to transfer into downstream embodied policies.
+                        These observed associations suggest that different VLA benchmarks emphasize different cognitive skills. RoboBench therefore serves not only as a leaderboard, but also as a diagnostic tool for identifying which VLM capabilities may be relevant to downstream embodied policies.
                     </p>
                     </div>
             </div>
