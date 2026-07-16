@@ -45,75 +45,104 @@ body {
     height: 1.1rem;
 }
 
-.more-research-nav {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 12px;
-    min-width: 0;
-}
-
-.more-research-label {
+.more-research-menu {
+    position: relative;
     flex: 0 0 auto;
-    color: #6b7280;
     font-family: 'Google Sans', sans-serif;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    white-space: nowrap;
 }
 
-.more-research-links {
-    display: flex;
+.more-research-menu summary {
+    display: inline-flex;
     align-items: center;
     gap: 8px;
-    overflow-x: auto;
-    scrollbar-width: none;
+    min-height: 34px;
+    padding: 8px 14px;
+    border: 1px solid rgba(31, 104, 209, 0.18);
+    border-radius: 999px;
+    background: rgba(245, 248, 255, 0.92);
+    color: #1f3554;
+    cursor: pointer;
+    font-size: 0.84rem;
+    font-weight: 700;
+    line-height: 1;
+    list-style: none;
+    user-select: none;
+    transition: background 0.16s ease, border-color 0.16s ease, color 0.16s ease, box-shadow 0.16s ease;
 }
 
-.more-research-links::-webkit-scrollbar {
+.more-research-menu summary::-webkit-details-marker {
     display: none;
 }
 
-.more-research-links a {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    flex: 0 0 auto;
-    padding: 7px 11px;
-    border: 1px solid rgba(31, 104, 209, 0.16);
-    border-radius: 999px;
-    background: rgba(245, 248, 255, 0.86);
-    color: #263142;
-    font-family: 'Google Sans', sans-serif;
-    font-size: 0.82rem;
-    font-weight: 700;
-    line-height: 1;
-    transition: background 0.16s ease, border-color 0.16s ease, color 0.16s ease, transform 0.16s ease;
+.more-research-menu summary:hover,
+.more-research-menu[open] summary {
+    border-color: rgba(31, 104, 209, 0.45);
+    background: #eef5ff;
+    color: #1f68d1;
+    box-shadow: 0 8px 18px rgba(31, 104, 209, 0.12);
 }
 
-.more-research-links a span {
+.more-research-menu summary .fa-chevron-down {
+    font-size: 0.7rem;
+    transition: transform 0.16s ease;
+}
+
+.more-research-menu[open] summary .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.more-research-panel {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    z-index: 70;
+    display: grid;
+    gap: 8px;
+    width: 290px;
+    padding: 10px;
+    border: 1px solid rgba(20, 32, 48, 0.10);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 18px 38px rgba(15, 23, 42, 0.14);
+}
+
+.research-card {
+    display: grid;
+    gap: 3px;
+    padding: 10px 12px;
+    border: 1px solid rgba(31, 104, 209, 0.12);
+    border-radius: 10px;
+    background: #ffffff;
+    color: #172033;
+    line-height: 1.2;
+    transition: background 0.16s ease, border-color 0.16s ease, transform 0.16s ease;
+}
+
+.research-card strong {
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.research-card span {
     color: #667085;
-    font-size: 0.74rem;
+    font-size: 0.76rem;
     font-weight: 600;
 }
 
-.more-research-links a:hover {
-    border-color: rgba(31, 104, 209, 0.42);
-    background: #eef5ff;
+.research-card:hover {
+    border-color: rgba(31, 104, 209, 0.38);
+    background: #f5f9ff;
     color: #1f68d1;
     transform: translateY(-1px);
 }
 
-.more-research-links a.is-active {
-    border-color: rgba(31, 104, 209, 0.55);
+.research-card.is-active {
+    border-color: rgba(31, 104, 209, 0.52);
     background: #1f68d1;
     color: #fff;
-    box-shadow: 0 8px 18px rgba(31, 104, 209, 0.18);
 }
 
-.more-research-links a.is-active span {
+.research-card.is-active span {
     color: rgba(255, 255, 255, 0.82);
 }
 
@@ -318,13 +347,19 @@ body {
         padding: 10px 14px;
     }
 
-    .more-research-nav {
-        align-items: flex-start;
+    .more-research-menu,
+    .more-research-menu summary {
         width: 100%;
     }
 
-    .more-research-links {
-        width: 100%;
+    .more-research-menu summary {
+        justify-content: space-between;
+    }
+
+    .more-research-panel {
+        left: 0;
+        right: auto;
+        width: min(100%, 320px);
     }
 
     .publication-authors {
