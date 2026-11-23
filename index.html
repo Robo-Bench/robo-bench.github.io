@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 
 
@@ -56,8 +56,8 @@
 
 
     <title>RoboBench: A Comprehensive Evaluation Benchmark for Multimodal Large Language Models as Embodied Brain</title>
-    <link rel="icon" type="image/x-icon" href="static/images/log/R1.png">
-    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="icon" type="image/webp" href="static/images/previews/robobench-mark.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="static/css/bulma.min.css">
     <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
@@ -65,6 +65,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <link rel="stylesheet" href="static/css/index.css">
     <link rel="stylesheet" href="static/css/table_style.css">
+    <link rel="stylesheet" href="static/css/project.css?v=20261123-refresh">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
@@ -73,339 +74,170 @@
     <script src="static/js/bulma-slider.min.js"></script>
     <script src="static/js/index.js"></script>
     <script src="static/js/table.js"></script>
-    <style>
-        .external-evaluations-intro {
-            max-width: 46rem;
-            margin-bottom: 1.15rem;
-        }
-        .external-evaluations-grid {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 1rem;
-        }
-        .external-evaluation {
-            padding: 1.15rem 1.25rem;
-            border: 1px solid #dee5ee;
-            border-radius: 0.6rem;
-            background: #fff;
-            font-size: 1rem;
-            line-height: 1.55;
-        }
-        .external-evaluation-team {
-            color: #52637a;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-        .external-evaluation h3 {
-            margin: 0.2rem 0 0.5rem;
-            font-size: 1.25rem;
-            font-weight: 650;
-        }
-        .external-evaluations-more {
-            max-width: 58rem;
-            margin-top: 1rem;
-            font-size: 0.95rem;
-        }
-        @media (max-width: 1050px) {
-            .external-evaluations-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-        }
-        @media (max-width: 640px) {
-            .external-evaluations-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 
-<body id="top">
-
-    <nav class="navbar project-navbar" role="navigation" aria-label="Project navigation">
-        <div class="navbar-menu is-active">
-            <div class="navbar-start project-navbar-start">
-                <a class="navbar-item project-home" href="https://github.com/yulin-luo" target="_blank" rel="noopener" aria-label="Yulin Luo GitHub profile">
-                    <span class="icon">
-                        <i class="fas fa-home"></i>
-                    </span>
-                </a>
-
-                <div class="navbar-item has-dropdown is-hoverable project-research-dropdown">
-                    <a class="navbar-link">More Research</a>
-                    <div class="navbar-dropdown">
-                        <a class="navbar-item is-active" href="https://robo-bench.github.io/">
-                            RoboBench (ECCV 2026)
-                        </a>
-                        <a class="navbar-item" href="https://deepvision-vla.github.io/" target="_blank" rel="noopener">
-                            DeepVision-VLA (ACM MM 2026)
-                        </a>
-                    </div>
-                </div>
+<body id="top" class="robo-project">
+    <header class="project-header">
+        <nav class="page-shell project-nav" aria-label="Project navigation">
+            <a class="project-brand" href="#top">
+                <img src="static/images/previews/robobench-mark.webp" alt="" width="34" height="34">
+                RoboBench
+            </a>
+            <div class="project-nav-links">
+                <a href="#overview">Overview</a>
+                <a href="#news">News</a>
+                <a href="#external-evaluations">Evaluations</a>
+                <a href="#leaderboard">Leaderboard</a>
             </div>
+        </nav>
+    </header>
+
+    <main>
+    <section class="page-shell project-intro" aria-labelledby="project-title">
+        <a class="venue-link" href="https://eccv.ecva.net/virtual/2026/poster/4213">ECCV 2026</a>
+        <h1 id="project-title">RoboBench</h1>
+        <p class="project-subtitle">A Comprehensive Evaluation Benchmark for Multimodal Large Language Models as Embodied Brain</p>
+
+        <ul class="project-authors" aria-label="Authors">
+            <li>Yulin Luo<sup>1*</sup></li>
+            <li>Chun-Kai Fan<sup>1*</sup></li>
+            <li>Menghang Dong<sup>1*</sup></li>
+            <li>Jiayu Shi<sup>1*</sup></li>
+            <li>Xiangju Mi<sup>1*</sup></li>
+            <li>Mengdi Zhao<sup>3*†</sup></li>
+            <li>Bo-Wen Zhang<sup>4*</sup></li>
+            <li>Cheng Chi<sup>2*†</sup></li>
+            <li>Jiaming Liu<sup>1</sup></li>
+            <li>Gaole Dai<sup>1</sup></li>
+            <li>Rongyu Zhang<sup>1</sup></li>
+            <li>Ruichuan An<sup>1</sup></li>
+            <li>Kun Wu<sup>5</sup></li>
+            <li>Zhengping Che<sup>5</sup></li>
+            <li>Shaoxuan Xie<sup>2</sup></li>
+            <li>Guocai Yao<sup>2</sup></li>
+            <li>Zhongxia Zhao<sup>1,2</sup></li>
+            <li>Pengwei Wang<sup>2</sup></li>
+            <li>Guang Liu<sup>2</sup></li>
+            <li>Zhongyuan Wang<sup>2</sup></li>
+            <li>Tiejun Huang<sup>1,2</sup></li>
+            <li>Shanghang Zhang<sup>1,2✉</sup></li>
+        </ul>
+        <ul class="project-affiliations" aria-label="Affiliations">
+            <li><sup>1</sup> <span title="State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University">Peking University</span></li>
+            <li><sup>2</sup> Beijing Academy of Artificial Intelligence</li>
+            <li><sup>3</sup> <span title="Institute for Brain and Intelligence, Fudan University">Fudan University</span></li>
+            <li><sup>4</sup> University of Science and Technology Beijing</li>
+            <li><sup>5</sup> Beijing Innovation Center of Humanoid Robotics</li>
+        </ul>
+        <p class="author-roles">* Equal contribution &nbsp; † Project lead &nbsp; ✉ Corresponding author</p>
+        <img class="affiliation-logos" src="static/images/previews/affiliation-logos.webp" alt="" width="1120" height="83">
+
+        <div class="project-actions">
+            <a class="project-button primary" href="https://arxiv.org/abs/2510.17801">arXiv paper</a>
+            <a class="project-button" href="https://github.com/yulin-luo/RoboBench">Code</a>
+            <a class="project-button" href="https://huggingface.co/datasets/LeoFan01/RoboBench">Dataset</a>
+            <a class="project-button" href="https://huggingface.co/datasets/lyl010221-pku/RoboBench-Results">Results</a>
+            <a class="project-button" href="static/pdfs/robobench_eccv2026_poster.pdf">Poster</a>
         </div>
-    </nav>
-
-    <section class="hero">
-        <div class="hero-body">
-            <div class="container is-max-desktop">
-                <div class="columns is-centered">
-                    <div class="column has-text-centered">
-                        <h1 class="title is-1 publication-title">
-                            <img src="static/images/log/R1.png">RoboBench: A Comprehensive Evaluation Benchmark for Multimodal Large Language Models as Embodied Brain
-                        </h1>
-                        <div class="publication-venue-badge">
-                            <i class="fas fa-award"></i>
-                            <span>Accepted to ECCV 2026</span>
-                        </div>
-                        <div class="is-size-5 publication-authors">
-                            <!-- Paper authors -->
-                            <span class="author-block">
-                <a>Yulin Luo</a><sup>1*</sup>,</span>
-                            <span class="author-block">
-                <a>Chun-Kai Fan</a><sup>1*</sup>,</span>
-                            <span class="author-block">
-                <a>Menghang Dong</a><sup>1*</sup>,</span>
-                            <span class="author-block">
-                <a>Jiayu Shi</a><sup>1*</sup>,</span>
-                            <span class="author-block">
-                <a>Xiangju Mi</a><sup>1*</sup>,</span>
-                            <span class="author-block">
-                <a>Mengdi Zhao</a><sup>3*†</sup>,</span>
-                            <span class="author-block">
-                <a>Bo-Wen Zhang</a><sup>4*</sup>,</span>
-                            <span class="author-block">
-                <a>Cheng Chi</a><sup>2*†</sup>,</span>
-                            <span class="author-block">
-                <a>Jiaming Liu</a><sup>1</sup>,</span>
-                            <span class="author-block">
-                <a>Gaole Dai</a><sup>1</sup>,</span>
-                            <span class="author-block">
-                <a>Rongyu Zhang</a><sup>1</sup>,</span>
-                            <span class="author-block">
-                <a>Ruichuan An</a><sup>1</sup>,</span>
-                            <span class="author-block">
-                <a>Kun Wu</a><sup>5</sup>,</span>
-                            <span class="author-block">
-                <a>Zhengping Che</a><sup>5</sup>,</span>
-                            <span class="author-block">
-                <a>Shaoxuan Xie</a><sup>2</sup>,</span>
-                            <span class="author-block">
-                <a>Guocai Yao</a><sup>2</sup>,</span>
-                            <span class="author-block">
-                <a>Zhongxia Zhao</a><sup>1,2</sup>,</span>
-                            <span class="author-block">
-                <a>Pengwei Wang</a><sup>2</sup>,</span>
-                            <span class="author-block">
-                <a>Guang Liu</a><sup>2</sup>,</span>
-                            <span class="author-block">
-                <a>Zhongyuan Wang</a><sup>2</sup>,</span>
-                            <span class="author-block">
-                <a>Tiejun Huang</a><sup>1,2</sup>,</span>
-                            <span class="author-block">
-                <a>Shanghang Zhang</a><sup>1,2✉</sup></span>
-                        </div>
-
-                        <div class="is-size-5 publication-authors publication-affiliations">
-                            <span><sup>1</sup> State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University</span>
-                            <span><sup>2</sup> Beijing Academy of Artificial Intelligence</span>
-                            <span><sup>3</sup> Institute for Brain and Intelligence, Fudan University</span>
-                            <span><sup>4</sup> University of Science and Technology Beijing</span>
-                            <span><sup>5</sup> Beijing Innovation Center of Humanoid Robotics</span>
-                            <span class="eql-cntrb"><small><br><sup>*</sup>Equal contribution, <sup>†</sup>Project leader, <sup>✉</sup>Corresponding author</small><br></span>
-                        </div>
-                        
-                        <img src="static/images/school_logo/logo.png" width="100%" class="img-responsive">
-
-                        <div class="column has-text-centered">
-                            <div class="publication-links">
-                                <!-- Arxiv PDF link -->
-                                <span class="link-block">
-                        <a href="https://arxiv.org/abs/2510.17801" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="ai ai-arxiv"></i>
-                        </span>
-                                <span>Paper</span>
-                                </a>
-                                </span>
-
-                                <!-- Github link -->
-                                <span class="link-block">
-                    <a href="https://github.com/yulin-luo/RoboBench" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                                <span>Code</span>
-                                </a>
-                                </span>
-
-                                <!-- ArXiv abstract Link -->
-                                <span class="link-block">
-                  <a href="https://huggingface.co/datasets/LeoFan01/RoboBench" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="fas fa-database"></i>
-                  </span>
-                                <span>Dataset</span>
-                                </a>
-                                </span>
-
-                                <!-- Official results link -->
-                                <span class="link-block">
-                  <a href="https://huggingface.co/datasets/lyl010221-pku/RoboBench-Results" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="fas fa-chart-bar"></i>
-                  </span>
-                                <span>Results</span>
-                                </a>
-                                </span>
-
-                                <!-- ECCV 2026 poster (PDF) -->
-                                <span class="link-block">
-                  <a href="static/pdfs/robobench_eccv2026_poster.pdf" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="fas fa-image"></i>
-                  </span>
-                                <span>Poster</span>
-                                </a>
-                                </span>
-
-                                <!-- ECCV 2026 virtual page -->
-                                <span class="link-block">
-                  <a href="https://eccv.ecva.net/virtual/2026/poster/4213" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="fas fa-chalkboard"></i>
-                  </span>
-                                <span>ECCV Page</span>
-                                </a>
-                                </span>
-
-                                <!-- Intro video -->
-                                <span class="link-block">
-                  <a href="https://www.youtube.com/watch?v=_W3FSK75IRQ" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="fab fa-youtube"></i>
-                  </span>
-                                <span>Video</span>
-                                </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="project-secondary">
+            <a href="#intro-video">Watch the introduction</a>
+            <a href="#BibTeX">Cite this work</a>
         </div>
     </section>
 
+    <section class="page-shell project-overview" id="overview" aria-labelledby="overview-title">
+        <h2 class="project-heading" id="overview-title">Benchmark overview</h2>
+        <figure class="overview-figure">
+            <a class="overview-image" href="static/images/teaser/teaser.png" aria-label="Open the full-size RoboBench overview">
+                <img src="static/images/previews/overview.webp" alt="RoboBench task taxonomy, model performance, and links to downstream robot control" width="1920" height="1201" decoding="async">
+            </a>
+            <figcaption>RoboBench evaluates five dimensions of embodied reasoning, from understanding instructions to diagnosing execution failures. The figure summarizes model performance and how perception scores relate to downstream CALVIN performance.</figcaption>
+        </figure>
+    </section>
 
-    <!-- Teaser video-->
-    <section class="hero teaser">
-        <div class="container is-max-desktop">
-            <div class="hero-body">
-                <img src="static/images/teaser/teaser.png">
-                <h2 class="content has-text-justified">
-                    <b>Overview of RoboBench.</b> We evaluate MLLMs as embodied brains across 5 dimensions, 14 capabilities, and 25 tasks, with tasks color-coded by dimension <b>(top left)</b>. These dimensions follow the embodied execution pipeline <b>(bottom)</b>—from understanding intent, perceiving the environment, planning and adapting actions, refining subgoals via affordances, to diagnosing failures—capturing the core cognitive roles of System 2. Performance comparison <b>(top middle)</b> reveals significant gaps among state-of-the-art MLLMs. <b>(top right)</b> Perception-focused RoboBench scores show strong associations with downstream CALVIN performance in our VLM-VLA analysis.
-                </h2>
-            </div>
+    <section class="project-news" id="news" aria-labelledby="news-title">
+        <div class="page-shell">
+            <h2 class="project-heading" id="news-title">News</h2>
+            <ol class="project-news-list">
+                <li><time datetime="2026-11">Nov 2026</time><p>Congratulations to the <a href="https://arxiv.org/abs/2611.26519">ACE-Brain team</a> on ACE-Brain-0.7! The report evaluates task decomposition, next-subtask prediction, and step completion on RoboBench.</p></li>
+                <li><time datetime="2026-09">Sep 2026</time><p>Li Auto reports results for both <a href="https://arxiv.org/html/2609.24526v1#S6">ME-VLM variants</a> in the <a href="https://arxiv.org/html/2609.24271v1#S7">ME-Brain-1.0</a> cognitive-core evaluation.</p></li>
+                <li><time datetime="2026-09">Sep 2026</time><p>The <a href="static/pdfs/robobench_eccv2026_poster.pdf">ECCV 2026 poster</a> is available. See the <a href="https://eccv.ecva.net/virtual/2026/poster/4213">ECCV poster page</a>.</p></li>
+                <li><time datetime="2026-07">Jul 2026</time><p>Congratulations to <a href="https://github.com/Tencent-Hunyuan/HY-Embodied">HY-Embodied</a>! The series reports results on RoboBench-MCQ and RoboBench-Planning.</p></li>
+            </ol>
+            <details class="news-archive">
+                <summary>Earlier updates</summary>
+                <ol class="project-news-list">
+                    <li><time datetime="2026-07">Jul 2026</time><p>RoboBench was accepted to ECCV 2026. The <a href="#leaderboard">official leaderboard</a> reports results for 18 MLLMs.</p></li>
+                    <li><time datetime="2026-07">Jul 2026</time><p>RoboBench was featured by <a href="https://mp.weixin.qq.com/s/SdGEqu_1mz14DhUumTZ3FQ" lang="zh">具身智能之心</a>.</p></li>
+                    <li><time datetime="2025-10-23">Oct 23, 2025</time><p>Released the <a href="https://huggingface.co/datasets/LeoFan01/RoboBench">dataset</a> and <a href="https://github.com/yulin-luo/RoboBench">evaluation code</a>.</p></li>
+                    <li><time datetime="2025-10-21">Oct 21, 2025</time><p>Released the <a href="https://arxiv.org/abs/2510.17801">paper</a>.</p></li>
+                </ol>
+            </details>
         </div>
     </section>
-    <!-- End teaser video -->
 
-    <!-- Paper abstract -->
-    <section class="section hero is-light">
-        <div class="container is-max-desktop">
-            <div class="columns is-centered has-text-centered">
-                <div class="column is-four-fifths">
-                    <h2 class="title is-3">Abstract</h2>
-                    <div class="content has-text-justified">
-                        <!-- <p> -->
-                            Building robots that can perceive, reason, and act in dynamic, unstructured environments remains a core challenge. Recent embodied systems often adopt a dual-system paradigm, where System 2 handles high-level reasoning while System 1 executes low-level control. In this work, we refer to System 2 as the embodied brain, emphasizing its role as the cognitive core for reasoning and decision-making in manipulation tasks. Given this role, systematic evaluation of the embodied brain is essential for advancing robotic intelligence. Yet existing benchmarks emphasize execution success, or, when targeting high-level reasoning, suffer from incomplete dimensions and limited task realism, offering only a partial picture of cognitive capability. To bridge this gap, we introduce RoboBench, a benchmark that systematically evaluates multimodal large language models (MLLMs) as embodied brains. Motivated by the distinct cognitive roles required across the full manipulation pipeline, RoboBench defines five dimensions—Instruction Comprehension, Perception Reasoning, Generalized Planning, Affordance Prediction, and Failure Analysis—spanning 14 capabilities, 25 tasks, and 6092 QA pairs. To ensure realism, we curate datasets across diverse embodiments, attribute-rich objects, multi-view scenes, and memory-driven navigation, drawing from large-scale real robotic data and in-house collection. For planning, RoboBench introduces an evaluation framework that uses an MLLM as a world simulator. It moves beyond symbolic matching to evaluate embodied feasibility by simulating whether predicted plans can achieve critical object-state changes under physical and visual constraints, enabling structured assessment of long-horizon reasoning. Experiments on 18 state-of-the-art MLLMs reveal persistent limitations: difficulties with implicit instruction comprehension, spatiotemporal reasoning, cross-scenario planning, fine-grained affordance understanding, and execution failure diagnosis. We further analyze how embodied cognitive abilities relate to downstream robotic control. RoboBench provides a comprehensive scaffold to quantify high-level cognition, clarify the role of the embodied brain, and inform the development of next-generation MLLMs for more robust robotic intelligence.
-                        <!-- </p> -->
-                    </div>
-                </div>
+    <section class="page-shell external-evaluations" id="external-evaluations" aria-labelledby="external-evaluations-title">
+        <header class="evaluation-header">
+            <div>
+                <h2 class="project-heading" id="external-evaluations-title">External RoboBench evaluations</h2>
+                <p>Research teams use RoboBench to evaluate planning, perception, and execution understanding. Task subsets and scoring vary by report.</p>
+            </div>
+            <a class="project-button" href="https://github.com/yulin-luo/RoboBench/blob/main/docs/EXTERNAL_EVALUATIONS.md">Scores &amp; protocols</a>
+        </header>
+        <div class="evaluation-grid">
+            <article class="evaluation-feature">
+                <p class="evaluation-team">ACE Robotics</p>
+                <h3><a href="https://arxiv.org/abs/2611.26519">ACE-Brain-0.7</a></h3>
+                <p>Uses visual observations on 3,979 RoboBench questions, with natural-language answers for Q1 and Q2.</p>
+                <dl class="ace-scores">
+                    <div><dt>Task decomposition</dt><dd>67.7</dd></div>
+                    <div><dt>Next-subtask prediction</dt><dd>52.1</dd></div>
+                    <div><dt>Step completion</dt><dd>77.8</dd></div>
+                </dl>
+            </article>
+            <div class="evaluation-models">
+                <article>
+                    <p class="evaluation-team">Li Auto</p>
+                    <h3><a href="https://arxiv.org/html/2609.24526v1#S6">ME-VLM</a></h3>
+                    <p>Both model sizes report Planning, Perception, and Affordance results. The 35B-A3B model also reports Error. <a href="https://arxiv.org/html/2609.24271v1#S7">ME-Brain-1.0</a> uses ME-VLM as its cognitive core.</p>
+                </article>
+                <article>
+                    <p class="evaluation-team">Tencent</p>
+                    <h3><a href="https://github.com/Tencent-Hunyuan/HY-Embodied">HY-Embodied</a></h3>
+                    <p>0.5 MoT-2B, 0.5 A30B, and VLM-1.0 A3B report results on RoboBench-MCQ and RoboBench-Planning.</p>
+                </article>
+                <article>
+                    <p class="evaluation-team">ZTE</p>
+                    <h3><a href="https://arxiv.org/html/2609.19659v1#S4">EmbodiedMind</a></h3>
+                    <p>The 8B and 27B models score 43.42 and 53.57 in the report’s planning evaluation.</p>
+                </article>
             </div>
         </div>
+        <div class="evaluation-footer">
+            <p>External reports also compare NVIDIA Cosmos, Xiaomi MiMo-Embodied, BAAI RoboBrain, and RynnBrain.</p>
+            <a href="#leaderboard">ECCV leaderboard</a>
+        </div>
     </section>
-    <!-- End paper abstract -->
 
-    <!-- Intro video -->
-    <section class="hero is-small">
-        <div class="hero-body">
-            <div class="container">
-                <h2 class="title is-3 has-text-centered">Introduction Video</h2>
+    <section class="project-background" aria-label="Abstract and introduction video">
+        <div class="page-shell project-background-grid">
+            <div class="abstract-copy">
+                <h2 class="project-heading">Abstract</h2>
+                <p>RoboBench evaluates multimodal models as embodied brains across instruction comprehension, perception reasoning, generalized planning, affordance prediction, and failure analysis. The benchmark includes 6,092 questions covering 25 tasks and 14 capabilities.</p>
+                <details>
+                    <summary>Read the full abstract</summary>
+                    <p>Building robots that can perceive, reason, and act in dynamic, unstructured environments remains a core challenge. Recent embodied systems often adopt a dual-system paradigm, where System 2 handles high-level reasoning while System 1 executes low-level control. In this work, we refer to System 2 as the embodied brain, emphasizing its role as the cognitive core for reasoning and decision-making in manipulation tasks. Given this role, systematic evaluation of the embodied brain is essential for advancing robotic intelligence. Yet existing benchmarks emphasize execution success, or, when targeting high-level reasoning, suffer from incomplete dimensions and limited task realism, offering only a partial picture of cognitive capability. To bridge this gap, we introduce RoboBench, a benchmark that systematically evaluates multimodal large language models (MLLMs) as embodied brains. Motivated by the distinct cognitive roles required across the full manipulation pipeline, RoboBench defines five dimensions—Instruction Comprehension, Perception Reasoning, Generalized Planning, Affordance Prediction, and Failure Analysis—spanning 14 capabilities, 25 tasks, and 6092 QA pairs. To ensure realism, we curate datasets across diverse embodiments, attribute-rich objects, multi-view scenes, and memory-driven navigation, drawing from large-scale real robotic data and in-house collection. For planning, RoboBench introduces an evaluation framework that uses an MLLM as a world simulator. It moves beyond symbolic matching to evaluate embodied feasibility by simulating whether predicted plans can achieve critical object-state changes under physical and visual constraints, enabling structured assessment of long-horizon reasoning. Experiments on 18 state-of-the-art MLLMs reveal persistent limitations: difficulties with implicit instruction comprehension, spatiotemporal reasoning, cross-scenario planning, fine-grained affordance understanding, and execution failure diagnosis. We further analyze how embodied cognitive abilities relate to downstream robotic control. RoboBench provides a comprehensive scaffold to quantify high-level cognition, clarify the role of the embodied brain, and inform the development of next-generation MLLMs for more robust robotic intelligence.</p>
+                </details>
+            </div>
+            <div id="intro-video">
+                <h2 class="project-heading">Introduction video</h2>
                 <div class="publication-video">
-                    <iframe src="https://www.youtube-nocookie.com/embed/_W3FSK75IRQ" title="RoboBench introduction video"
-                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube-nocookie.com/embed/_W3FSK75IRQ" title="RoboBench introduction video" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
                 </div>
+                <p class="video-link"><a href="https://www.youtube.com/watch?v=_W3FSK75IRQ">Watch on YouTube</a></p>
             </div>
         </div>
     </section>
-    <!-- End intro video -->
-
-    <section class="hero is-small">
-        <div class="hero-body">
-            <div class="container">
-                <h2 class="title is-3">News</h2>
-                <div class="content has-text-justified">
-                    <b>2026.11</b> – Congratulations to the <a href="https://arxiv.org/abs/2611.26519">ACE-Brain team</a> on ACE-Brain-0.7! The report evaluates task decomposition, next-subtask prediction, and step completion on RoboBench. See <a href="#external-evaluations">external evaluations</a> for the protocol.<br>
-                    <b>2026.09</b> – Li Auto reports RoboBench results for both <a href="https://arxiv.org/html/2609.24526v1#S6">ME-VLM variants</a>, also featured in the <a href="https://arxiv.org/html/2609.24271v1#S7">ME-Brain-1.0</a> cognitive-core evaluation.<br>
-                    <b>🖼️ 2026.09</b> - The official <a href="static/pdfs/robobench_eccv2026_poster.pdf" target="_blank">ECCV 2026 poster</a> is released! Come find us at ECCV 2026 in Malmö (Sept 8–12), and visit our <a href="https://eccv.ecva.net/virtual/2026/poster/4213" target="_blank" rel="noopener">ECCV virtual poster page</a>❗️<br>
-                    <b>📊 2026.07</b> - Congratulations to <a href="https://github.com/Tencent-Hunyuan/HY-Embodied" target="_blank" rel="noopener">HY-Embodied</a>! <b>HY-Embodied-0.5 MoT-2B</b> and <b>Hy-Embodied-VLM-1.0 A3B</b> include <b>RoboBench-MCQ</b> and <b>RoboBench-Planning</b> as part of their official evaluation suite, highlighting RoboBench as a recognized benchmark for embodied foundation models.<br>
-                    <b>🎉 2026.07</b> - RoboBench is accepted to <b>ECCV 2026</b>! This page now reports the official ECCV 2026 leaderboard, covering <b>18 state-of-the-art MLLMs</b> (GPT-5.4 / GPT-5, Claude-Opus-4.7 / Sonnet-4.6, Gemini-3.1-Pro, Qwen3-VL, MiMo-Embodied, RoboBrain-2.5, and more), evaluated with the MLLM-as-world-simulator planning framework.<br>
-                    <b>📰 2026.07</b> - RoboBench is featured by <a href="https://mp.weixin.qq.com/s/SdGEqu_1mz14DhUumTZ3FQ" target="_blank" rel="noopener">具身智能之心</a>, introducing our benchmark for evaluating MLLMs as embodied brains.<br>
-                    <b>🔥 2025.10.23</b> - Dataset and code have been released! If you encounter any issues, please feel free to submit an issue on <a href="https://github.com/yulin-luo/RoboBench" target="_blank">GitHub</a>, and we will check and address them as soon as possible❗️<br>
-                    <b>🔥 2025.10.21</b> - The paper has been released! Code and dataset are being organized and will be released soon. Stay tuned❗️
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="hero is-small is-light external-evaluations" id="external-evaluations" aria-labelledby="external-evaluations-title">
-        <div class="hero-body">
-            <div class="container">
-                <h2 class="title is-3" id="external-evaluations-title">External RoboBench Evaluations</h2>
-                <p class="external-evaluations-intro">Embodied foundation models evaluated on RoboBench in published technical reports. Each report uses its own task subset and scoring protocol.</p>
-                <div class="external-evaluations-grid">
-                    <article class="external-evaluation">
-                        <p class="external-evaluation-team">ACE Robotics</p>
-                        <h3><a href="https://arxiv.org/abs/2611.26519">ACE-Brain-0.7</a></h3>
-                        <p>Natural-language planning from visual observations on 3,979 questions. The report gives 67.7 for task decomposition, 52.1 for next-subtask prediction, and 77.8 for step completion.</p>
-                    </article>
-                    <article class="external-evaluation">
-                        <p class="external-evaluation-team">Li Auto</p>
-                        <h3><a href="https://arxiv.org/html/2609.24526v1#S6">ME-VLM</a></h3>
-                        <p>4B and 35B-A3B variants evaluated on Planning, Perception, Affordance, and Error. <a href="https://arxiv.org/html/2609.24271v1#S7">ME-Brain-1.0</a> reports these results for its cognitive core.</p>
-                    </article>
-                    <article class="external-evaluation">
-                        <p class="external-evaluation-team">Tencent</p>
-                        <h3><a href="https://github.com/Tencent-Hunyuan/HY-Embodied">HY-Embodied</a></h3>
-                        <p>0.5 MoT-2B, 0.5 A30B, and VLM-1.0 A3B report results on RoboBench-MCQ and RoboBench-Planning.</p>
-                    </article>
-                    <article class="external-evaluation">
-                        <p class="external-evaluation-team">ZTE</p>
-                        <h3><a href="https://arxiv.org/html/2609.19659v1#S4">EmbodiedMind</a></h3>
-                        <p>The 8B and 27B models score 43.42 and 53.57 on RoboBench in the report’s task-planning evaluation.</p>
-                    </article>
-                </div>
-                <p class="external-evaluations-more">External reports also include comparison results for NVIDIA Cosmos, Xiaomi MiMo-Embodied, BAAI RoboBrain, RynnBrain, and other models. <a href="https://github.com/yulin-luo/RoboBench/blob/main/docs/EXTERNAL_EVALUATIONS.md">See reported scores and protocols</a>.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- <section class="hero is-small is-light">
-        <div class="hero-body">
-            <div class="container">
-                <h2 class="title is-3">Takeaway</h2>
-                <div class="content has-text-justified">Text</div>
-            </div>
-        </div>
-        </div>
-    </section> -->
 
     <section class="hero is-small">
         <div class="hero-body">
@@ -445,15 +277,13 @@
    <!-- Case Study -->
    <section class="section" id="case-study" style="padding-top:2rem; padding-bottom:2rem;">
      <div class="container">
-       <h2 class="title is-3" style="text-align:center; margin-bottom:1rem;">Demo Case</h2>
-       <div class="columns is-centered has-text-centered">
-         <div class="column is-10">
-           <img src="static/images/demo_case/demo_case.png" alt="Demo Case" style="width:100%; max-width:960px;"/>
-           <p class="content has-text-justified" style="margin: 0.75rem auto 0; max-width: 960px; font-size: 1.02em;">
-             <b>Demo case.</b> A representative RoboBench item illustrates how a robot scene is converted into grounded questions and evaluated across embodied reasoning skills, including perception, planning, affordance prediction, and failure analysis.
-           </p>
-         </div>
-       </div>
+       <h2 class="project-heading">Demo case</h2>
+       <figure class="overview-figure">
+         <a class="overview-image" href="static/images/demo_case/demo_case.png" aria-label="Open the full-size demo case">
+           <img src="static/images/previews/demo-case.webp" alt="A robot scene with example RoboBench questions across five reasoning dimensions" width="1680" height="1193" loading="lazy" decoding="async">
+         </a>
+         <figcaption>A RoboBench example shows how one robot scene leads to questions about perception, planning, affordance prediction, and failure analysis.</figcaption>
+       </figure>
      </div>
    </section>
 
@@ -461,7 +291,7 @@
         <div class="hero-body">
             <div class="container">
                 <!-- Paper video. -->
-                <h2 class="title is-3" id="leaderboard">Leaderboard</h2>
+                <h2 class="title is-3" id="leaderboard">ECCV leaderboard</h2>
                 <div class="tab-container">
                     <div class="tab-buttons">
                         <button class="tab-btn active" data-tab="text-only">Perception Reasoning</button>
@@ -470,7 +300,7 @@
                         <button class="tab-btn" data-tab="open-source">Affordance Prediction &amp; Failure Analysis</button>
                     </div>
 
-                    <div id="text-only" class="tab-content active">
+                    <div id="text-only" class="tab-content active" role="region" tabindex="0" aria-label="Scrollable leaderboard results">
                         <table>
                             <thead>
                                 <tr>
@@ -752,7 +582,7 @@
                         </table>
                     </div>
 
-                    <div id="closed-source" class="tab-content">
+                    <div id="closed-source" class="tab-content" role="region" tabindex="0" aria-label="Scrollable leaderboard results">
                         <table>
                             <thead>
                                 <tr>
@@ -1142,7 +972,7 @@
                         </table>
                     </div>
 
-                    <div id="planning-q2q3" class="tab-content">
+                    <div id="planning-q2q3" class="tab-content" role="region" tabindex="0" aria-label="Scrollable leaderboard results">
                         <table>
                             <thead>
                                 <tr>
@@ -1404,7 +1234,7 @@
                         </table>
                     </div>
 
-                    <div id="open-source" class="tab-content">
+                    <div id="open-source" class="tab-content" role="region" tabindex="0" aria-label="Scrollable leaderboard results">
                         <table>
                             <thead>
                                 <tr>
@@ -1819,11 +1649,18 @@
     <!--End BibTex citation -->
 
 
+    </main>
+
     <footer class="footer">
         <div class="container">
             <div class="columns is-centered">
                 <div class="column is-8">
                     <div class="content">
+                        <div class="footer-project-links">
+                            <a href="#top">Back to top</a>
+                            <a href="https://deepvision-vla.github.io/">DeepVision-VLA</a>
+                            <a href="https://github.com/yulin-luo">Yulin Luo on GitHub</a>
+                        </div>
 
                         <p>
                             This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project
