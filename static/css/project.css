@@ -190,3 +190,216 @@ th[aria-sort="descending"] .score-sort span::after { content: "↓"; font-size: 
 }
 
 .media-description p { color: var(--muted); font-size: .85rem; }
+
+/* 2026-11-23 polish: video cover, legend, scroll cue, BibTeX, aligned footer. */
+.robo-project { color-scheme: light; }
+.project-nav-links a.active { color: var(--accent); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+
+.video-facade { background: #1b2436; }
+.video-play { position: absolute; inset: 0; display: block; width: 100%; height: 100%; padding: 0; border: 0; background: transparent; cursor: pointer; }
+.video-play img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.video-play-icon { position: absolute; top: 50%; left: 50%; width: 68px; height: 48px; border-radius: 12px; background: rgb(24 37 58 / 82%); transform: translate(-50%, -50%); transition: background-color .15s ease; }
+.video-play-icon::after { content: ""; position: absolute; top: 50%; left: 50%; border-style: solid; border-width: 10px 0 10px 17px; border-color: transparent transparent transparent #fff; transform: translate(-38%, -50%); }
+.video-play:hover .video-play-icon, .video-play:focus-visible .video-play-icon { background: var(--accent); }
+
+.score-legend { white-space: nowrap; }
+.score-legend strong { color: var(--ink); font-weight: 800; }
+.score-legend u, .tab-content td u { color: var(--ink); text-decoration-thickness: 1.5px; text-underline-offset: 3px; text-decoration-color: #7c8aa0; }
+.tab-content.can-scroll-right {
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 40px), rgb(0 0 0 / 22%));
+    mask-image: linear-gradient(to right, #000 calc(100% - 40px), rgb(0 0 0 / 22%));
+}
+
+.robo-project #BibTeX { padding-block: 26px 30px; }
+.bibtex-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+.bibtex-header .project-heading { margin-bottom: 0; }
+.robo-project .bibtex-code { margin: 0; padding: 16px 18px; border: 1px solid var(--line); border-radius: 7px; background: var(--wash); color: var(--ink); font: .8rem/1.75 ui-monospace, "Cascadia Code", "SFMono-Regular", Consolas, Menlo, "Courier New", monospace; white-space: pre-wrap; overflow-wrap: anywhere; }
+.bibtex-code code { padding: 0; background: none; color: inherit; font: inherit; }
+.bibtex-code code > span { display: block; padding-left: 4ch; text-indent: -4ch; }
+.robo-project .footer { padding-inline: 0; }
+.robo-project .footer .content p { max-width: 94ch; }
+
+@media (max-width: 520px) {
+    .score-legend { white-space: normal; }
+    .video-play-icon { width: 56px; height: 40px; }
+    .robo-project .bibtex-code { padding: 12px; font-size: .74rem; }
+}
+
+/* ===== 2026-11-23 visual refresh: depth, rhythm and a stronger hero. Existing fonts, colours and assets only. ===== */
+.robo-project {
+    --accent-2: #4f7be0;
+    --accent-soft: rgb(44 73 187 / 8%);
+    --radius: 14px;
+    --shadow-sm: 0 1px 2px rgb(24 37 58 / 5%), 0 6px 18px rgb(24 37 58 / 6%);
+    --shadow-lg: 0 2px 6px rgb(24 37 58 / 6%), 0 22px 54px rgb(24 37 58 / 13%);
+}
+.robo-project main { overflow-x: clip; }
+
+/* Header */
+.project-header { background: rgb(255 255 255 / 84%); backdrop-filter: saturate(1.6) blur(16px); }
+.project-nav-links { gap: 4px; }
+.project-nav-links a { padding: 6px 12px; border-radius: 999px; transition: color .15s ease, background-color .15s ease; }
+.project-nav-links a:hover { background: var(--accent-soft); text-decoration: none; }
+.project-nav-links a.active { background: var(--accent-soft); }
+
+/* Hero */
+.project-intro { position: relative; isolation: isolate; padding-block: 44px 46px; }
+.project-intro::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0 calc(50% - 50vw);
+    background:
+        radial-gradient(46% 60% at 50% 0%, rgb(44 73 187 / 14%), transparent 72%),
+        radial-gradient(30% 44% at 88% 26%, rgb(79 123 224 / 11%), transparent 72%),
+        radial-gradient(28% 40% at 10% 40%, rgb(40 92 82 / 8%), transparent 72%),
+        linear-gradient(#f5f8ff, #fff 80%);
+}
+.project-intro::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0 calc(50% - 50vw);
+    background: radial-gradient(circle at 1px 1px, rgb(24 37 58 / 8%) 1px, transparent 0) 0 0 / 24px 24px;
+    -webkit-mask-image: radial-gradient(70% 60% at 50% 16%, #000, transparent 75%);
+    mask-image: radial-gradient(70% 60% at 50% 16%, #000, transparent 75%);
+}
+.venue-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 14px 5px 12px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(44 73 187 / 22%);
+    border-radius: 999px;
+    background: rgb(255 255 255 / 80%);
+    box-shadow: var(--shadow-sm);
+}
+.venue-link::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+.robo-project .venue-link:hover { text-decoration: none; border-color: rgb(44 73 187 / 45%); }
+.project-intro h1 {
+    color: transparent;
+    background: linear-gradient(96deg, var(--ink) 15%, #23409f 55%, var(--accent-2) 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    padding-bottom: .04em;
+}
+.project-subtitle { color: #2a3a54; }
+.affiliation-logos { padding: 8px 18px; border: 1px solid rgb(217 226 237 / 80%); border-radius: 14px; background: rgb(255 255 255 / 85%); box-shadow: var(--shadow-sm); margin-block: 16px 18px; }
+.project-actions { gap: 10px; }
+.robo-project .project-button {
+    gap: 8px;
+    min-height: 40px;
+    padding: 8px 17px;
+    border-color: #d3deeb;
+    border-radius: 999px;
+    background: rgb(255 255 255 / 88%);
+    box-shadow: var(--shadow-sm);
+    transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease, border-color .15s ease;
+}
+.robo-project .project-button:hover { transform: translateY(-1px); box-shadow: var(--shadow-lg); background: #fff; }
+.robo-project .project-button.primary { border-color: transparent; background: linear-gradient(135deg, #3a5bd0, var(--accent) 55%, #22399a); box-shadow: 0 6px 18px rgb(44 73 187 / 30%); }
+.robo-project .project-button.primary:hover { background: linear-gradient(135deg, #3352c2, #22399a); box-shadow: 0 10px 26px rgb(44 73 187 / 36%); }
+.button-icon { width: 17px; height: 17px; flex-shrink: 0; }
+.project-secondary { margin-top: 12px; }
+
+/* Section headings get a small gradient rule */
+.robo-project main .project-heading::after { content: ""; display: block; width: 40px; height: 4px; margin-top: 10px; border-radius: 4px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
+.robo-project .project-news .project-heading::after { background: linear-gradient(90deg, #285c52, #4f9b8c); }
+.external-evaluations, .project-overview, .findings, .project-media { padding-block: 52px; }
+.project-band { padding-block: 48px; }
+.overview-media-layout { padding-block: 52px; }
+
+/* News */
+.project-news { padding-block: 30px 26px; background: linear-gradient(180deg, #f0f7f4, #f6fbf9); }
+.project-news-list { display: grid; gap: 8px; }
+.project-news-list li { align-items: center; padding: 11px 16px; border: 1px solid var(--news-line); border-radius: 12px; background: #fff; box-shadow: 0 1px 2px rgb(24 37 58 / 4%); }
+.project-news-list time { justify-self: start; padding: 2px 10px; border-radius: 999px; background: rgb(40 92 82 / 9%); }
+.project-news > .page-shell > .project-news-list li:first-child { border-color: rgb(44 73 187 / 28%); }
+.project-news > .page-shell > .project-news-list li:first-child time { background: var(--accent-soft); }
+.news-archive { margin-top: 10px; border-top: 0; }
+.news-archive .project-news-list { margin-top: 6px; }
+
+/* Cards */
+.report-card, .findings-grid article, .association-grid article, .media-grid article {
+    position: relative;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow .2s ease, transform .2s ease;
+}
+.report-card, .findings-grid article { padding: 18px 20px; }
+.report-card { overflow: hidden; }
+.report-card::before { content: ""; position: absolute; inset: 0 0 auto; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
+.report-card:hover, .findings-grid article:hover, .media-grid article:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.report-team { display: inline-block; padding: 1px 9px; margin-bottom: 6px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); letter-spacing: .02em; }
+.report-scores .report-total { border-radius: 8px; background: linear-gradient(90deg, rgb(44 73 187 / 10%), rgb(79 123 224 / 6%)); padding-inline: 10px; }
+.evaluation-grid, .findings-grid, .association-grid, .media-grid { gap: 16px; }
+
+/* Abstract + stats */
+.robo-project #abstract { background: linear-gradient(180deg, #f3f6fb, #f7f9fc); }
+.benchmark-counts { gap: 12px; margin-top: 22px; border: 0; }
+.benchmark-counts div, .benchmark-counts div + div { padding: 14px 6px; border: 1px solid var(--line); border-radius: 12px; background: #fff; box-shadow: var(--shadow-sm); }
+.benchmark-counts dd {
+    color: transparent;
+    background: linear-gradient(120deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: clamp(1.4rem, 3vw, 2.1rem);
+}
+.benchmark-counts dt { margin-top: 2px; font-weight: 650; }
+
+/* Video + overview */
+.overview-video .publication-video { border-radius: var(--radius) !important; box-shadow: var(--shadow-lg), 0 0 0 1px rgb(24 37 58 / 8%); }
+.video-play img { transition: transform .4s ease; }
+.video-play:hover img { transform: scale(1.02); }
+.video-play-icon { width: 76px; height: 54px; border-radius: 16px; background: linear-gradient(135deg, #3a5bd0, #22399a); box-shadow: 0 10px 30px rgb(24 37 58 / 35%); }
+.overview-image { border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 8px; transition: box-shadow .2s ease; }
+.overview-image:hover { box-shadow: var(--shadow-lg); }
+.overview-image img { border-radius: 8px; }
+
+/* Leaderboard */
+.robo-project .leaderboard-section { background: linear-gradient(180deg, #f3f6fb, #f7f9fc); }
+.leaderboard-section .hero-body { padding-block: 52px; }
+.tab-buttons { gap: 4px; padding: 5px; margin-bottom: 14px; border: 1px solid var(--line); border-radius: 999px; background: #e9eef7; }
+.tab-btn { padding: 8px 10px; border: 0; border-radius: 999px; transition: background-color .15s ease, color .15s ease, box-shadow .15s ease; }
+.tab-btn.active { border: 0; background: #fff; box-shadow: var(--shadow-sm); }
+.tab-content { border-radius: var(--radius); box-shadow: var(--shadow-sm); }
+.tab-content thead th { background: #eef2f9; }
+.tab-content table tbody th { color: var(--accent); background: #f1f4fb; letter-spacing: .02em; }
+.robo-project .tab-content td strong, .robo-project .score-legend strong { display: inline-block; padding: 0 7px; border-radius: 999px; background: rgb(44 73 187 / 11%); color: var(--accent); font-weight: 800; }
+.score-legend strong { padding: 0 6px; }
+
+/* Findings */
+.finding-bars meter { height: 8px; border-radius: 999px; }
+.finding-bars meter::-webkit-meter-bar { border-radius: 999px; background: #e8eef7; }
+.finding-bars meter::-webkit-meter-optimum-value { border-radius: 999px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
+.finding-bars meter::-moz-meter-bar { border-radius: 999px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
+.finding-notes p { padding: 14px 18px; border-left: 0; border-radius: 12px; background: linear-gradient(120deg, rgb(44 73 187 / 7%), rgb(79 123 224 / 4%)); }
+
+/* Correlation */
+.robo-project #vlm-vla-analysis { background: linear-gradient(180deg, #f3f6fb, #f7f9fc); }
+.association-matrix .overview-image { padding: 12px; }
+.association-matrix { margin-bottom: 18px; }
+
+/* BibTeX: dark code block */
+.robo-project .bibtex-code { border-color: #22324d; background: #142238; color: #d7e3f4; box-shadow: var(--shadow-sm); }
+.robo-project .footer { background: #f3f6fb; }
+
+@media (max-width: 740px) {
+    .external-evaluations, .project-overview, .findings, .project-media, .project-band, .overview-media-layout { padding-block: 36px; }
+    .leaderboard-section .hero-body { padding-block: 36px; }
+    .tab-buttons { border-radius: 18px; }
+    .tab-btn { border-radius: 14px; }
+    .benchmark-counts { gap: 8px; }
+}
+
+@media (max-width: 520px) {
+    .project-intro { padding-block: 24px 30px; }
+    .project-nav-links { flex-wrap: nowrap; gap: 0; margin-left: -5px; }
+    .project-nav-links a { padding: 4px 5px; font-size: .78rem; white-space: nowrap; }
+    .robo-project .project-button { padding: 7px 13px; min-height: 38px; }
+    .affiliation-logos { padding: 6px 10px; border-radius: 10px; }
+    .benchmark-counts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .report-card, .findings-grid article { padding: 16px; }
+}
