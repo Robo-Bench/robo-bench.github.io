@@ -12,6 +12,49 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // In-page figure viewer: show the cached preview at once, swap in the full-size original when it arrives.
+    const figureLinks = [...document.querySelectorAll("a.overview-image")];
+    if (figureLinks.length && window.HTMLDialogElement) {
+        const viewer = document.createElement("dialog");
+        viewer.className = "figure-viewer";
+        viewer.setAttribute("aria-label", "Expanded figure");
+        viewer.innerHTML = `
+            <div class="figure-viewer-bar">
+                <button class="figure-viewer-btn" type="button" data-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+            </div>
+            <div class="figure-viewer-stage"><img alt=""><span class="figure-viewer-spinner" aria-hidden="true"></span></div>`;
+        document.body.append(viewer);
+        const stage = viewer.querySelector(".figure-viewer-stage");
+        const image = viewer.querySelector("img");
+        let token = 0;
+        const close = () => {
+            viewer.classList.add("closing");
+            setTimeout(() => { viewer.classList.remove("closing"); viewer.close(); }, 160);
+        };
+        for (const link of figureLinks) {
+            link.addEventListener("click", event => {
+                if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+                event.preventDefault();
+                const preview = link.querySelector("img");
+                const full = link.href;
+                const current = ++token;
+                image.src = preview.currentSrc || preview.src;
+                image.alt = preview.alt;
+                stage.classList.remove("zoomed");
+                viewer.classList.add("loading");
+                viewer.showModal();
+                const loader = new Image();
+                loader.onload = () => { if (current === token) { image.src = full; viewer.classList.remove("loading"); } };
+                loader.onerror = () => { if (current === token) viewer.classList.remove("loading"); };
+                loader.src = full;
+            });
+        }
+        viewer.querySelector("[data-close]").addEventListener("click", close);
+        viewer.addEventListener("cancel", event => { event.preventDefault(); close(); });
+        viewer.addEventListener("click", event => { if (event.target === viewer || event.target === stage) close(); });
+        image.addEventListener("click", () => stage.classList.toggle("zoomed"));
+    }
+
     const copy = document.getElementById("copy-bibtex");
     if (copy) {
         const code = document.getElementById("bibtex-code");

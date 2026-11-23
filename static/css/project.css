@@ -442,3 +442,29 @@ th[aria-sort="descending"] .score-sort span::after { content: "↓"; font-size: 
 
 /* 2026-11-23 order: External evaluations now follows the leaderboard; separate it from Key findings. */
 .external-evaluations + .findings { border-top: 1px solid var(--line); }
+
+/* 2026-11-23 figure viewer: in-page lightbox for preview links (original links kept for new-tab use). */
+a.overview-image { position: relative; cursor: zoom-in; }
+a.overview-image::after { content: ""; position: absolute; right: 12px; bottom: 12px; width: 30px; height: 30px; border-radius: 8px; background: rgb(24 37 58 / 60%) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7'/%3E%3C/svg%3E") center / 16px no-repeat; opacity: .85; transition: background-color .15s ease, opacity .15s ease; }
+a.overview-image:hover::after, a.overview-image:focus-visible::after { background-color: var(--accent); opacity: 1; }
+
+.figure-viewer { width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: transparent; overflow: hidden; }
+.figure-viewer::backdrop { background: rgb(12 20 34 / 78%); backdrop-filter: blur(4px); animation: viewer-fade .2s ease; }
+.figure-viewer[open] .figure-viewer-stage img { animation: viewer-pop .22s cubic-bezier(.2, .8, .2, 1); }
+.figure-viewer.closing::backdrop { animation: viewer-fade .16s ease reverse forwards; }
+.figure-viewer.closing .figure-viewer-stage img { animation: viewer-pop .16s ease reverse forwards; }
+.figure-viewer-stage { position: absolute; inset: 0; display: grid; place-items: center; padding: 64px 3vw 3vh; overflow: auto; }
+.figure-viewer-stage img { display: block; max-width: 100%; max-height: calc(100dvh - 90px); width: auto; height: auto; border-radius: 10px; background: #fff; box-shadow: 0 30px 80px rgb(0 0 0 / 40%); cursor: zoom-in; }
+.figure-viewer-stage.zoomed { place-items: start center; }
+.figure-viewer-stage.zoomed img { max-width: none; max-height: none; width: min(2600px, 220vw); cursor: zoom-out; }
+.figure-viewer-bar { position: fixed; top: 14px; right: 16px; z-index: 2; display: flex; gap: 8px; }
+.figure-viewer-btn { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid rgb(255 255 255 / 25%); border-radius: 999px; background: rgb(255 255 255 / 12%); color: #fff; cursor: pointer; transition: background-color .15s ease; }
+.figure-viewer-btn:hover { background: rgb(255 255 255 / 24%); }
+.figure-viewer-btn svg { width: 18px; height: 18px; }
+.figure-viewer-spinner { position: fixed; top: 24px; left: 50%; width: 22px; height: 22px; margin-left: -11px; border: 2px solid rgb(255 255 255 / 30%); border-top-color: #fff; border-radius: 50%; opacity: 0; animation: viewer-spin .8s linear infinite; transition: opacity .2s ease; pointer-events: none; }
+.figure-viewer.loading .figure-viewer-spinner { opacity: 1; }
+@keyframes viewer-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes viewer-pop { from { opacity: 0; transform: scale(.94); } to { opacity: 1; transform: scale(1); } }
+@keyframes viewer-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .figure-viewer *, .figure-viewer::backdrop { animation: none !important; } }
+@media (max-width: 520px) { a.overview-image::after { right: 8px; bottom: 8px; width: 26px; height: 26px; background-size: 14px; } .figure-viewer-stage { padding: 60px 8px 8px; } }
