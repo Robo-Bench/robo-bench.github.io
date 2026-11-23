@@ -62,7 +62,7 @@
 
     <link rel="stylesheet" href="static/css/bulma.min.css">
     <link rel="stylesheet" href="static/css/index.css">
-    <link rel="stylesheet" href="static/css/project.css?v=20261123-visual">
+    <link rel="stylesheet" href="static/css/project.css?v=20261123-order">
 
     <script defer src="static/js/table.js?v=20261123-grouped"></script>
     <script defer src="static/js/project.js?v=20261123-polish"></script>
@@ -78,8 +78,8 @@
             <div class="project-nav-links">
                 <a href="#news">News</a>
                 <a href="#overview">Overview</a>
-                <a href="#external-evaluations">Evaluations</a>
                 <a href="#leaderboard">Leaderboard</a>
+                <a href="#external-evaluations">Evaluations</a>
                 <a href="#findings">Findings</a>
             </div>
         </nav>
@@ -161,64 +161,12 @@
         </div>
     </section>
 
-    <section class="page-shell external-evaluations" id="external-evaluations" aria-labelledby="external-evaluations-title">
-        <div class="section-heading">
-            <div>
-                <h2 class="project-heading" id="external-evaluations-title">External evaluations</h2>
-                <p>RoboBench scores reported by each team. The evaluation subsets and scoring protocols vary.</p>
-            </div>
-            <a class="project-button" href="https://github.com/yulin-luo/RoboBench/blob/main/docs/EXTERNAL_EVALUATIONS.md">Scores &amp; protocols</a>
-        </div>
-        <div class="evaluation-grid">
-            <article class="report-card">
-                <p class="report-team">ACE Robotics</p>
-                <h3><a href="https://arxiv.org/abs/2611.26519">ACE-Brain-0.7</a></h3>
-                <p class="report-setting">Q1 and Q2 use natural-language answers. Overall averages 3,979 questions with visual input.</p>
-                <dl class="report-scores">
-                    <div><dt>Q1 · Task decomposition</dt><dd>67.7</dd></div>
-                    <div><dt>Q2 · Next subtask</dt><dd>52.1</dd></div>
-                    <div><dt>Q3 · Step completion</dt><dd>77.8</dd></div>
-                    <div class="report-total"><dt>RoboBench overall</dt><dd>67.4</dd></div>
-                </dl>
-
-            </article>
-            <article class="report-card">
-                <p class="report-team">Li Auto</p>
-                <h3><a href="https://arxiv.org/html/2609.24526v1#S6">ME-VLM</a></h3>
-                <p class="report-setting">Cognitive core of <a href="https://arxiv.org/html/2609.24271v1#S7">ME-Brain-1.0</a>. The 4B Error score is unavailable.</p>
-                <table class="report-table" aria-label="ME-VLM scores">
-                    <thead><tr><th scope="col">Model</th><th scope="col">Planning</th><th scope="col">Perception</th><th scope="col">Affordance</th><th scope="col">Error</th></tr></thead>
-                    <tbody><tr><th scope="row">4B</th><td>40.1</td><td>41.8</td><td>47.0</td><td>—</td></tr><tr><th scope="row">35B-A3B</th><td>53.7</td><td>52.2</td><td>60.7</td><td>52.7</td></tr></tbody>
-                </table>
-
-            </article>
-            <article class="report-card">
-                <p class="report-team">Tencent</p>
-                <h3><a href="https://arxiv.org/html/2607.12894v1">HY-Embodied</a></h3>
-                <p class="report-setting">Scores on RoboBench-MCQ and RoboBench-Planning.</p>
-                <table class="report-table" aria-label="HY-Embodied scores">
-                    <thead><tr><th scope="col">Model</th><th scope="col">MCQ</th><th scope="col">Planning</th></tr></thead>
-                    <tbody><tr><th scope="row">0.5 MoT-2B</th><td>49.2</td><td>54.2</td></tr><tr><th scope="row">0.5 A30B</th><td>62.8</td><td>59.3</td></tr><tr><th scope="row">VLM-1.0 A3B</th><td>61.2</td><td>54.9</td></tr></tbody>
-                </table>
-
-            </article>
-            <article class="report-card">
-                <p class="report-team">ZTE</p>
-                <h3><a href="https://arxiv.org/html/2609.19659v1#S4">EmbodiedMind</a></h3>
-                <p class="report-setting">Scores on the report’s RoboBench task-planning evaluation.</p>
-                <dl class="report-scores"><div><dt>EmbodiedMind-8B</dt><dd>43.42</dd></div><div><dt>EmbodiedMind-27B</dt><dd>53.57</dd></div></dl>
-
-            </article>
-        </div>
-        <p class="section-note">The linked reports also include comparison results for NVIDIA Cosmos, Xiaomi MiMo-Embodied, BAAI RoboBrain, and RynnBrain.</p>
-    </section>
-
     <section class="project-band" id="abstract" aria-labelledby="abstract-title">
         <div class="page-shell">
             <div class="abstract-copy">
                 <h2 class="project-heading" id="abstract-title">Abstract</h2>
                 <p>Building robots that can perceive, reason, and act in dynamic, unstructured environments remains a core challenge. Recent embodied systems often adopt a dual-system paradigm, where System 2 handles high-level reasoning while System 1 executes low-level control. In this work, we refer to System 2 as the embodied brain, emphasizing its role as the cognitive core for reasoning and decision-making in manipulation tasks.</p>
-                <p>Given this role, systematic evaluation of the embodied brain is essential for advancing robotic intelligence. Yet existing benchmarks emphasize execution success, or, when targeting high-level reasoning, suffer from incomplete dimensions and limited task realism, offering only a partial picture of cognitive capability. To bridge this gap, we introduce RoboBench, a benchmark that systematically evaluates multimodal large language models (MLLMs) as embodied brains. Motivated by the distinct cognitive roles required across the full manipulation pipeline, RoboBench defines five dimensions—Instruction Comprehension, Perception Reasoning, Generalized Planning, Affordance Prediction, and Failure Analysis—spanning 14 capabilities, 25 tasks, and 6092 QA pairs. To ensure realism, we curate datasets across diverse embodiments, attribute-rich objects, multi-view scenes, and memory-driven navigation, drawing from large-scale real robotic data and in-house collection.</p>
+                <p>Given this role, systematic evaluation of the embodied brain is essential for advancing robotic intelligence. Yet existing benchmarks emphasize execution success, or, when targeting high-level reasoning, suffer from incomplete dimensions and limited task realism, offering only a partial picture of cognitive capability. To bridge this gap, we introduce RoboBench, a benchmark that systematically evaluates multimodal large language models (MLLMs) as embodied brains. Motivated by the distinct cognitive roles required across the full manipulation pipeline, RoboBench defines five dimensions—Instruction Comprehension, Perception Reasoning, Generalized Planning, Affordance Prediction, and Failure Analysis—spanning 14 capabilities, 25 tasks, and 6092 QA pairs. To ensure realism, we curate datasets across diverse embodiments, attribute-rich objects, multi-view scenes, and memory-driven navigation, drawing from large-scale real robotic data and in&#8209;house collection.</p>
                 <p>For planning, RoboBench introduces an evaluation framework that uses an MLLM as a world simulator. It moves beyond symbolic matching to evaluate embodied feasibility by simulating whether predicted plans can achieve critical object-state changes under physical and visual constraints, enabling structured assessment of long-horizon reasoning.</p>
                 <p>Experiments on 18 state-of-the-art MLLMs reveal persistent limitations: difficulties with implicit instruction comprehension, spatiotemporal reasoning, cross-scenario planning, fine-grained affordance understanding, and execution failure diagnosis. We further analyze how embodied cognitive abilities relate to downstream robotic control. RoboBench provides a comprehensive scaffold to quantify high-level cognition, clarify the role of the embodied brain, and inform the development of next-generation MLLMs for more robust robotic intelligence.</p>
             </div>
@@ -1441,6 +1389,58 @@
     </section>
 
 
+    <section class="page-shell external-evaluations" id="external-evaluations" aria-labelledby="external-evaluations-title">
+        <div class="section-heading">
+            <div>
+                <h2 class="project-heading" id="external-evaluations-title">External evaluations</h2>
+                <p>RoboBench scores reported by each team. The evaluation subsets and scoring protocols vary.</p>
+            </div>
+            <a class="project-button" href="https://github.com/yulin-luo/RoboBench/blob/main/docs/EXTERNAL_EVALUATIONS.md">Scores &amp; protocols</a>
+        </div>
+        <div class="evaluation-grid">
+            <article class="report-card">
+                <p class="report-team">ACE Robotics</p>
+                <h3><a href="https://arxiv.org/abs/2611.26519">ACE-Brain-0.7</a></h3>
+                <p class="report-setting">Q1 and Q2 use natural-language answers. Overall averages 3,979 questions with visual input.</p>
+                <dl class="report-scores">
+                    <div><dt>Q1 · Task decomposition</dt><dd>67.7</dd></div>
+                    <div><dt>Q2 · Next subtask</dt><dd>52.1</dd></div>
+                    <div><dt>Q3 · Step completion</dt><dd>77.8</dd></div>
+                    <div class="report-total"><dt>RoboBench overall</dt><dd>67.4</dd></div>
+                </dl>
+
+            </article>
+            <article class="report-card">
+                <p class="report-team">Li Auto</p>
+                <h3><a href="https://arxiv.org/html/2609.24526v1#S6">ME-VLM</a></h3>
+                <p class="report-setting">Cognitive core of <a href="https://arxiv.org/html/2609.24271v1#S7">ME-Brain-1.0</a>. The 4B Error score is unavailable.</p>
+                <table class="report-table" aria-label="ME-VLM scores">
+                    <thead><tr><th scope="col">Model</th><th scope="col">Planning</th><th scope="col">Perception</th><th scope="col">Affordance</th><th scope="col">Error</th></tr></thead>
+                    <tbody><tr><th scope="row">4B</th><td>40.1</td><td>41.8</td><td>47.0</td><td>—</td></tr><tr><th scope="row">35B-A3B</th><td>53.7</td><td>52.2</td><td>60.7</td><td>52.7</td></tr></tbody>
+                </table>
+
+            </article>
+            <article class="report-card">
+                <p class="report-team">Tencent</p>
+                <h3><a href="https://arxiv.org/html/2607.12894v1">HY-Embodied</a></h3>
+                <p class="report-setting">Scores on RoboBench-MCQ and RoboBench-Planning.</p>
+                <table class="report-table" aria-label="HY-Embodied scores">
+                    <thead><tr><th scope="col">Model</th><th scope="col">MCQ</th><th scope="col">Planning</th></tr></thead>
+                    <tbody><tr><th scope="row">0.5 MoT-2B</th><td>49.2</td><td>54.2</td></tr><tr><th scope="row">0.5 A30B</th><td>62.8</td><td>59.3</td></tr><tr><th scope="row">VLM-1.0 A3B</th><td>61.2</td><td>54.9</td></tr></tbody>
+                </table>
+
+            </article>
+            <article class="report-card">
+                <p class="report-team">ZTE</p>
+                <h3><a href="https://arxiv.org/html/2609.19659v1#S4">EmbodiedMind</a></h3>
+                <p class="report-setting">Scores on the report’s RoboBench task-planning evaluation.</p>
+                <dl class="report-scores"><div><dt>EmbodiedMind-8B</dt><dd>43.42</dd></div><div><dt>EmbodiedMind-27B</dt><dd>53.57</dd></div></dl>
+
+            </article>
+        </div>
+        <p class="section-note">The linked reports also include comparison results for NVIDIA Cosmos, Xiaomi MiMo-Embodied, BAAI RoboBrain, and RynnBrain.</p>
+    </section>
+
     <section class="page-shell findings" id="findings" aria-labelledby="findings-title">
         <h2 class="project-heading" id="findings-title">Key findings</h2>
         <div class="findings-grid">
@@ -1508,10 +1508,6 @@
                     </a>
                     <figcaption>Robot data are processed and annotated, then converted into a shared schema for question and answer generation.</figcaption>
                 </figure>
-                <details class="figure-disclosure media-description" open>
-                    <summary>Dataset annotations</summary>
-                    <p>RoboBench integrates open-source and self-collected robot data under a shared process—preprocessing → tool-assisted + human-in-the-loop annotation → unified schema → auto-generated QA—and builds datasets for five dimensions: <b>Instruction Comprehension:</b> pair explicit instructions with LLM-rewritten implicit variants to test intent understanding. <b>Perception Reasoning:</b> use captioning/detection/segmentation tools to draft labels across robotic/object/scene/task views, then human-refine and standardize. <b>Generalized Planning:</b> construct a planning pool from robot videos; VLMs produce step/timestamp summaries and metadata, which are mapped to function templates to support Q1/Q2/Q3 evaluations. <b>Affordance Prediction:</b> sample key frames and annotate static (contact points), dynamic (trajectories), and mobile (base positions) affordances. <b>Failure Analysis:</b> mine execution-level failures from real trials and synthesize planning-level errors by perturbing correct instructions. All outputs follow one schema and are rendered into binary, single-choice, and multi-step multiple-choice QA formats for open- and closed-source MLLMs.</p>
-                </details>
             </article>
             <article>
                 <h3>Planning evaluation</h3>
@@ -1521,11 +1517,38 @@
                     </a>
                     <figcaption>Q1 checks action alignment and goal completion with a world simulator. Q2 scores the next action. Q3 checks whether a subtask is complete.</figcaption>
                 </figure>
-                <details class="figure-disclosure media-description" open>
-                    <summary>Planning metrics</summary>
-                    <p>Evaluation of the planning dimension (Q1–Q3). Each task is decomposed into a sequence of parameterized atomic actions forming a Directed Acyclic Graph (DAG) that encodes causal and temporal dependencies. For <b>Q1 (Long-horizon planning)</b>, an MLLM-based world simulator assesses both NodeCorrectness (action alignment) and TaskCompletion (goal-state achievement) by simulating action rollouts under visual and physical constraints. <b>Q2 (Next-step planning)</b> evaluates fine-grained step prediction by comparing skill, object, and parameter accuracy, while <b>Q3 (Task state estimation)</b> measures binary correctness on whether a subtask has been completed. Together, the pipeline provides a unified, interpretable framework for assessing structural correctness and embodied feasibility in planning.</p>
-                </details>
             </article>
+        </div>
+        <div class="method-details">
+            <details class="figure-disclosure media-description" open>
+                <summary>Dataset annotations</summary>
+                <p>RoboBench integrates open-source and self-collected robot data under a shared process:</p>
+                <ol class="process-steps">
+                    <li>Preprocessing</li>
+                    <li>Tool-assisted + human-in-the-loop annotation</li>
+                    <li>Unified schema</li>
+                    <li>Auto-generated QA</li>
+                </ol>
+                <p>It builds datasets for five dimensions:</p>
+                <ul class="dimension-list">
+                    <li><b>Instruction Comprehension:</b> pair explicit instructions with LLM-rewritten implicit variants to test intent understanding.</li>
+                    <li><b>Perception Reasoning:</b> use captioning/detection/segmentation tools to draft labels across robotic/object/scene/task views, then human-refine and standardize.</li>
+                    <li><b>Generalized Planning:</b> construct a planning pool from robot videos; VLMs produce step/timestamp summaries and metadata, which are mapped to function templates to support Q1/Q2/Q3 evaluations.</li>
+                    <li><b>Affordance Prediction:</b> sample key frames and annotate static (contact points), dynamic (trajectories), and mobile (base positions) affordances.</li>
+                    <li><b>Failure Analysis:</b> mine execution-level failures from real trials and synthesize planning-level errors by perturbing correct instructions.</li>
+                </ul>
+                <p>All outputs follow one schema and are rendered into binary, single-choice, and multi-step multiple-choice QA formats for open- and closed-source MLLMs.</p>
+            </details>
+            <details class="figure-disclosure media-description" open>
+                <summary>Planning metrics</summary>
+                <p>Evaluation of the planning dimension (Q1–Q3). Each task is decomposed into a sequence of parameterized atomic actions forming a Directed Acyclic Graph (DAG) that encodes causal and temporal dependencies.</p>
+                <ul class="q-list">
+                    <li><b>Q1</b><span><strong>Long-horizon planning.</strong> An MLLM-based world simulator assesses both NodeCorrectness (action alignment) and TaskCompletion (goal-state achievement) by simulating action rollouts under visual and physical constraints.</span></li>
+                    <li><b>Q2</b><span><strong>Next-step planning.</strong> Evaluates fine-grained step prediction by comparing skill, object, and parameter accuracy.</span></li>
+                    <li><b>Q3</b><span><strong>Task state estimation.</strong> Measures binary correctness on whether a subtask has been completed.</span></li>
+                </ul>
+                <p>Together, the pipeline provides a unified, interpretable framework for assessing structural correctness and embodied feasibility in planning.</p>
+            </details>
         </div>
     </section>
 

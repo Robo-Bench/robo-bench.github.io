@@ -403,3 +403,42 @@ th[aria-sort="descending"] .score-sort span::after { content: "↓"; font-size: 
     .benchmark-counts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .report-card, .findings-grid article { padding: 16px; }
 }
+
+/* 2026-11-23 balance: abstract line breaks, examples/methods split into figure cards + detail panels. */
+.abstract-copy p { text-wrap: pretty; }
+
+.media-grid { align-items: stretch; }
+.media-grid figure { display: flex; flex-direction: column; }
+.method-details { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 16px; margin-top: 16px; align-items: stretch; }
+.method-details details { padding: 18px 22px 20px; border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(180deg, #fff, #fafbfe); box-shadow: var(--shadow-sm); }
+.method-details summary { margin-bottom: 4px; font-size: .95rem; }
+.method-details p { color: var(--muted); font-size: .88rem; line-height: 1.6; text-wrap: pretty; }
+.method-details p + p, .method-details ul + p, .method-details ol + p { margin-top: 10px; }
+
+.process-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin: 10px 0 12px; padding: 0; list-style: none; counter-reset: step; }
+.process-steps li { position: relative; display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 10px; background: var(--accent-soft); color: var(--accent); font-size: .78rem; font-weight: 700; line-height: 1.3; counter-increment: step; }
+.process-steps li::before { content: counter(step); flex: none; display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--accent); color: #fff; font-size: .68rem; }
+.process-steps li + li::after { content: ""; position: absolute; left: -7px; top: 50%; width: 6px; height: 6px; border-top: 2px solid #9aaad0; border-right: 2px solid #9aaad0; transform: translate(-1px, -50%) rotate(45deg); }
+.dimension-list, .q-list { display: grid; gap: 8px; margin: 10px 0 0; padding: 0; list-style: none; }
+.dimension-list li { position: relative; padding: 7px 12px 7px 28px; border-radius: 10px; background: #f4f6fb; color: var(--muted); font-size: .85rem; line-height: 1.55; }
+.dimension-list li::before { content: ""; position: absolute; left: 12px; top: 13px; width: 8px; height: 8px; border-radius: 50%; background: var(--dot, var(--accent)); }
+.dimension-list li b { color: var(--ink); }
+.dimension-list li:nth-child(1) { --dot: #e8833a; }
+.dimension-list li:nth-child(2) { --dot: #3aa655; }
+.dimension-list li:nth-child(3) { --dot: #4a7bd0; }
+.dimension-list li:nth-child(4) { --dot: #9b6bd4; }
+.dimension-list li:nth-child(5) { --dot: #d9534f; }
+
+.q-list li { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 12px; align-items: start; padding: 10px 12px; border-radius: 10px; background: #f4f6fb; color: var(--muted); font-size: .85rem; line-height: 1.55; }
+.q-list li > b { display: grid; place-items: center; height: 26px; border-radius: 8px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #fff; font-size: .78rem; }
+.q-list li strong { color: var(--ink); }
+
+@media (max-width: 740px) {
+    .method-details { grid-template-columns: minmax(0, 1fr); }
+    .process-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .process-steps li:nth-child(3)::after { display: none; }
+    .method-details details { padding: 16px; }
+}
+
+/* 2026-11-23 order: External evaluations now follows the leaderboard; separate it from Key findings. */
+.external-evaluations + .findings { border-top: 1px solid var(--line); }
