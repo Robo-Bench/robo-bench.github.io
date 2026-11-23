@@ -64,8 +64,7 @@
     <link rel="stylesheet" href="static/css/bulma-slider.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <link rel="stylesheet" href="static/css/index.css">
-    <link rel="stylesheet" href="static/css/table_style.css">
-    <link rel="stylesheet" href="static/css/project.css?v=20261123-refresh">
+    <link rel="stylesheet" href="static/css/project.css?v=20261123-compact">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
@@ -73,7 +72,7 @@
     <script src="static/js/bulma-carousel.min.js"></script>
     <script src="static/js/bulma-slider.min.js"></script>
     <script src="static/js/index.js"></script>
-    <script src="static/js/table.js"></script>
+    <script src="static/js/table.js?v=20261123-grouped"></script>
 </head>
 
 <body id="top" class="robo-project">
@@ -84,8 +83,8 @@
                 RoboBench
             </a>
             <div class="project-nav-links">
-                <a href="#overview">Overview</a>
                 <a href="#news">News</a>
+                <a href="#overview">Overview</a>
                 <a href="#external-evaluations">Evaluations</a>
                 <a href="#leaderboard">Leaderboard</a>
             </div>
@@ -145,159 +144,112 @@
         </div>
     </section>
 
-    <section class="page-shell project-overview" id="overview" aria-labelledby="overview-title">
-        <h2 class="project-heading" id="overview-title">Benchmark overview</h2>
-        <figure class="overview-figure">
-            <a class="overview-image" href="static/images/teaser/teaser.png" aria-label="Open the full-size RoboBench overview">
-                <img src="static/images/previews/overview.webp" alt="RoboBench task taxonomy, model performance, and links to downstream robot control" width="1920" height="1201" decoding="async">
-            </a>
-            <figcaption>RoboBench evaluates five dimensions of embodied reasoning, from understanding instructions to diagnosing execution failures. The figure summarizes model performance and how perception scores relate to downstream CALVIN performance.</figcaption>
-        </figure>
-    </section>
 
     <section class="project-news" id="news" aria-labelledby="news-title">
         <div class="page-shell">
             <h2 class="project-heading" id="news-title">News</h2>
             <ol class="project-news-list">
-                <li><time datetime="2026-11">Nov 2026</time><p>Congratulations to the <a href="https://arxiv.org/abs/2611.26519">ACE-Brain team</a> on ACE-Brain-0.7! The report evaluates task decomposition, next-subtask prediction, and step completion on RoboBench.</p></li>
-                <li><time datetime="2026-09">Sep 2026</time><p>Li Auto reports results for both <a href="https://arxiv.org/html/2609.24526v1#S6">ME-VLM variants</a> in the <a href="https://arxiv.org/html/2609.24271v1#S7">ME-Brain-1.0</a> cognitive-core evaluation.</p></li>
-                <li><time datetime="2026-09">Sep 2026</time><p>The <a href="static/pdfs/robobench_eccv2026_poster.pdf">ECCV 2026 poster</a> is available. See the <a href="https://eccv.ecva.net/virtual/2026/poster/4213">ECCV poster page</a>.</p></li>
-                <li><time datetime="2026-07">Jul 2026</time><p>Congratulations to <a href="https://github.com/Tencent-Hunyuan/HY-Embodied">HY-Embodied</a>! The series reports results on RoboBench-MCQ and RoboBench-Planning.</p></li>
+                <li><time datetime="2026-11">2026.11</time><p>ACE Robotics reports <a href="https://arxiv.org/abs/2611.26519">ACE-Brain-0.7</a> results on 3,979 RoboBench questions with natural-language planning. <a href="#external-evaluations">See the evaluation</a>.</p></li>
+                <li><time datetime="2026-09">2026.09</time><div><p>Li Auto and ZTE report RoboBench results for <a href="https://arxiv.org/html/2609.24526v1#S6">ME-VLM</a> and <a href="https://arxiv.org/html/2609.19659v1#S4">EmbodiedMind</a>.</p><p>The <a href="static/pdfs/robobench_eccv2026_poster.pdf">ECCV 2026 poster</a> is available. See the <a href="https://eccv.ecva.net/virtual/2026/poster/4213">ECCV poster page</a>.</p></div></li>
+                <li><time datetime="2026-07">2026.07</time><p>Tencent reports <a href="https://github.com/Tencent-Hunyuan/HY-Embodied">HY-Embodied</a> results on RoboBench-MCQ and RoboBench-Planning.</p></li>
             </ol>
             <details class="news-archive">
                 <summary>Earlier updates</summary>
                 <ol class="project-news-list">
-                    <li><time datetime="2026-07">Jul 2026</time><p>RoboBench was accepted to ECCV 2026. The <a href="#leaderboard">official leaderboard</a> reports results for 18 MLLMs.</p></li>
-                    <li><time datetime="2026-07">Jul 2026</time><p>RoboBench was featured by <a href="https://mp.weixin.qq.com/s/SdGEqu_1mz14DhUumTZ3FQ" lang="zh">具身智能之心</a>.</p></li>
-                    <li><time datetime="2025-10-23">Oct 23, 2025</time><p>Released the <a href="https://huggingface.co/datasets/LeoFan01/RoboBench">dataset</a> and <a href="https://github.com/yulin-luo/RoboBench">evaluation code</a>.</p></li>
-                    <li><time datetime="2025-10-21">Oct 21, 2025</time><p>Released the <a href="https://arxiv.org/abs/2510.17801">paper</a>.</p></li>
+                    <li><time datetime="2026-07">2026.07</time><p>RoboBench was accepted to ECCV 2026. The <a href="#leaderboard">official leaderboard</a> reports results for 18 MLLMs.</p></li>
+                    <li><time datetime="2026-07">2026.07</time><p>RoboBench was featured by <a href="https://mp.weixin.qq.com/s/SdGEqu_1mz14DhUumTZ3FQ" lang="zh">具身智能之心</a>.</p></li>
+                    <li><time datetime="2025-10-23">2025.10.23</time><p>Released the <a href="https://huggingface.co/datasets/LeoFan01/RoboBench">dataset</a> and <a href="https://github.com/yulin-luo/RoboBench">evaluation code</a>.</p></li>
+                    <li><time datetime="2025-10-21">2025.10.21</time><p>Released the <a href="https://arxiv.org/abs/2510.17801">paper</a>.</p></li>
                 </ol>
             </details>
         </div>
     </section>
 
     <section class="page-shell external-evaluations" id="external-evaluations" aria-labelledby="external-evaluations-title">
-        <header class="evaluation-header">
+        <div class="section-heading">
             <div>
-                <h2 class="project-heading" id="external-evaluations-title">External RoboBench evaluations</h2>
-                <p>Research teams use RoboBench to evaluate planning, perception, and execution understanding. Task subsets and scoring vary by report.</p>
+                <h2 class="project-heading" id="external-evaluations-title">External evaluations</h2>
+                <p>Author-reported scores. Evaluation subsets and scoring differ by report.</p>
             </div>
             <a class="project-button" href="https://github.com/yulin-luo/RoboBench/blob/main/docs/EXTERNAL_EVALUATIONS.md">Scores &amp; protocols</a>
-        </header>
+        </div>
         <div class="evaluation-grid">
-            <article class="evaluation-feature">
-                <p class="evaluation-team">ACE Robotics</p>
+            <article class="report-card">
+                <p class="report-team">ACE Robotics</p>
                 <h3><a href="https://arxiv.org/abs/2611.26519">ACE-Brain-0.7</a></h3>
-                <p>Uses visual observations on 3,979 RoboBench questions, with natural-language answers for Q1 and Q2.</p>
-                <dl class="ace-scores">
-                    <div><dt>Task decomposition</dt><dd>67.7</dd></div>
-                    <div><dt>Next-subtask prediction</dt><dd>52.1</dd></div>
-                    <div><dt>Step completion</dt><dd>77.8</dd></div>
-                </dl>
+                <p class="report-setting">Visual input on 3,979 questions. Q1 and Q2 use natural-language answers.</p>
+                <dl class="report-scores"><div><dt>Q1 task decomposition</dt><dd>67.7</dd></div><div><dt>Q2 next subtask</dt><dd>52.1</dd></div><div><dt>Q3 step completion</dt><dd>77.8</dd></div></dl>
+
             </article>
-            <div class="evaluation-models">
-                <article>
-                    <p class="evaluation-team">Li Auto</p>
-                    <h3><a href="https://arxiv.org/html/2609.24526v1#S6">ME-VLM</a></h3>
-                    <p>Both model sizes report Planning, Perception, and Affordance results. The 35B-A3B model also reports Error. <a href="https://arxiv.org/html/2609.24271v1#S7">ME-Brain-1.0</a> uses ME-VLM as its cognitive core.</p>
-                </article>
-                <article>
-                    <p class="evaluation-team">Tencent</p>
-                    <h3><a href="https://github.com/Tencent-Hunyuan/HY-Embodied">HY-Embodied</a></h3>
-                    <p>0.5 MoT-2B, 0.5 A30B, and VLM-1.0 A3B report results on RoboBench-MCQ and RoboBench-Planning.</p>
-                </article>
-                <article>
-                    <p class="evaluation-team">ZTE</p>
-                    <h3><a href="https://arxiv.org/html/2609.19659v1#S4">EmbodiedMind</a></h3>
-                    <p>The 8B and 27B models score 43.42 and 53.57 in the report’s planning evaluation.</p>
-                </article>
-            </div>
+            <article class="report-card">
+                <p class="report-team">Li Auto</p>
+                <h3><a href="https://arxiv.org/html/2609.24526v1#S6">ME-VLM</a></h3>
+                <p class="report-setting">Cognitive core of <a href="https://arxiv.org/html/2609.24271v1#S7">ME-Brain-1.0</a>.</p>
+                <table class="report-table" aria-label="ME-VLM scores">
+                    <thead><tr><th scope="col">Model</th><th scope="col">Planning</th><th scope="col">Perception</th><th scope="col">Affordance</th><th scope="col">Error</th></tr></thead>
+                    <tbody><tr><th scope="row">4B</th><td>40.1</td><td>41.8</td><td>47.0</td><td>—</td></tr><tr><th scope="row">35B-A3B</th><td>53.7</td><td>52.2</td><td>60.7</td><td>52.7</td></tr></tbody>
+                </table>
+
+            </article>
+            <article class="report-card">
+                <p class="report-team">Tencent</p>
+                <h3><a href="https://arxiv.org/html/2607.12894v1">HY-Embodied</a></h3>
+                <p class="report-setting">Scores on RoboBench-MCQ and RoboBench-Planning.</p>
+                <table class="report-table" aria-label="HY-Embodied scores">
+                    <thead><tr><th scope="col">Model</th><th scope="col">MCQ</th><th scope="col">Planning</th></tr></thead>
+                    <tbody><tr><th scope="row">0.5 MoT-2B</th><td>49.2</td><td>54.2</td></tr><tr><th scope="row">0.5 A30B</th><td>62.8</td><td>59.3</td></tr><tr><th scope="row">VLM-1.0 A3B</th><td>61.2</td><td>54.9</td></tr></tbody>
+                </table>
+
+            </article>
+            <article class="report-card">
+                <p class="report-team">ZTE</p>
+                <h3><a href="https://arxiv.org/html/2609.19659v1#S4">EmbodiedMind</a></h3>
+                <p class="report-setting">Scores on the report’s RoboBench task-planning evaluation.</p>
+                <dl class="report-scores"><div><dt>EmbodiedMind-8B</dt><dd>43.42</dd></div><div><dt>EmbodiedMind-27B</dt><dd>53.57</dd></div></dl>
+
+            </article>
         </div>
-        <div class="evaluation-footer">
-            <p>External reports also compare NVIDIA Cosmos, Xiaomi MiMo-Embodied, BAAI RoboBrain, and RynnBrain.</p>
-            <a href="#leaderboard">ECCV leaderboard</a>
+        <p class="section-note">The linked reports also include comparison results for NVIDIA Cosmos, Xiaomi MiMo-Embodied, BAAI RoboBrain, and RynnBrain.</p>
+    </section>
+
+    <section class="project-band" id="abstract" aria-labelledby="abstract-title">
+        <div class="page-shell abstract-copy">
+            <h2 class="project-heading" id="abstract-title">Abstract</h2>
+            <p>Building robots that can perceive, reason, and act in dynamic, unstructured environments remains a core challenge. Recent embodied systems often adopt a dual-system paradigm, where System 2 handles high-level reasoning while System 1 executes low-level control. In this work, we refer to System 2 as the embodied brain, emphasizing its role as the cognitive core for reasoning and decision-making in manipulation tasks.</p>
+            <p>Given this role, systematic evaluation of the embodied brain is essential for advancing robotic intelligence. Yet existing benchmarks emphasize execution success, or, when targeting high-level reasoning, suffer from incomplete dimensions and limited task realism, offering only a partial picture of cognitive capability. To bridge this gap, we introduce RoboBench, a benchmark that systematically evaluates multimodal large language models (MLLMs) as embodied brains. Motivated by the distinct cognitive roles required across the full manipulation pipeline, RoboBench defines five dimensions—Instruction Comprehension, Perception Reasoning, Generalized Planning, Affordance Prediction, and Failure Analysis—spanning 14 capabilities, 25 tasks, and 6092 QA pairs. To ensure realism, we curate datasets across diverse embodiments, attribute-rich objects, multi-view scenes, and memory-driven navigation, drawing from large-scale real robotic data and in-house collection.</p>
+            <p>For planning, RoboBench introduces an evaluation framework that uses an MLLM as a world simulator. It moves beyond symbolic matching to evaluate embodied feasibility by simulating whether predicted plans can achieve critical object-state changes under physical and visual constraints, enabling structured assessment of long-horizon reasoning.</p>
+            <p>Experiments on 18 state-of-the-art MLLMs reveal persistent limitations: difficulties with implicit instruction comprehension, spatiotemporal reasoning, cross-scenario planning, fine-grained affordance understanding, and execution failure diagnosis. We further analyze how embodied cognitive abilities relate to downstream robotic control. RoboBench provides a comprehensive scaffold to quantify high-level cognition, clarify the role of the embodied brain, and inform the development of next-generation MLLMs for more robust robotic intelligence.</p>
         </div>
     </section>
 
-    <section class="project-background" aria-label="Abstract and introduction video">
-        <div class="page-shell project-background-grid">
-            <div class="abstract-copy">
-                <h2 class="project-heading">Abstract</h2>
-                <p>RoboBench evaluates multimodal models as embodied brains across instruction comprehension, perception reasoning, generalized planning, affordance prediction, and failure analysis. The benchmark includes 6,092 questions covering 25 tasks and 14 capabilities.</p>
-                <details>
-                    <summary>Read the full abstract</summary>
-                    <p>Building robots that can perceive, reason, and act in dynamic, unstructured environments remains a core challenge. Recent embodied systems often adopt a dual-system paradigm, where System 2 handles high-level reasoning while System 1 executes low-level control. In this work, we refer to System 2 as the embodied brain, emphasizing its role as the cognitive core for reasoning and decision-making in manipulation tasks. Given this role, systematic evaluation of the embodied brain is essential for advancing robotic intelligence. Yet existing benchmarks emphasize execution success, or, when targeting high-level reasoning, suffer from incomplete dimensions and limited task realism, offering only a partial picture of cognitive capability. To bridge this gap, we introduce RoboBench, a benchmark that systematically evaluates multimodal large language models (MLLMs) as embodied brains. Motivated by the distinct cognitive roles required across the full manipulation pipeline, RoboBench defines five dimensions—Instruction Comprehension, Perception Reasoning, Generalized Planning, Affordance Prediction, and Failure Analysis—spanning 14 capabilities, 25 tasks, and 6092 QA pairs. To ensure realism, we curate datasets across diverse embodiments, attribute-rich objects, multi-view scenes, and memory-driven navigation, drawing from large-scale real robotic data and in-house collection. For planning, RoboBench introduces an evaluation framework that uses an MLLM as a world simulator. It moves beyond symbolic matching to evaluate embodied feasibility by simulating whether predicted plans can achieve critical object-state changes under physical and visual constraints, enabling structured assessment of long-horizon reasoning. Experiments on 18 state-of-the-art MLLMs reveal persistent limitations: difficulties with implicit instruction comprehension, spatiotemporal reasoning, cross-scenario planning, fine-grained affordance understanding, and execution failure diagnosis. We further analyze how embodied cognitive abilities relate to downstream robotic control. RoboBench provides a comprehensive scaffold to quantify high-level cognition, clarify the role of the embodied brain, and inform the development of next-generation MLLMs for more robust robotic intelligence.</p>
-                </details>
-            </div>
-            <div id="intro-video">
-                <h2 class="project-heading">Introduction video</h2>
-                <div class="publication-video">
-                    <iframe src="https://www.youtube-nocookie.com/embed/_W3FSK75IRQ" title="RoboBench introduction video" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <p class="video-link"><a href="https://www.youtube.com/watch?v=_W3FSK75IRQ">Watch on YouTube</a></p>
-            </div>
-        </div>
+    <section class="page-shell project-overview" id="overview" aria-labelledby="overview-title">
+        <h2 class="project-heading" id="overview-title">Benchmark overview</h2>
+        <dl class="benchmark-counts">
+            <div><dt>Dimensions</dt><dd>5</dd></div>
+            <div><dt>Capabilities</dt><dd>14</dd></div>
+            <div><dt>Tasks</dt><dd>25</dd></div>
+            <div><dt>QA pairs</dt><dd>6,092</dd></div>
+        </dl>
+        <figure class="overview-figure">
+            <a class="overview-image" href="static/images/teaser/teaser.png" aria-label="Open the full-size RoboBench overview">
+                <img src="static/images/previews/overview.webp" alt="RoboBench task taxonomy, model performance, and links to downstream robot control" width="1920" height="1201" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Five dimensions of embodied reasoning, model performance across tasks, and the association between RoboBench perception scores and CALVIN performance.</figcaption>
+        </figure>
     </section>
 
-    <section class="hero is-small">
-        <div class="hero-body">
-            <div class="container">
-                <h2 class="title is-3">Highlight</h2>
-                <div class="content has-text-justified">
-                    <b>🔍 Benchmark Overview</b><br>
-                        <ul>
-                            <li>RoboBench systematically evaluates MLLMs as embodied brains rather than only measuring final robot execution success.</li>
-                            <li>The benchmark spans 5 core dimensions, 14 capabilities, 25 task types, and 6,092 high-quality QA pairs.</li>
-                        </ul>
-                    <b>🧭 Embodied Execution Pipeline</b><br>
-                        <ul>
-                            <li>Tasks cover the full manipulation reasoning pipeline: instruction comprehension, perception reasoning, generalized planning, affordance prediction, and failure analysis.</li>
-                        </ul>
-                    <b>🛡️ Planning Beyond Text Matching</b><br>
-                        <ul>
-                            <li>Long-horizon planning is evaluated with a DAG-guided MLLM-as-world-simulator that checks action alignment and task completion under physical and visual constraints.</li>
-                            <li>Q2 and Q3 further test next-step prediction and task-state estimation, making the planning evaluation interpretable at the step level.</li>
-                        </ul>
-                    <b>🧠 Real-world Data</b><br>
-                        <ul>
-                            <li>Data are curated from open-source real-robot datasets and in-house collection across diverse embodiments, objects, views, and navigation scenarios.</li>
-                            <li>Dimension-specific validation and human review keep QA items grounded in the visible scene and executable task context.</li>
-                        </ul>
-                    <b>🌍 Broad Model Audit and Downstream Signal</b><br>
-                        <ul>
-                            <li>The official leaderboard covers 18 state-of-the-art closed-source, open-source, and embodied MLLMs, plus a text-only ablation.</li>
-                            <li>Selected RoboBench scores show benchmark-dependent associations with downstream VLA performance, offering diagnostic signals for robot-control evaluation.</li>
-                        </ul>
-                </div>
-            </div>
-        </div>
-        </div>
-    </section>
-
-   <!-- Case Study -->
-   <section class="section" id="case-study" style="padding-top:2rem; padding-bottom:2rem;">
-     <div class="container">
-       <h2 class="project-heading">Demo case</h2>
-       <figure class="overview-figure">
-         <a class="overview-image" href="static/images/demo_case/demo_case.png" aria-label="Open the full-size demo case">
-           <img src="static/images/previews/demo-case.webp" alt="A robot scene with example RoboBench questions across five reasoning dimensions" width="1680" height="1193" loading="lazy" decoding="async">
-         </a>
-         <figcaption>A RoboBench example shows how one robot scene leads to questions about perception, planning, affordance prediction, and failure analysis.</figcaption>
-       </figure>
-     </div>
-   </section>
-
-    <section class="hero is-small is-light">
+    <section class="hero is-small is-light leaderboard-section">
         <div class="hero-body">
             <div class="container">
                 <!-- Paper video. -->
-                <h2 class="title is-3" id="leaderboard">ECCV leaderboard</h2>
+                <h2 class="project-heading" id="leaderboard">ECCV leaderboard</h2>
+                <p class="section-note">18 evaluated models, plus human and text-only references. Sort scores within each model group.</p>
                 <div class="tab-container">
                     <div class="tab-buttons">
-                        <button class="tab-btn active" data-tab="text-only">Perception Reasoning</button>
-                        <button class="tab-btn" data-tab="closed-source">Instruction Comprehension &amp; Generalized Planning (Q1)</button>
-                        <button class="tab-btn" data-tab="planning-q2q3">Generalized Planning (Q2 &amp; Q3)</button>
-                        <button class="tab-btn" data-tab="open-source">Affordance Prediction &amp; Failure Analysis</button>
+                        <button class="tab-btn active" data-tab="text-only" type="button" aria-pressed="true">Perception reasoning</button>
+                        <button class="tab-btn" data-tab="closed-source" type="button" aria-pressed="false">Instructions &amp; planning (Q1)</button>
+                        <button class="tab-btn" data-tab="planning-q2q3" type="button" aria-pressed="false">Planning (Q2 &amp; Q3)</button>
+                        <button class="tab-btn" data-tab="open-source" type="button" aria-pressed="false">Affordance &amp; failure analysis</button>
                     </div>
 
                     <div id="text-only" class="tab-content active" role="region" tabindex="0" aria-label="Scrollable leaderboard results">
@@ -315,14 +267,14 @@
                                     <th rowspan="2" style="vertical-align: middle; text-align: center;">Avg</th>
                                 </tr>
                                 <tr>
-                                    <th style="vertical-align: middle; text-align: center;">Robot-type<span class="sort-btn" data-col="0">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Robot-view<span class="sort-btn" data-col="1">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Static Attr.<span class="sort-btn" data-col="2">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Functional Attr.<span class="sort-btn" data-col="3">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Spatial Relation<span class="sort-btn" data-col="4">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Temp. Grounding<span class="sort-btn" data-col="5">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Causality<span class="sort-btn" data-col="6">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Refer. Comprehen.<span class="sort-btn" data-col="7">▼</span></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="0">Robot-type<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="1">Robot-view<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="2">Static Attr.<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="3">Functional Attr.<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="4">Spatial Relation<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="5">Temp. Grounding<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="6">Causality<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="7">Refer. Comprehen.<span aria-hidden="true">↕</span></button></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -591,9 +543,9 @@
                                     <th colspan="11" style="vertical-align: middle; text-align: center;">Generalized Planning (Q1)</th>
                                 </tr>
                                 <tr>
-                                    <th style="vertical-align: middle; text-align: center;">Explicit<span class="sort-btn" data-col="0">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Implicit<span class="sort-btn" data-col="1">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Avg<span class="sort-btn" data-col="2">▼</span></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="0">Explicit<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="1">Implicit<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="2">Avg<span aria-hidden="true">↕</span></button></th>
                                     <th colspan="4" style="vertical-align: middle; text-align: center;">Cross-Embodiment Planning</th>
                                     <th colspan="3" style="vertical-align: middle; text-align: center;">Cross-Object Planning</th>
                                     <th colspan="2" style="vertical-align: middle; text-align: center;">Cross-View Planning</th>
@@ -602,16 +554,16 @@
                                 </tr>
                                 <tr>
                                     <th colspan="3"></th>
-                                    <th style="vertical-align: middle; text-align: center;">Single-arm<span class="sort-btn" data-col="3">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Dual-arm<span class="sort-btn" data-col="4">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Mobile-manip.<span class="sort-btn" data-col="5">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Human<span class="sort-btn" data-col="6">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Material Afford.<span class="sort-btn" data-col="7">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Physical Attr.<span class="sort-btn" data-col="8">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">World Knowl.<span class="sort-btn" data-col="9">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Multi<span class="sort-btn" data-col="10">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Single<span class="sort-btn" data-col="11">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Navigation Plan.<span class="sort-btn" data-col="12">▼</span></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="3">Single-arm<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="4">Dual-arm<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="5">Mobile-manip.<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="6">Human<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="7">Material Afford.<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="8">Physical Attr.<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="9">World Knowl.<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="10">Multi<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="11">Single<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="12">Navigation Plan.<span aria-hidden="true">↕</span></button></th>
                                     <th style="vertical-align: middle; text-align: center;"></th>
                                 </tr>
                             </thead>
@@ -987,14 +939,14 @@
                                     <th colspan="2" style="vertical-align: middle; text-align: center;">World Knowl.</th>
                                 </tr>
                                 <tr>
-                                    <th style="vertical-align: middle; text-align: center;">Q2<span class="sort-btn" data-col="0">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Q3<span class="sort-btn" data-col="1">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Q2<span class="sort-btn" data-col="2">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Q3<span class="sort-btn" data-col="3">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Q2<span class="sort-btn" data-col="4">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Q3<span class="sort-btn" data-col="5">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Q2<span class="sort-btn" data-col="6">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Q3<span class="sort-btn" data-col="7">▼</span></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="0">Q2<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="1">Q3<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="2">Q2<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="3">Q3<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="4">Q2<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="5">Q3<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="6">Q2<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="7">Q3<span aria-hidden="true">↕</span></button></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -1243,13 +1195,13 @@
                                     <th colspan="3" style="vertical-align: middle; text-align: center;">Failure Analysis</th>
                                 </tr>
                                 <tr>
-                                    <th style="vertical-align: middle; text-align: center;">Static<span class="sort-btn" data-col="0">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Dynamic<span class="sort-btn" data-col="1">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Naviga.<span class="sort-btn" data-col="2">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Avg<span class="sort-btn" data-col="3">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Execution<span class="sort-btn" data-col="4">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Planning<span class="sort-btn" data-col="5">▼</span></th>
-                                    <th style="vertical-align: middle; text-align: center;">Avg<span class="sort-btn" data-col="6">▼</span></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="0">Static<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="1">Dynamic<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="2">Naviga.<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="3">Avg<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="4">Execution<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="5">Planning<span aria-hidden="true">↕</span></button></th>
+                                    <th style="vertical-align: middle; text-align: center;"><button type="button" class="score-sort" data-col="6">Avg<span aria-hidden="true">↕</span></button></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -1478,158 +1430,103 @@
         </div>
     </section>
 
-    <!-- Key Findings Section -->
-    <section class="hero is-small is-light">
-        <div class="hero-body">
-            <div class="container is-max-desktop">
-                <h2 class="title is-3 has-text-left">Key Findings from RoboBench Evaluation</h2>
-                <div class="content has-text-justified">
-                    
-                    <!-- Overall Findings -->
-                    <h3 class="title is-4 has-text-left" style="margin-bottom: 1rem;">Overall Findings</h3>
-                    <div class="columns is-multiline" style="margin: 0;">
-                        <div class="column is-6" style="padding: 0.5rem;">
-                            <div class="box" style="height: 100%; padding: 1rem; margin: 0;">
-                                <h4 class="title is-6 has-text-primary">🥇 Large Capability Gaps, yet the Frontier Keeps Advancing</h4>
-                                <p style="font-size: 0.9em; line-height: 1.4;">Gemini-3.1-Pro shows the most consistent advantages across perception, affordance, and failure dimensions—<strong>67.32</strong> in perception reasoning (vs. the next-best <strong>63.93</strong> of Gemini-2.5-Pro), <strong>85.70</strong> in affordance prediction, and <strong>52.95</strong> in failure analysis—narrowing the gap on selected perception and affordance subsets while remaining uneven across tasks. Most other MLLMs are still highly uneven or generally weak.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="column is-6" style="padding: 0.5rem;">
-                            <div class="box" style="height: 100%; padding: 1rem; margin: 0;">
-                                <h4 class="title is-6 has-text-primary">🔒 Closed-Source Models Lead by ~20 Points</h4>
-                                <p style="font-size: 0.9em; line-height: 1.4;">Closed-source MLLMs lead open-source ones in <strong>every dimension</strong>, by about <strong>20 points on average (~50% relative)</strong>—widest in instruction comprehension (~28) and generalized planning (~25), narrowest in failure analysis (~13). Within the same family, performance improves <strong>consistently with model size and generation</strong>.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="column is-6" style="padding: 0.5rem;">
-                            <div class="box" style="height: 100%; padding: 1rem; margin: 0;">
-                                <h4 class="title is-6 has-text-primary">🧭 Plans Sound Plausible but Break at Execution</h4>
-                                <p style="font-size: 0.9em; line-height: 1.4;">Planning failures are dominated by a perception-action gap: <strong>45%</strong> are execution errors from missing or incorrect action sequences, while <strong>24%</strong> are identification errors, <strong>25%</strong> commonsense or physical-constraint errors, and <strong>6%</strong> mode-specific format errors. Current MLLMs often reason plausibly but still fail to produce executable embodied actions.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="column is-6" style="padding: 0.5rem;">
-                            <div class="box" style="height: 100%; padding: 1rem; margin: 0;">
-                                <h4 class="title is-6 has-text-primary">👀 Vision Is Truly Required, Not Commonsense Recall</h4>
-                                <p style="font-size: 0.9em; line-height: 1.4;">A <strong>text-only baseline</strong> (GPT-5.4 without images) stays close to random on perception (<strong>27.12</strong>) and affordance (<strong>25.61</strong>) tasks, far below the best vision-conditioned MLLM (<strong>67.32 / 85.70</strong>). RoboBench questions demand grounding in the observed scene—visual state, embodiment, and physical feasibility.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Fine-grained Findings -->
-                    <h3 class="title is-4 has-text-left" style="margin-top: 1.5rem; margin-bottom: 1rem;">Fine-grained Findings</h3>
-                    <div class="columns is-multiline" style="margin: 0;">
-                        <div class="column is-6" style="padding: 0.5rem;">
-                            <div class="box" style="height: 100%; padding: 1rem; margin: 0;">
-                                <h4 class="title is-6 has-text-primary">🧠 Implicit Intent Understanding Remains a Major Challenge</h4>
-                                <p style="font-size: 0.9em; line-height: 1.4;">Even the strongest explicit-goal model (Claude-Sonnet-4.6) drops from <strong>79.94 to 61.38</strong> when instructions become implicit, and the gap widens for weaker MLLMs. A paired chain-of-thought rewriting ablation shows this is a <strong>genuine intent-grounding limitation</strong>, not a prompting artifact.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="column is-6" style="padding: 0.5rem;">
-                            <div class="box" style="height: 100%; padding: 1rem; margin: 0;">
-                                <h4 class="title is-6 has-text-primary">👁️ Perception Bottlenecks: Embodiment and Time</h4>
-                                <p style="font-size: 0.9em; line-height: 1.4;">Models handle object attributes well (up to <strong>82.28</strong> on functional attributes) but struggle with robotic perception and spatiotemporal reasoning: the best scores are only <strong>53.62</strong> on robot-view understanding and <strong>50.38</strong> on temporal grounding—the two weakest perception tasks. Stronger <strong>embodiment-aware perception</strong> and explicit <strong>spatiotemporal reasoning</strong> are needed.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="column is-6" style="padding: 0.5rem;">
-                            <div class="box" style="height: 100%; padding: 1rem; margin: 0;">
-                                <h4 class="title is-6 has-text-primary">🧩 Planning Limitations Persist</h4>
-                                <p style="font-size: 0.9em; line-height: 1.4;"><strong>Cross-embodiment:</strong> models trained mostly on single-arm settings fail to coordinate dual-arm actions or mobile manipulation. <strong>Cross-object:</strong> performance drops sharply on uncommon objects, symbolic reasoning, and world knowledge. <strong>Cross-view:</strong> multi-view inputs effectively recover performance when the front view is occluded, underscoring the value of multi-view reasoning.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="column is-6" style="padding: 0.5rem;">
-                            <div class="box" style="height: 100%; padding: 1rem; margin: 0;">
-                                <h4 class="title is-6 has-text-primary">⚙️ Execution-Failure Diagnosis Is Extremely Hard</h4>
-                                <p style="font-size: 0.9em; line-height: 1.4;">Diagnosing <strong>execution-level errors</strong> is far harder than planning-level ones: the best model reaches only <strong>43.71</strong> (most fall between 15 and 27), while planning-error diagnosis reaches <strong>80.74</strong>; the human reference shows the same asymmetry (<strong>47.30 vs. 80.67</strong>). It requires <strong>fine-grained spatial and physical understanding</strong>, e.g., separating position errors from rotation errors.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+    <section class="page-shell findings" id="findings" aria-labelledby="findings-title">
+        <h2 class="project-heading" id="findings-title">Key findings</h2>
+        <div class="findings-grid">
+            <article>
+                <h3>Visual input helps ground answers</h3>
+                <p>GPT-5.4 scores higher with images on perception and affordance.</p>
+                <dl class="finding-bars"><div><dt>Perception · with images</dt><dd><meter min="0" max="100" value="56.20" aria-label="Perception · with images">56.20</meter><span>56.20</span></dd></div><div><dt>Perception · text only</dt><dd><meter min="0" max="100" value="27.12" aria-label="Perception · text only">27.12</meter><span>27.12</span></dd></div><div><dt>Affordance · with images</dt><dd><meter min="0" max="100" value="46.43" aria-label="Affordance · with images">46.43</meter><span>46.43</span></dd></div><div><dt>Affordance · text only</dt><dd><meter min="0" max="100" value="25.61" aria-label="Affordance · text only">25.61</meter><span>25.61</span></dd></div></dl>
+            </article>
+            <article>
+                <h3>Implicit instructions are harder</h3>
+                <p>Two models score lower on implicit goals, by 18.56 and 23.78 points.</p>
+                <dl class="finding-bars"><div><dt>Claude-Sonnet-4.6 · explicit</dt><dd><meter min="0" max="100" value="79.94" aria-label="Claude-Sonnet-4.6 · explicit">79.94</meter><span>79.94</span></dd></div><div><dt>Claude-Sonnet-4.6 · implicit</dt><dd><meter min="0" max="100" value="61.38" aria-label="Claude-Sonnet-4.6 · implicit">61.38</meter><span>61.38</span></dd></div><div><dt>GPT-5.4 · explicit</dt><dd><meter min="0" max="100" value="74.58" aria-label="GPT-5.4 · explicit">74.58</meter><span>74.58</span></dd></div><div><dt>GPT-5.4 · implicit</dt><dd><meter min="0" max="100" value="50.80" aria-label="GPT-5.4 · implicit">50.80</meter><span>50.80</span></dd></div></dl>
+            </article>
+            <article>
+                <h3>Executable plans are still difficult</h3>
+                <p>Percentage of errors in the planning error analysis.</p>
+                <dl class="finding-bars"><div><dt>Execution sequence</dt><dd><meter min="0" max="100" value="45" aria-label="Execution sequence">45</meter><span>45%</span></dd></div><div><dt>Commonsense or physical constraints</dt><dd><meter min="0" max="100" value="25" aria-label="Commonsense or physical constraints">25</meter><span>25%</span></dd></div><div><dt>Identification</dt><dd><meter min="0" max="100" value="24" aria-label="Identification">24</meter><span>24%</span></dd></div><div><dt>Output format</dt><dd><meter min="0" max="100" value="6" aria-label="Output format">6</meter><span>6%</span></dd></div></dl>
+            </article>
+            <article>
+                <h3>Diagnosing execution errors is harder</h3>
+                <p>Human reference and best model score for each failure analysis task.</p>
+                <dl class="finding-bars"><div><dt>Human · planning errors</dt><dd><meter min="0" max="100" value="80.67" aria-label="Human · planning errors">80.67</meter><span>80.67</span></dd></div><div><dt>Human · execution errors</dt><dd><meter min="0" max="100" value="47.30" aria-label="Human · execution errors">47.30</meter><span>47.30</span></dd></div><div><dt>Best model · planning errors</dt><dd><meter min="0" max="100" value="80.74" aria-label="Best model · planning errors">80.74</meter><span>80.74</span></dd></div><div><dt>Best model · execution errors</dt><dd><meter min="0" max="100" value="43.71" aria-label="Best model · execution errors">43.71</meter><span>43.71</span></dd></div></dl>
+            </article>
+        </div>
+        <div class="finding-notes">
+            <p><strong>Perception varies by task.</strong> The best model scores are <strong>82.28</strong> for functional attributes, <strong>53.62</strong> for robot-view recognition, and <strong>50.38</strong> for temporal grounding.</p>
+            <p><strong>Planning generalization.</strong> Coordinating two arms, mobile manipulation, and handling unfamiliar objects remain challenging. Additional views help when the front view is occluded.</p>
         </div>
     </section>
 
-    <!-- In-depth Analysis Section -->
-    <section class="hero is-small" id="vlm-vla-analysis">
-        <div class="hero-body">
-            <div class="container is-max-desktop">
-                <h2 class="title is-3 has-text-left">In-depth Analysis: VLM-VLA Association</h2>
-                <div class="columns is-centered">
-                    <div class="column is-full">
-                        <img src="static/images/correlation_vla/robobench_to_vla_heatmap_horizontal_v8.png" alt="RoboBench and VLA correlation heatmap" style="width:100%;"/>
-                    </div>
-                </div>
-                <div class="content has-text-justified" style="margin-top: 1rem;">
-                    <p>
-                        To probe how RoboBench scores relate to downstream robot-control evaluation, we convert several open-source VLM backbones into VLA policies with minimal fine-tuning and evaluate them on CALVIN and LIBERO-10.
-                    </p>
-                    <p>
-                        In our 8-backbone analysis, RoboBench perception scores show strong associations with long-horizon CALVIN performance: object-centric perception reaches <strong>r=0.884</strong> and scene-centric perception reaches <strong>r=0.833</strong>. For LIBERO-10, the strongest positive trend shifts toward fine-grained interaction dynamics, where static+dynamic affordance prediction reaches <strong>r=0.677</strong>.
-                    </p>
-                    <p>
-                        These observed associations suggest that different VLA benchmarks emphasize different cognitive skills. RoboBench therefore serves not only as a leaderboard, but also as a diagnostic tool for identifying which VLM capabilities may be relevant to downstream embodied policies.
-                    </p>
-                    </div>
+    <section class="project-band" id="vlm-vla-analysis" aria-labelledby="association-title">
+        <div class="page-shell association">
+            <h2 class="project-heading" id="association-title">From benchmark scores to robot control</h2>
+            <p>Across eight VLM backbones adapted to VLA policies, the strongest correlations (<i>r</i>) depend on the robot benchmark.</p>
+            <div class="association-grid">
+                <article><h3>CALVIN</h3><dl class="finding-bars"><div><dt>Object-centric perception</dt><dd><meter min="0" max="1" value="0.884" aria-label="Object-centric perception">0.884</meter><span>0.884</span></dd></div><div><dt>Scene-centric perception</dt><dd><meter min="0" max="1" value="0.833" aria-label="Scene-centric perception">0.833</meter><span>0.833</span></dd></div></dl></article>
+                <article><h3>LIBERO-10</h3><dl class="finding-bars"><div><dt>Static and dynamic affordance</dt><dd><meter min="0" max="1" value="0.677" aria-label="Static and dynamic affordance">0.677</meter><span>0.677</span></dd></div></dl></article>
             </div>
+            <details class="figure-disclosure">
+                <summary>View the full correlation matrix</summary>
+                <figure>
+                    <a class="overview-image" href="static/images/correlation_vla/robobench_to_vla_heatmap_horizontal_v8.png" aria-label="Open the full-size correlation matrix">
+                        <img src="static/images/previews/correlation.webp" alt="Correlation heatmap for RoboBench scores and downstream robot control" width="1400" height="410" loading="lazy" decoding="async">
+                    </a>
+                </figure>
+            </details>
         </div>
     </section>
 
-    <section class="hero is-small">
-        <div class="hero-body">
-            <div class="container">
-                <!-- Paper video. -->
-                <h2 class="title is-3">Dataset Construction Pipeline</h2>
-                <div class="columns is-centered has-text-centered">
-                    <img src="static/images/pipeline/pipeline.png">
+    <section class="page-shell project-media" aria-labelledby="media-title">
+        <h2 class="project-heading" id="media-title">Examples and evaluation methods</h2>
+        <div class="media-grid">
+            <article id="case-study">
+                <h3>Demo case</h3>
+                <figure>
+                    <a class="overview-image" href="static/images/demo_case/demo_case.png" aria-label="Open the full-size demo case">
+                        <img src="static/images/previews/demo-case.webp" alt="One robot scene with sample questions across five RoboBench dimensions" width="1680" height="1193" loading="lazy" decoding="async">
+                    </a>
+                    <figcaption>Example questions on perception, planning, affordance, and failure diagnosis from one robot scene.</figcaption>
+                </figure>
+            </article>
+            <article id="intro-video">
+                <h3>Introduction video</h3>
+                <div class="publication-video">
+                    <iframe src="https://www.youtube-nocookie.com/embed/_W3FSK75IRQ" title="RoboBench introduction video" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
                 </div>
-                <div class="container is-max-desktop"></div>
-                <div class="content has-text-justified">
-                    <b>Dataset Construction Pipeline.</b> RoboBench integrates open-source and self-collected robot data under a shared process—preprocessing → tool-assisted + human-in-the-loop annotation → unified schema → auto-generated QA—and builds datasets for five dimensions: <b>Instruction Comprehension:</b> pair explicit instructions with LLM-rewritten implicit variants to test intent understanding. <b>Perception Reasoning:</b> use captioning/detection/segmentation tools to draft labels across robotic/object/scene/task views, then human-refine and standardize. <b>Generalized Planning:</b> construct a planning pool from robot videos; VLMs produce step/timestamp summaries and metadata, which are mapped to function templates to support Q1/Q2/Q3 evaluations. <b>Affordance Prediction:</b> sample key frames and annotate static (contact points), dynamic (trajectories), and mobile (base positions) affordances. <b>Failure Analysis:</b> mine execution-level failures from real trials and synthesize planning-level errors by perturbing correct instructions. All outputs follow one schema and are rendered into binary, single-choice, and multi-step multiple-choice QA formats for open- and closed-source MLLMs.
-                </div>
-            </div>
-        </div>
+                <p class="section-note"><a href="https://www.youtube.com/watch?v=_W3FSK75IRQ">Watch on YouTube</a></p>
+            </article>
+            <article>
+                <h3>Dataset construction</h3>
+                <figure>
+                    <a class="overview-image pipeline-preview" href="static/images/pipeline/pipeline.png" aria-label="Open the full-size dataset construction figure">
+                        <img src="static/images/previews/dataset.webp" alt="RoboBench data sources, annotation, shared schema, and QA generation" width="1400" height="636" loading="lazy" decoding="async">
+                    </a>
+                    <figcaption>Robot data are processed and annotated, then converted into a shared schema for question and answer generation.</figcaption>
+                </figure>
+                <details class="figure-disclosure media-description">
+                    <summary>Dataset annotations</summary>
+                    <p>RoboBench integrates open-source and self-collected robot data under a shared process—preprocessing → tool-assisted + human-in-the-loop annotation → unified schema → auto-generated QA—and builds datasets for five dimensions: <b>Instruction Comprehension:</b> pair explicit instructions with LLM-rewritten implicit variants to test intent understanding. <b>Perception Reasoning:</b> use captioning/detection/segmentation tools to draft labels across robotic/object/scene/task views, then human-refine and standardize. <b>Generalized Planning:</b> construct a planning pool from robot videos; VLMs produce step/timestamp summaries and metadata, which are mapped to function templates to support Q1/Q2/Q3 evaluations. <b>Affordance Prediction:</b> sample key frames and annotate static (contact points), dynamic (trajectories), and mobile (base positions) affordances. <b>Failure Analysis:</b> mine execution-level failures from real trials and synthesize planning-level errors by perturbing correct instructions. All outputs follow one schema and are rendered into binary, single-choice, and multi-step multiple-choice QA formats for open- and closed-source MLLMs.</p>
+                </details>
+            </article>
+            <article>
+                <h3>Planning evaluation</h3>
+                <figure>
+                    <a class="overview-image pipeline-preview" href="static/images/eval_pipeline/eval_pipeline.png" aria-label="Open the full-size planning evaluation figure">
+                        <img src="static/images/previews/planning.webp" alt="Directed acyclic action graph and RoboBench planning evaluation" width="1400" height="763" loading="lazy" decoding="async">
+                    </a>
+                    <figcaption>Q1 checks action alignment and goal completion with a world simulator. Q2 scores the next action. Q3 checks whether a subtask is complete.</figcaption>
+                </figure>
+                <details class="figure-disclosure media-description">
+                    <summary>Planning metrics</summary>
+                    <p>Evaluation of the planning dimension (Q1–Q3). Each task is decomposed into a sequence of parameterized atomic actions forming a Directed Acyclic Graph (DAG) that encodes causal and temporal dependencies. For <b>Q1 (Long-horizon planning)</b>, an MLLM-based world simulator assesses both NodeCorrectness (action alignment) and TaskCompletion (goal-state achievement) by simulating action rollouts under visual and physical constraints. <b>Q2 (Next-step planning)</b> evaluates fine-grained step prediction by comparing skill, object, and parameter accuracy, while <b>Q3 (Task state estimation)</b> measures binary correctness on whether a subtask has been completed. Together, the pipeline provides a unified, interpretable framework for assessing structural correctness and embodied feasibility in planning.</p>
+                </details>
+            </article>
         </div>
     </section>
-
-     <!-- Planning Evaluation Pipeline -->
-     <section class="hero is-small">
-     <div class="hero-body">
-         <div class="container">
-             <h2 class="title is-3">Planning Evaluation Pipeline</h2>
-             <div class="columns is-centered">
-                 <div class="column is-four-fifths">
-                     <div class="has-text-centered">
-                         <img src="static/images/eval_pipeline/eval_pipeline.png" alt="Planning Evaluation Pipeline" width="100%"/>
-                     </div>
-                     <div class="content has-text-left" style="margin-top: 1rem;">
-                         <p style="font-size: 1.1em;">
-                             <b>Planning Evaluation Framework.</b> Evaluation of the planning dimension (Q1–Q3). Each task is decomposed into a sequence of parameterized atomic actions forming a Directed Acyclic Graph (DAG) that encodes causal and temporal dependencies. For <b>Q1 (Long-horizon planning)</b>, an MLLM-based world simulator assesses both NodeCorrectness (action alignment) and TaskCompletion (goal-state achievement) by simulating action rollouts under visual and physical constraints. <b>Q2 (Next-step planning)</b> evaluates fine-grained step prediction by comparing skill, object, and parameter accuracy, while <b>Q3 (Task state estimation)</b> measures binary correctness on whether a subtask has been completed. Together, the pipeline provides a unified, interpretable framework for assessing structural correctness and embodied feasibility in planning.
-                         </p>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
-     </section>
-
-     <!-- Paper poster -->
-    <!-- <section class="hero is-small is-light">
-        <div class="hero-body">
-            <div class="container">
-                <h2 class="title">Poster</h2>
-
-                <iframe src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-
-            </div>
-        </div>
-    </section> -->
-    <!--End paper poster -->
-
 
     <!--BibTex citation -->
     <section class="section" id="BibTeX">
