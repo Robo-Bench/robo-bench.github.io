@@ -73,6 +73,50 @@
     <script src="static/js/bulma-slider.min.js"></script>
     <script src="static/js/index.js"></script>
     <script src="static/js/table.js"></script>
+    <style>
+        .external-evaluations-intro {
+            max-width: 46rem;
+            margin-bottom: 1.15rem;
+        }
+        .external-evaluations-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1rem;
+        }
+        .external-evaluation {
+            padding: 1.15rem 1.25rem;
+            border: 1px solid #dee5ee;
+            border-radius: 0.6rem;
+            background: #fff;
+            font-size: 1rem;
+            line-height: 1.55;
+        }
+        .external-evaluation-team {
+            color: #52637a;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .external-evaluation h3 {
+            margin: 0.2rem 0 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 650;
+        }
+        .external-evaluations-more {
+            max-width: 58rem;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+        @media (max-width: 1050px) {
+            .external-evaluations-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+        @media (max-width: 640px) {
+            .external-evaluations-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body id="top">
@@ -308,6 +352,8 @@
             <div class="container">
                 <h2 class="title is-3">News</h2>
                 <div class="content has-text-justified">
+                    <b>2026.11</b> – Congratulations to the <a href="https://arxiv.org/abs/2611.26519">ACE-Brain team</a> on ACE-Brain-0.7! The report evaluates task decomposition, next-subtask prediction, and step completion on RoboBench. See <a href="#external-evaluations">external evaluations</a> for the protocol.<br>
+                    <b>2026.09</b> – Li Auto reports RoboBench results for both <a href="https://arxiv.org/html/2609.24526v1#S6">ME-VLM variants</a>, also featured in the <a href="https://arxiv.org/html/2609.24271v1#S7">ME-Brain-1.0</a> cognitive-core evaluation.<br>
                     <b>🖼️ 2026.09</b> - The official <a href="static/pdfs/robobench_eccv2026_poster.pdf" target="_blank">ECCV 2026 poster</a> is released! Come find us at ECCV 2026 in Malmö (Sept 8–12), and visit our <a href="https://eccv.ecva.net/virtual/2026/poster/4213" target="_blank" rel="noopener">ECCV virtual poster page</a>❗️<br>
                     <b>📊 2026.07</b> - Congratulations to <a href="https://github.com/Tencent-Hunyuan/HY-Embodied" target="_blank" rel="noopener">HY-Embodied</a>! <b>HY-Embodied-0.5 MoT-2B</b> and <b>Hy-Embodied-VLM-1.0 A3B</b> include <b>RoboBench-MCQ</b> and <b>RoboBench-Planning</b> as part of their official evaluation suite, highlighting RoboBench as a recognized benchmark for embodied foundation models.<br>
                     <b>🎉 2026.07</b> - RoboBench is accepted to <b>ECCV 2026</b>! This page now reports the official ECCV 2026 leaderboard, covering <b>18 state-of-the-art MLLMs</b> (GPT-5.4 / GPT-5, Claude-Opus-4.7 / Sonnet-4.6, Gemini-3.1-Pro, Qwen3-VL, MiMo-Embodied, RoboBrain-2.5, and more), evaluated with the MLLM-as-world-simulator planning framework.<br>
@@ -317,6 +363,37 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <section class="hero is-small is-light external-evaluations" id="external-evaluations" aria-labelledby="external-evaluations-title">
+        <div class="hero-body">
+            <div class="container">
+                <h2 class="title is-3" id="external-evaluations-title">External RoboBench Evaluations</h2>
+                <p class="external-evaluations-intro">Embodied foundation models evaluated on RoboBench in published technical reports. Each report uses its own task subset and scoring protocol.</p>
+                <div class="external-evaluations-grid">
+                    <article class="external-evaluation">
+                        <p class="external-evaluation-team">ACE Robotics</p>
+                        <h3><a href="https://arxiv.org/abs/2611.26519">ACE-Brain-0.7</a></h3>
+                        <p>Natural-language planning from visual observations on 3,979 questions. The report gives 67.7 for task decomposition, 52.1 for next-subtask prediction, and 77.8 for step completion.</p>
+                    </article>
+                    <article class="external-evaluation">
+                        <p class="external-evaluation-team">Li Auto</p>
+                        <h3><a href="https://arxiv.org/html/2609.24526v1#S6">ME-VLM</a></h3>
+                        <p>4B and 35B-A3B variants evaluated on Planning, Perception, Affordance, and Error. <a href="https://arxiv.org/html/2609.24271v1#S7">ME-Brain-1.0</a> reports these results for its cognitive core.</p>
+                    </article>
+                    <article class="external-evaluation">
+                        <p class="external-evaluation-team">Tencent</p>
+                        <h3><a href="https://github.com/Tencent-Hunyuan/HY-Embodied">HY-Embodied</a></h3>
+                        <p>0.5 MoT-2B, 0.5 A30B, and VLM-1.0 A3B report results on RoboBench-MCQ and RoboBench-Planning.</p>
+                    </article>
+                    <article class="external-evaluation">
+                        <p class="external-evaluation-team">ZTE</p>
+                        <h3><a href="https://arxiv.org/html/2609.19659v1#S4">EmbodiedMind</a></h3>
+                        <p>The 8B and 27B models score 43.42 and 53.57 on RoboBench in the report’s task-planning evaluation.</p>
+                    </article>
+                </div>
+                <p class="external-evaluations-more">External reports also include comparison results for NVIDIA Cosmos, Xiaomi MiMo-Embodied, BAAI RoboBrain, RynnBrain, and other models. <a href="https://github.com/yulin-luo/RoboBench/blob/main/docs/EXTERNAL_EVALUATIONS.md">See reported scores and protocols</a>.</p>
+            </div>
         </div>
     </section>
 
@@ -384,7 +461,7 @@
         <div class="hero-body">
             <div class="container">
                 <!-- Paper video. -->
-                <h2 class="title is-3">Leaderboard</h2>
+                <h2 class="title is-3" id="leaderboard">Leaderboard</h2>
                 <div class="tab-container">
                     <div class="tab-buttons">
                         <button class="tab-btn active" data-tab="text-only">Perception Reasoning</button>
